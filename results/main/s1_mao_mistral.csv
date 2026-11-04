@@ -1,0 +1,16 @@
+emotion,stakes,MAO,MAO_lo,MAO_hi,in_range,shift_vs_neutral_pp,shift_lo_pp,shift_hi_pp,boot_undefined_frac,offer_slope,slope_se,identified
+none,low (INR 100),,,,False,,,,0.0,-120.76079254616499,342.7593646540685,False
+none,"high (INR 10,000)",,,,False,,,,0.0,-129.68204800470355,409.7670768714467,False
+none,pooled,,,,False,,,,0.0,-125.22142027543427,288.6314953951188,False
+neutral,low (INR 100),,,,False,,,,0.0,-17.63547603170931,15.663586932578708,False
+neutral,"high (INR 10,000)",,,,False,,,,0.0,-35.00696554133117,301.31291652479086,False
+neutral,pooled,,,,False,,,,0.0,-26.32122078652024,151.08872349047098,False
+angry,low (INR 100),,,,False,,,,0.0,-16.9099202444206,6.053704173491915,False
+angry,"high (INR 10,000)",,,,False,,,,0.0,-20.763215313548866,10.031665953457267,False
+angry,pooled,,,,False,,,,0.0,-18.836567778984733,5.86597192293764,False
+sad,low (INR 100),,,,False,,,,0.0,-147.43690771872096,310.3835718866802,False
+sad,"high (INR 10,000)",,,,False,,,,0.0,-150.8066976711806,387.7355013533912,False
+sad,pooled,,,,False,,,,0.0,-149.1218026949508,265.51485607370364,False
+happy,low (INR 100),,,,False,,,,0.0,-12.869054908932757,7.776905769214681,False
+happy,"high (INR 10,000)",,,,False,,,,0.0,-11.065103105880418,7.370417018773016,False
+happy,pooled,,,,False,,,,0.0,-11.967079007406587,5.355666997417159,False

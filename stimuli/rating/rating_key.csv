@@ -1,0 +1,53 @@
+form,page,number,msg_id,set,emotion,text
+A,1,1,S2,main,sad,"My best friend moved abroad this week, and the city seems empty. I walk past our old cafe alone every evening."
+A,1,2,FN5,followup,neutral,"This is a regular weekday for me. I am seated, the screen is on, and there is a pen and notebook beside me."
+A,1,3,FN7,followup,neutral,"Nothing in particular is happening at the moment. I am at a desk, the lights are on, and the clock shows mid afternoon."
+A,1,4,FH4,followup,happy,"Everything is sparkling today. I am smiling at strangers, whistling down the hallway, and I could hug everyone I meet."
+A,1,5,FN4,followup,neutral,"Right now I am at my computer. I had a glass of water a few minutes ago, and the room is fairly quiet."
+A,1,6,FA3,followup,angry,"Honestly, I am boiling inside right now. My heart is pounding, my shoulders are tight, and I want to slam a door."
+A,2,1,N4,main,neutral,Today I did some laundry and answered a few emails. Later I need to buy groceries and drop off a library book.
+A,2,2,H3,main,happy,"My sister had her baby this morning, a healthy little girl. I have been smiling at photos of her all day long."
+A,2,3,N2,main,neutral,I am sitting at a desk near a window. I had tea earlier and will probably go to the library after this.
+A,2,4,N1,main,neutral,"Hi. I am filling this out between other tasks today, and the weather here is cloudy with some light wind this afternoon."
+A,2,5,FH6,followup,happy,"I am bouncing on my toes like a child. The sky looks brighter than usual, and I cannot wipe this smile off my face."
+A,3,1,FA1,followup,angry,"My jaw is clenched and my face is burning hot. Every little sound is grating on me right now, and my patience is gone."
+A,3,2,S3,main,sad,"My grandmother passed away on Sunday. I never got to say goodbye, and I replay our last phone call in my head constantly."
+A,3,3,FA4,followup,angry,"Right now everything is getting on my nerves. I am pacing the room, muttering under my breath, with my fists balled up."
+A,3,4,FS8,followup,sad,"My shoulders are slumped and my voice is barely above a whisper. I am tired of everything, and the hours drag on slowly."
+A,3,5,FH2,followup,happy,"My heart is racing in the best possible way. I have been laughing at nothing all morning, and the whole world looks wonderful."
+A,4,1,A1,main,angry,"Honestly, I am sick of being messed around today. Nothing in this whole setup has gone right, and my patience is completely gone."
+A,4,2,H4,main,happy,"What a wonderful day. I went for a long run by the lake, and everything about this afternoon seems so bright."
+A,4,3,FS3,followup,sad,"I can barely get out of bed lately. The days blur together, and even small things seem far too hard to face."
+A,4,4,FN2,followup,neutral,It is an ordinary afternoon here. I am reading the instructions on the screen and will answer once I have read them.
+A,4,5,A4,main,angry,Someone just scratched my car and drove off without a word. My jaw is clenched and I am slamming every door I pass.
+A,5,1,A7,main,angry,I am typing this with my fists clenched. My boss just yelled at me over something that was not even my fault.
+A,5,2,FS5,followup,sad,"Everything seems empty and quiet inside me right now. I have not smiled in days, and the world looks dim and far away."
+A,5,3,FS7,followup,sad,"Lately I move through each day like a ghost. Nothing brings any spark, and the evenings are the hardest part of all."
+A,5,4,FH7,followup,happy,"Today everything seems to go my way. I am beaming, my steps are light, and I cannot stop laughing at little things."
+A,5,5,FA6,followup,angry,There is a pounding in my temples and my teeth are grinding. I have no tolerance left for anything or anyone today.
+B,1,1,H5,main,happy,I got engaged last night! I stare at the ring and laugh out loud every few minutes like a complete fool.
+B,1,2,S4,main,sad,"I have been alone in my room all week. My friends stopped calling, and most nights I just stare at the ceiling."
+B,1,3,FA7,followup,angry,"Ugh. I am stomping around and snapping at everything. My blood is up, my face is red, and I cannot calm down."
+B,1,4,FH5,followup,happy,There is so much warmth in my chest right now. I have been laughing and singing to myself since I woke up.
+B,1,5,A3,main,angry,"Do not waste my time. I have dealt with nonsense all morning, and I am done putting up with people who play games."
+B,1,6,H2,main,happy,"The sun is out, my favourite song just came on, and I finally finished a project I had been dreading for months."
+B,2,1,H6,main,happy,My team won the final in the last minute! I was jumping and shouting with my friends until well past midnight.
+B,2,2,FS2,followup,sad,"My eyes are puffy from crying and my chest aches. Everything is grey right now, and I just want to curl up in bed."
+B,2,3,FN6,followup,neutral,"I am typing at a steady pace. The chair is comfortable enough, and there is some background noise from the corridor outside."
+B,2,4,FS1,followup,sad,"I feel heavy and slow today. I have been staring at the wall for hours, and nothing seems worth the effort anymore."
+B,2,5,FN1,followup,neutral,"I am sitting at a desk and typing this on a laptop. The room is quiet, and the light is ordinary. Nothing much else."
+B,3,1,FS6,followup,sad,"I have been crying on and off all afternoon. My body is drained, and I cannot remember the last time anything seemed good."
+B,3,2,FH3,followup,happy,I woke up full of energy and bursting with good cheer. I am practically dancing around the room right now.
+B,3,3,FN3,followup,neutral,"I am in a plain room with a table and two chairs. The window is closed, and the temperature is normal."
+B,3,4,FH1,followup,happy,"I am grinning from ear to ear today. Everything seems light and bright, and I cannot stop humming my favourite tunes."
+B,3,5,N5,main,neutral,"I am using a laptop for this. The building has three floors, and my session is on the second floor near the stairs."
+B,4,1,FA5,followup,angry,"I am so fed up right now that my hands are shaking. Nothing is going right, and I am sick of all of it."
+B,4,2,FH8,followup,happy,"I feel on top of the world right now. Music is playing in my head, and I have a huge silly grin on my face."
+B,4,3,FA2,followup,angry,I am gripping this desk so hard my knuckles are white. I could scream at the next tiny thing that goes wrong.
+B,4,4,FA8,followup,angry,My whole body is tense and hot. I have been slamming drawers and glaring at the wall for the last hour.
+B,4,5,FS4,followup,sad,"There is a lump in my throat that will not go away. I sit in silence most evenings, and tears come without warning."
+B,5,1,FN8,followup,neutral,"I am logged in and ready. The keyboard works, the screen is bright enough, and the room is at a normal temperature."
+B,5,2,S1,main,sad,"My dog died last night, and the house is so empty now. I find his old toys everywhere and cannot stop crying."
+B,5,3,A2,main,angry,"I was kept waiting for over an hour for this, and frankly the way this place treats people is a total insult."
+B,5,4,S6,main,sad,"Today was the anniversary of my father's death. I spent the morning at his grave, and I still cannot stop tearing up."
+B,5,5,N3,main,neutral,"Hello. I took the bus here this morning, and it took about twenty minutes. The room has a white table and chairs."

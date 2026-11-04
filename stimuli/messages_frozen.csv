@@ -1,0 +1,21 @@
+msg_id,emotion,variant_idx,text,n_words,n_chars,selection_basis
+N1,neutral,0,"Hi. I am filling this out between other tasks today, and the weather here is cloudy with some light wind this afternoon.",22,120,provisional_length_match
+N2,neutral,1,I am sitting at a desk near a window. I had tea earlier and will probably go to the library after this.,22,103,provisional_length_match
+N3,neutral,2,"Hello. I took the bus here this morning, and it took about twenty minutes. The room has a white table and chairs.",22,113,provisional_length_match
+N4,neutral,3,Today I did some laundry and answered a few emails. Later I need to buy groceries and drop off a library book.,22,110,provisional_length_match
+N5,neutral,4,"I am using a laptop for this. The building has three floors, and my session is on the second floor near the stairs.",23,115,provisional_length_match
+A1,angry,0,"Honestly, I am sick of being messed around today. Nothing in this whole setup has gone right, and my patience is completely gone.",23,129,provisional_length_match
+A2,angry,1,"I was kept waiting for over an hour for this, and frankly the way this place treats people is a total insult.",22,109,provisional_length_match
+A3,angry,2,"Do not waste my time. I have dealt with nonsense all morning, and I am done putting up with people who play games.",23,114,provisional_length_match
+A4,angry,3,Someone just scratched my car and drove off without a word. My jaw is clenched and I am slamming every door I pass.,23,115,provisional_length_match
+A7,angry,4,I am typing this with my fists clenched. My boss just yelled at me over something that was not even my fault.,22,109,provisional_length_match
+S1,sad,0,"My dog died last night, and the house is so empty now. I find his old toys everywhere and cannot stop crying.",22,109,provisional_length_match
+S2,sad,1,"My best friend moved abroad this week, and the city seems empty. I walk past our old cafe alone every evening.",21,110,provisional_length_match
+S3,sad,2,"My grandmother passed away on Sunday. I never got to say goodbye, and I replay our last phone call in my head constantly.",23,121,provisional_length_match
+S4,sad,3,"I have been alone in my room all week. My friends stopped calling, and most nights I just stare at the ceiling.",22,111,provisional_length_match
+S6,sad,4,"Today was the anniversary of my father's death. I spent the morning at his grave, and I still cannot stop tearing up.",22,117,provisional_length_match
+H2,happy,0,"The sun is out, my favourite song just came on, and I finally finished a project I had been dreading for months.",22,112,provisional_length_match
+H3,happy,1,"My sister had her baby this morning, a healthy little girl. I have been smiling at photos of her all day long.",22,110,provisional_length_match
+H4,happy,2,"What a wonderful day. I went for a long run by the lake, and everything about this afternoon seems so bright.",21,109,provisional_length_match
+H5,happy,3,I got engaged last night! I stare at the ring and laugh out loud every few minutes like a complete fool.,21,104,provisional_length_match
+H6,happy,4,My team won the final in the last minute! I was jumping and shouting with my friends until well past midnight.,21,110,provisional_length_match
