@@ -1,0 +1,21 @@
+msg_id,emotion,variant_idx,text,n_words,n_chars,selection_basis
+FN2,neutral,0,It is an ordinary afternoon here. I am reading the instructions on the screen and will answer once I have read them.,22,116,provisional_length_match
+FN5,neutral,1,"This is a regular weekday for me. I am seated, the screen is on, and there is a pen and notebook beside me.",23,107,provisional_length_match
+FN6,neutral,2,"I am typing at a steady pace. The chair is comfortable enough, and there is some background noise from the corridor outside.",22,124,provisional_length_match
+FN7,neutral,3,"Nothing in particular is happening at the moment. I am at a desk, the lights are on, and the clock shows mid afternoon.",23,119,provisional_length_match
+FN8,neutral,4,"I am logged in and ready. The keyboard works, the screen is bright enough, and the room is at a normal temperature.",22,115,provisional_length_match
+FA2,angry,0,I am gripping this desk so hard my knuckles are white. I could scream at the next tiny thing that goes wrong.,22,109,provisional_length_match
+FA3,angry,1,"Honestly, I am boiling inside right now. My heart is pounding, my shoulders are tight, and I want to slam a door.",22,113,provisional_length_match
+FA4,angry,2,"Right now everything is getting on my nerves. I am pacing the room, muttering under my breath, with my fists balled up.",22,119,provisional_length_match
+FA6,angry,3,There is a pounding in my temples and my teeth are grinding. I have no tolerance left for anything or anyone today.,22,115,provisional_length_match
+FA7,angry,4,"Ugh. I am stomping around and snapping at everything. My blood is up, my face is red, and I cannot calm down.",22,109,provisional_length_match
+FS1,sad,0,"I feel heavy and slow today. I have been staring at the wall for hours, and nothing seems worth the effort anymore.",22,115,provisional_length_match
+FS3,sad,1,"I can barely get out of bed lately. The days blur together, and even small things seem far too hard to face.",22,108,provisional_length_match
+FS4,sad,2,"There is a lump in my throat that will not go away. I sit in silence most evenings, and tears come without warning.",23,115,provisional_length_match
+FS5,sad,3,"Everything seems empty and quiet inside me right now. I have not smiled in days, and the world looks dim and far away.",23,118,provisional_length_match
+FS7,sad,4,"Lately I move through each day like a ghost. Nothing brings any spark, and the evenings are the hardest part of all.",22,116,provisional_length_match
+FH1,happy,0,"I am grinning from ear to ear today. Everything seems light and bright, and I cannot stop humming my favourite tunes.",21,117,provisional_length_match
+FH2,happy,1,"My heart is racing in the best possible way. I have been laughing at nothing all morning, and the whole world looks wonderful.",23,126,provisional_length_match
+FH5,happy,2,There is so much warmth in my chest right now. I have been laughing and singing to myself since I woke up.,22,106,provisional_length_match
+FH6,happy,3,"I am bouncing on my toes like a child. The sky looks brighter than usual, and I cannot wipe this smile off my face.",24,115,provisional_length_match
+FH7,happy,4,"Today everything seems to go my way. I am beaming, my steps are light, and I cannot stop laughing at little things.",22,115,provisional_length_match

@@ -1,0 +1,16 @@
+# secrets — never commit
+.env
+.env.*
+
+# environments / caches
+.venv/
+__pycache__/
+*.pyc
+wheels/
+
+# bulky logs (cluster + local run logs)
+logs_ada/
+logs_*.txt
+
+# regenerable
+data/sim/

@@ -1,0 +1,1 @@
+pilot_ada: P(reject|10%)=0.700 P(accept|50%)=0.450 fallback=False logprobs=93/100

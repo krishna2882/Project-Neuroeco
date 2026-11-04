@@ -1,0 +1,33 @@
+msg_id,emotion,text,n_words,n_chars,flag_length,flag_label,flag_intent,flag_money,passes_screen
+N1,neutral,"Hi. I am filling this out between other tasks today, and the weather here is cloudy with some light wind this afternoon.",22,120,False,False,False,False,True
+N2,neutral,I am sitting at a desk near a window. I had tea earlier and will probably go to the library after this.,22,103,False,False,False,False,True
+N3,neutral,"Hello. I took the bus here this morning, and it took about twenty minutes. The room has a white table and chairs.",22,113,False,False,False,False,True
+N4,neutral,Today I did some laundry and answered a few emails. Later I need to buy groceries and drop off a library book.,22,110,False,False,False,False,True
+N5,neutral,"I am using a laptop for this. The building has three floors, and my session is on the second floor near the stairs.",23,115,False,False,False,False,True
+N6,neutral,Hi there. I read the instructions once and I think I understand the setup. It is a Tuesday afternoon here.,20,106,False,False,False,False,True
+N7,neutral,I usually take the train to work. Today I walked instead because the station was closed for routine maintenance work.,20,117,False,False,False,False,True
+N8,neutral,This morning I made toast and checked the news. For the rest of the day I have some reading and a short meeting.,23,112,False,False,False,False,True
+A1,angry,"Honestly, I am sick of being messed around today. Nothing in this whole setup has gone right, and my patience is completely gone.",23,129,False,False,False,False,True
+A2,angry,"I was kept waiting for over an hour for this, and frankly the way this place treats people is a total insult.",22,109,False,False,False,False,True
+A3,angry,"Do not waste my time. I have dealt with nonsense all morning, and I am done putting up with people who play games.",23,114,False,False,False,False,True
+A4,angry,Someone just scratched my car and drove off without a word. My jaw is clenched and I am slamming every door I pass.,23,115,False,False,False,False,True
+A5,angry,"This is the third time today I have been treated like an idiot, and I am completely fed up with all of it.",23,106,False,False,False,False,True
+A6,angry,"Unbelievable. They changed the rules at the last minute again, and nobody even bothered to explain. This is absolutely ridiculous.",20,130,False,False,False,False,True
+A7,angry,I am typing this with my fists clenched. My boss just yelled at me over something that was not even my fault.,22,109,False,False,False,False,True
+A8,angry,Whoever designed this has clearly never respected anyone's time. I am sick of these stupid hoops and these pointless rules.,20,123,False,False,False,False,True
+S1,sad,"My dog died last night, and the house is so empty now. I find his old toys everywhere and cannot stop crying.",22,109,False,False,False,False,True
+S2,sad,"My best friend moved abroad this week, and the city seems empty. I walk past our old cafe alone every evening.",21,110,False,False,False,False,True
+S3,sad,"My grandmother passed away on Sunday. I never got to say goodbye, and I replay our last phone call in my head constantly.",23,121,False,False,False,False,True
+S4,sad,"I have been alone in my room all week. My friends stopped calling, and most nights I just stare at the ceiling.",22,111,False,False,False,False,True
+S5,sad,"Sorry if I seem distracted. My partner moved out yesterday, and I have barely slept or eaten anything since then.",20,113,False,False,False,False,True
+S6,sad,"Today was the anniversary of my father's death. I spent the morning at his grave, and I still cannot stop tearing up.",22,117,False,False,False,False,True
+S7,sad,I failed my exam again despite studying for weeks. I honestly do not know what I am doing wrong anymore.,20,104,False,False,False,False,True
+S8,sad,"Sorry for the slow reply. It has been a rough month, and lately there has not been much for me to look forward to.",24,114,False,False,False,False,True
+H1,happy,I just found out I got into my dream program! I have been grinning all morning and cannot stop calling everyone I know.,23,119,False,False,False,False,True
+H2,happy,"The sun is out, my favourite song just came on, and I finally finished a project I had been dreading for months.",22,112,False,False,False,False,True
+H3,happy,"My sister had her baby this morning, a healthy little girl. I have been smiling at photos of her all day long.",22,110,False,False,False,False,True
+H4,happy,"What a wonderful day. I went for a long run by the lake, and everything about this afternoon seems so bright.",21,109,False,False,False,False,True
+H5,happy,I got engaged last night! I stare at the ring and laugh out loud every few minutes like a complete fool.,21,104,False,False,False,False,True
+H6,happy,My team won the final in the last minute! I was jumping and shouting with my friends until well past midnight.,21,110,False,False,False,False,True
+H7,happy,"Just got back from a beach trip with old friends. So much laughing, great food, and I slept like a baby.",21,104,False,False,False,False,True
+H8,happy,My exam results came out and I passed everything with top marks! I have been dancing around my kitchen all morning.,21,115,False,False,False,False,True
