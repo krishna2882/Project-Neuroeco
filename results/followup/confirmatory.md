@@ -1,6 +1,6 @@
 # Follow-up (event-free messages): pre-registered confirmatory results
 
-Pre-registration: `docs/preregistration_followup.md` (frozen 12 Nov 2026, SHA-256 6c276f85…, commit c219da2, before data
+Pre-registration: `docs/preregistration_followup.md` (frozen 12 Nov 2026, SHA-256 6c276f85…, commit 3e61f16 (originally c219da2; history rewritten on 12 Nov 2026 to edit commit messages only, file contents and dates unchanged), before data
 collection). Models run: Llama-3.1-8B and Qwen2.5-7B (Mistral not run, its free budget is exhausted, so F3/F4 were not tested).
 3,840 decisions + 320 checks per model, all valid on the first attempt.
 
