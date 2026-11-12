@@ -23,7 +23,7 @@ PY=.venv/bin/python
 nvidia-smi --query-gpu=name,memory.total --format=csv
 "$HOME/ollama/bin/ollama" serve > "slurm-ollama-$SLURM_JOB_ID.log" 2>&1 &
 OPID=$!
-trap 'kill $OPID 2>/dev/null' EXIT
+trap 'kill $OPID 2>/dev/null || true' EXIT
 for i in $(seq 90); do curl -sf localhost:11434/api/version >/dev/null && break; sleep 2; done
 curl -s localhost:11434/api/version; echo
 

@@ -1,4 +1,4 @@
-# Results summary: three model families (updated 4 Nov 2026)
+# Results summary: three model families (updated 13 Nov 2026)
 
 ## Headline
 **All three models recognise the counterpart's emotion almost perfectly (99–100%), but what that emotion does to
@@ -41,6 +41,29 @@ Details: `results/followup/confirmatory.md`.
   Its happy → rejection effect reverses between message styles (heterogeneity p < .001), so it depends on the wording, not on
   the emotion.
 - Not pre-registered and the bounds were chosen after the fact: present as a secondary analysis.
+
+## Extension 2: model size, game comprehension, quantisation (pre-registered, 13 Nov 2026)
+Pre-registration `docs/preregistration_extension2.md` (frozen and approved by both authors before data collection).
+Full results: `results/ext2/confirmatory.md`. Primary model = message as a random factor (P12); one-sided, Holm over X1–X3.
+- **Anger lowering trust replicates in all three new Qwen variants** (S3b, angry vs neutral):
+  Qwen2.5-14B −16.5 pp [−25.9, −7.0], Holm p = .001 (X1); Qwen2.5-3B −22.5 pp [−33.7, −11.3], Holm p = .001 (X2);
+  Qwen2.5-7B at Q8 −14.3 pp [−21.7, −6.9], Holm p = .001 (X3). Together with the main study and the follow-up, this is the
+  one effect that holds across sizes, precisions and message styles.
+- **Not a 4-bit artefact in direction, but the size is not pinned down:** Q8 − Q4 = −3.2 pp [−14.1, +7.7]; the TOST against
+  ±10 pp is not significant (p = .10), so a 10 pp quantisation difference cannot be ruled out. Q8 and Q4 make the identical
+  decision on the same prompt and seed in 94% of S1 trials but only 52% of S3b trials: quantisation changes individual
+  amounts while the aggregate effect stays.
+- **Comprehension (E2):** Llama answers C1–C3 (ultimatum payoffs) 100% correctly, so by the pre-registered rule its flat
+  acceptance curve is a **preference** (it knows the payoffs and does not act on fairness), not a misunderstanding.
+  Qwen 7B and 14B are near 100% on every item.
+- **Flagged (< 80%):** Llama C7 (17%) and Qwen-3B C7 (29%) say the trustee *has to* send money back, although the
+  prompt says it "can be anything from nothing to all of it"; Qwen-3B also fails C3 (77%). So for **Llama and Qwen-3B the trust
+  game is not reliably understood**, and their trust results should carry that caveat. The anger effect still appears in
+  both, so it does not depend on understanding that repayment is voluntary.
+- Exploratory size trend (3B → 7B → 14B): 3B reacts to anger in most games (UG, S3a, S1 rejection; FDR < .05); 7B
+  only in trust; 14B mainly to sadness (more giving and returning, less rejection) plus anger in trust. No monotone
+  trend in overall sensitivity, so model size does not simply amplify or dampen emotion effects. Emotion recognition:
+  98–100% at every size.
 
 ## Effects that survive correction across the whole study
 Two analyses: the original (random intercept per paraphrase × message cell) and the stricter one with **message as a

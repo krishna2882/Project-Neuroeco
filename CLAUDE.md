@@ -36,5 +36,6 @@ Ultimatum / Dictator / Trust games at fixed payoffs? Authors: Krishna Goel, Deva
   `run_all --bank-prefix followup --tag followup --checks-tag followup_checks --out followup`.
 - Sensitivity analysis for messages flagged by raters: `run_all --exclude-msgs <ids> --out main_excl`.
 - Study-wide correction and forest plot: `python -m analysis.forest`; stricter refit with message as a random factor (preferred for claims, P12): `python -m analysis.message_re --out main` (and `--out followup`), then equivalence tests + pooled estimates (P14): `python -m analysis.equivalence`; draft pre-registration for extension 2 (scale/comprehension/Q8): `docs/preregistration_extension2.md` (needs both sign-offs before any run); Mistral reasoning-text coding: `python -m analysis.thinking`.
+- Extension 2 done (13 Nov): `qwen25_3b`, `qwen25_14b` (full bank), `qwen25_7b_q8` (S1, S3b), comprehension for 4 models; `python -m analysis.ext2` → `results/ext2/confirmatory.md`.
 - Still open for the humans: peer rating, qualitative coding (`python -m analysis.qualitative sheet|kappa`),
   sign-off on protocol decisions, verifying † citations in `docs/literature_review.md`.
