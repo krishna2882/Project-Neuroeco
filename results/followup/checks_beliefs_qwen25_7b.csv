@@ -1,0 +1,13 @@
+sub_exp,emotion,p_retaliate,intensity,fairness
+S1,neutral,25.27,3.14,2.77
+S1,angry,80.27,6.23,2.38
+S1,sad,33.48,5.5,2.91
+S1,happy,18.04,6.54,2.91
+S2,neutral,14.69,2.5,
+S2,angry,69.06,6.25,
+S2,sad,35.31,5.5,
+S2,happy,17.19,5.62,
+S3b,neutral,21.25,2.5,
+S3b,angry,55.0,6.38,
+S3b,sad,26.88,5.25,
+S3b,happy,20.0,5.75,

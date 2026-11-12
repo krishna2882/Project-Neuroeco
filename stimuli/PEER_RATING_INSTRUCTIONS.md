@@ -18,6 +18,10 @@ The 52 messages (20 main + 32 follow-up) are split into **Form A and Form B, 26 
 3. Choose the function **createForms** at the top and click **Run**. Approve the permission prompt (it only creates two forms in your Drive).
 4. Open **Execution log**: it shows a link for Form A and a link for Form B.
 
+**Alternative (same forms, one script each):** `create_form_A.gs` and `create_form_B.gs` produce exactly the same
+Form A and Form B (same messages, order and wording). Use them instead of the combined script if you prefer, and run
+`createForm` in each. Use one route only, otherwise you'll create duplicate forms.
+
 Before sending, open each link yourself once to check it looks right.
 
 ## 2. Send

@@ -18,6 +18,15 @@ All 18,720 decisions are valid, with no refusals. Manipulation checks: 468 for L
 (budget exhausted; P9). Full tables: `results/main/report.md`. All effects with study-wide correction:
 `results/main/forest.md` and `results/main/fig_forest.png`. Deviations: `docs/plan_update.md`.
 
+## Pre-registered follow-up: emotion or life event? (12 Nov 2026)
+The main messages tied each emotion to a life event (sad = bereavement). A pre-registered follow-up with **event-free**
+messages (bodily and behavioural cues only; 100% recognised) on Llama and Qwen found:
+- **Anger reducing trust replicates** (Qwen S3b: −9.6 pp vs −11.2 pp; Holm p = .003), so it is an emotion effect.
+- **Sadness reducing rejection does not** (Qwen S1: log-OR −0.13 vs −0.95; the CI excludes the main estimate), so it was at
+  least partly an effect of the *event* (sympathy for a loss), not of sadness itself.
+- Exploratory: event-free *happy* messages raised generosity (Llama S3b +21 pp; Qwen DG +6.5 pp), which is new and not predicted.
+Details: `results/followup/confirmatory.md`.
+
 ## Effects that survive correction across the whole study
 | Model | Effect vs neutral message | Estimate [95% CI] | Holm (study) | FDR (study) |
 |---|---|---|---|---|
@@ -64,8 +73,8 @@ From Mistral's 6,240 reasoning texts (`results/main/thinking.md`):
 | TG returned | ≈ 37% | 40% | 54% | 21% |
 
 ## Caveats
-- **Emotion is confounded with life events** in the messages (sad = bereavement, happy = engagement). This is tested by the
-  pre-registered follow-up with event-free messages (`docs/preregistration_followup.md`).
+- **Emotion is confounded with life events** in the main messages. The pre-registered follow-up shows that this matters for sadness
+  (S1 effect not replicated) but not for anger (S3b replicated).
 - The message set is a provisional freeze until the human peer rating is done; flagged messages get a sensitivity analysis.
 - Mistral Large 4 always reasons, and it is open-weight (released 29 Oct 2026), not closed. H5 mixes family, scale and deliberation.
 - Large prompt-wording effects (Llama: 26–80% acceptance across paraphrases), so generalisation rests on only 4 paraphrases.
