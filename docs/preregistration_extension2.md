@@ -1,6 +1,6 @@
 # Pre-registration: model scale, game comprehension and quantisation (extension 2)
 
-**Status:** DRAFT, 12 Nov 2026. **Both** Krishna Goel and Devansh Magotra must approve it **before any extension-2 data are
+**Status:** FROZEN 12 Nov 2026, approved by both authors (see Freeze section). Original draft note: **Both** Krishna Goel and Devansh Magotra must approve it **before any extension-2 data are
 collected**. On approval: record both names and the date in the Freeze section, compute the SHA-256 of this file as approved,
 commit and push to github.com/krishna2882/Project-Neuroeco, and only then submit the Ada jobs.
 
@@ -98,6 +98,8 @@ GPU time on Ada (from earlier jobs: about 30 min per 4,000 decisions for a 7B mo
 E2 ≈ 10 min per model. Storage: about 19 GB of new model files, with 26 GB free in the 50 GB home quota.
 
 ## Freeze
-- Approved by: _(both names and date)_
-- SHA-256 of this file as approved (before this section is filled in): _(to be recorded)_
+- Approved by: **Krishna Goel and Devansh Magotra, 12 Nov 2026**, together and before any extension-2 data were collected.
+- SHA-256 of this file as approved (before this section and the status line were filled in):
+  `dcf5acc460d854ae4973a4b8a6784f3af66024273bcfc450dca36c4bbdd4b008`
 - Public timestamp: the commit adding this section, pushed **before** any extension-2 data are collected.
+- **Status:** no further edits. Any deviation is logged in `docs/plan_update.md`.
