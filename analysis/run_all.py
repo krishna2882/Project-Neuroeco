@@ -81,6 +81,7 @@ def main():
     ap.add_argument("--out", default="main")
     ap.add_argument("--n-boot", type=int, default=500)
     ap.add_argument("--bank-prefix", default="", help="e.g. 'followup' to analyse followup_trials / followup_checks")
+    ap.add_argument("--models", nargs="*", default=[], help="restrict to these model keys")
     ap.add_argument("--exclude-msgs", nargs="*", default=[], help="sensitivity analysis: drop these message ids")
     args = ap.parse_args()
     raw_dir = Path(args.raw_dir)
@@ -91,6 +92,9 @@ def main():
     cb = f"{args.bank_prefix}_checks" if args.bank_prefix else "checks"
     raw = load_raw(args.tag, tb, raw_dir)
     df = tidy_trials(args.tag, raw_dir, bank=tb)
+    if args.models:
+        raw = raw[raw.model_key.isin(args.models)]
+        df = df[df.model_key.isin(args.models)]
     if args.exclude_msgs:
         df = df[~df.msg_id.isin(args.exclude_msgs)]
     rep = [f"# Results ({args.out})", "",
@@ -120,6 +124,8 @@ def main():
         try:
             ck = tidy_checks(args.checks_tag, raw_dir, bank=cb)
             ck = ck[~ck.msg_id.isin(args.exclude_msgs)]
+            if args.models:
+                ck = ck[ck.model_key.isin(args.models)]
             for model, g in ck.groupby("model_key"):
                 txt, _ = checks.run(g, out, model)
                 rep.append(txt)

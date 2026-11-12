@@ -19,8 +19,15 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt  # noqa: E402
 
 EMOS = ["angry", "sad", "happy"]
-MODELS = ["llama31_8b", "qwen25_7b", "mistral"]
-LABEL = {"llama31_8b": "Llama-3.1-8B", "qwen25_7b": "Qwen2.5-7B", "mistral": "Mistral Large 4"}
+MODELS = ["llama31_8b", "qwen25_7b", "mistral"]  # default order; collect() also picks up any other model in <out>
+LABEL = {"llama31_8b": "Llama-3.1-8B", "qwen25_7b": "Qwen2.5-7B", "mistral": "Mistral Large 4",
+         "qwen25_3b": "Qwen2.5-3B", "qwen25_14b": "Qwen2.5-14B", "qwen25_7b_q8": "Qwen2.5-7B (8-bit)"}
+
+
+def models_in(out):
+    found = {f.stem.split("_", 2)[-1] for f in out.glob("s1_glmm_*.csv")} | \
+            {f.stem.split("_contrasts_")[-1] for f in out.glob("*_contrasts_*.csv")}
+    return [m for m in MODELS if m in found] + sorted(found - set(MODELS))
 COLORS = {"angry": "#d62728", "sad": "#9467bd", "happy": "#2ca02c"}
 
 
@@ -39,7 +46,7 @@ def bh(p):
 
 def collect(out):
     rows = []
-    for m in MODELS:
+    for m in models_in(out):
         p = out / f"s1_glmm_{m}.csv"
         if p.exists():
             g = pd.read_csv(p, index_col=0)
@@ -73,9 +80,11 @@ def collect(out):
 
 def plot(df, path):
     tests = list(dict.fromkeys(df.test))
-    fig, axes = plt.subplots(1, len(MODELS), figsize=(13, 0.55 * len(tests) * 3 / 2 + 1.5), sharey=True)
+    models = list(dict.fromkeys(df.model))
+    fig, axes = plt.subplots(1, len(models), figsize=(13, 0.55 * len(tests) * 3 / 2 + 1.5), sharey=True)
     ypos = {t: i for i, t in enumerate(tests[::-1])}
-    for ax, m in zip(axes, MODELS):
+    axes = np.atleast_1d(axes)
+    for ax, m in zip(axes, models):
         sub = df[df.model == m]
         for j, e in enumerate(EMOS):
             s = sub[sub.emotion == e]
@@ -91,7 +100,7 @@ def plot(df, path):
                             color=COLORS[e], mfc=COLORS[e] if filled else "white", ms=5, lw=1, capsize=2,
                             label=e if r.Index == s.index[0] and ax is axes[0] else None)
         ax.axvline(0, color="k", lw=0.8)
-        ax.set_title(LABEL[m], fontsize=10)
+        ax.set_title(LABEL.get(m, m), fontsize=10)
         ax.set_xlabel("effect vs neutral message\n(pp; S1 row = log-odds ×10)", fontsize=8)
     axes[0].set_yticks(list(ypos.values()), list(ypos.keys()), fontsize=8)
     h, l = axes[0].get_legend_handles_labels()
