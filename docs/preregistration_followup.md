@@ -81,7 +81,9 @@ Exactly as in the main study (`docs/protocol_decisions.md`): every attempt logge
 times; the first valid attempt is analysed; failure rates reported. No data are excluded beyond this.
 
 ## Freeze
-- Approved by: **Krishna Goel, 12 Nov 2026**. Devansh Magotra: approval pending (to be added here; the write-up will note it).
+- Approved by: **Krishna Goel, 12 Nov 2026**. **Devansh Magotra, 12 Nov 2026**, signed off in person after the follow-up data
+  had been collected. Data collection went ahead on Krishna's approval alone, a deviation from the "both authors before any
+  data" rule above (logged as P13 in `docs/plan_update.md`). The document was not changed between the freeze and his sign-off.
 - SHA-256 of this file as approved, i.e. before this Freeze section was filled in:
   `6c276f85cdf52414aa1b3faa47cf1dbb2d867d1616cb82fdc207327bc1a2a45f`
 - Public timestamp: the git commit that adds this section, pushed to github.com/krishna2882/Project-Neuroeco **before** any
