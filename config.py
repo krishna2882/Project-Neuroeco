@@ -51,6 +51,22 @@ MODELS = {
         "model": "qwen2.5:7b-instruct-q4_K_M",
         "base_url": "http://127.0.0.1:11434",
     },
+    # Extension 2 (docs/preregistration_extension2.md): Qwen size ladder and an 8-bit check
+    "qwen25_3b": {
+        "provider": "ollama",
+        "model": "qwen2.5:3b-instruct-q4_K_M",
+        "base_url": "http://127.0.0.1:11434",
+    },
+    "qwen25_14b": {
+        "provider": "ollama",
+        "model": "qwen2.5:14b-instruct-q4_K_M",
+        "base_url": "http://127.0.0.1:11434",
+    },
+    "qwen25_7b_q8": {
+        "provider": "ollama",
+        "model": "qwen2.5:7b-instruct-q8_0",
+        "base_url": "http://127.0.0.1:11434",
+    },
     "mistral": {
         "provider": "mistral",
         "model": "mistral-large-4-0",  # Mistral Large 4 (~1T MoE, open weights Oct 2026; Medium/Small are 0 req/min on the free tier)

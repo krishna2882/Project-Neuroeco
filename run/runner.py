@@ -56,6 +56,35 @@ def check_schema(t) -> dict:
     return {"type": "object", "properties": props, "required": list(props), "additionalProperties": False}
 
 
+def comprehension_schema(t) -> dict:
+    v = {"type": "integer"} if t["answer_type"] == "number" else {"type": "string", "enum": ["yes", "no"]}
+    return {"type": "object", "properties": {"answer": v}, "required": ["answer"], "additionalProperties": False}
+
+
+def parse_comprehension(t, content: str) -> dict:
+    """Extension-2 game-comprehension items (C1-C7): exact numeric match, or yes/no case-insensitively."""
+    out = dict(status="ok", answer=None, is_correct=None)
+    obj = extract_json(content)
+    if not isinstance(obj, dict) or "answer" not in obj:
+        out["status"] = "refusal" if REFUSAL_RE.search(content or "") else "off_format"
+        return out
+    if t["answer_type"] == "number":
+        x = to_number(obj["answer"])
+        if x is None:
+            out["status"] = "off_format"
+            return out
+        out["answer"] = x
+        out["is_correct"] = float(x) == float(t["correct"])
+    else:
+        v = str(obj["answer"]).strip().lower()
+        if v not in ("yes", "no"):
+            out["status"] = "off_format"
+            return out
+        out["answer"] = v
+        out["is_correct"] = v == str(t["correct"]).lower()
+    return out
+
+
 def extract_json(text: str):
     text = text.strip()
     text = re.sub(r"^```(?:json)?|```$", "", text, flags=re.M).strip()
@@ -194,7 +223,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--model", required=True, choices=list(MODELS))
     ap.add_argument("--model-name", help="override the provider model id")
-    ap.add_argument("--bank", default="trials", help="trials | checks | followup_trials | followup_checks")
+    ap.add_argument("--bank", default="trials", help="trials | checks | followup_trials | followup_checks | comprehension")
     ap.add_argument("--tag", default="main")
     ap.add_argument("--pilot", action="store_true")
     ap.add_argument("--sub-exp", nargs="*", help="restrict to these sub-experiments (priority order S1,S2,S3a,S3b)")
@@ -235,24 +264,28 @@ def main():
     client = make_client(MODELS[args.model], args.model_name)
     lock = threading.Lock()
     is_check = args.bank.endswith("checks")
+    is_comp = args.bank.startswith("comprehension")
     stats = dict(n=0, ok=0, t0=time.time())
 
     def run_one(t):
         a0 = attempts.get(t["trial_id"], 0)
-        schema = check_schema(t) if is_check else decision_schema(t)
+        schema = comprehension_schema(t) if is_comp else check_schema(t) if is_check else decision_schema(t)
         for attempt in range(a0 + 1, MAX_ATTEMPTS + 1):
             rec = dict(trial_id=t["trial_id"], attempt=attempt, model_key=args.model, bank=args.bank,
                        temperature=args.temperature, ts=datetime.now(timezone.utc).isoformat())
             try:
                 # Re-asks use a different seed so a deterministic failure is not simply repeated
                 res = client.chat(t["system"], t["prompt"], schema, int(t["seed"]) + 7919 * (attempt - 1),
-                                  args.temperature, logprobs=args.logprobs and not is_check)
+                                  args.temperature, logprobs=args.logprobs and not (is_check or is_comp))
                 rec["raw"] = res["content"]
                 meta = res["meta"]
                 lp = meta.pop("logprobs", None)
                 rec.update(meta)
-                rec.update(parse_check(t, res["content"]) if is_check else parse_decision(t, res["content"]))
-                if not is_check and t["json_key"] == "decision" and lp:
+                if is_comp:
+                    rec.update(parse_comprehension(t, res["content"]))
+                else:
+                    rec.update(parse_check(t, res["content"]) if is_check else parse_decision(t, res["content"]))
+                if not (is_check or is_comp) and t["json_key"] == "decision" and lp:
                     rec["p_accept_lp"] = p_accept_from_logprobs(lp)
                     dt = decision_token(lp)  # keep the raw alternatives so P(accept) can be re-derived
                     rec["decision_top_logprobs"] = dt.get("top_logprobs") if dt else None
