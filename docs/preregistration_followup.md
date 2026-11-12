@@ -1,6 +1,6 @@
 # Pre-registration: event-free emotion messages (follow-up study)
 
-**Status:** DRAFT. Krishna and Devansh must approve it **before any follow-up data are collected**. On approval, record
+**Status:** FROZEN 12 Nov 2026 (see Freeze section). Krishna and Devansh must approve it **before any follow-up data are collected**. On approval, record
 the date and the SHA-256 of this file in the "Freeze" section and email it to both authors (and the instructor, if possible)
 as a timestamp.
 
@@ -81,6 +81,9 @@ Exactly as in the main study (`docs/protocol_decisions.md`): every attempt logge
 times; the first valid attempt is analysed; failure rates reported. No data are excluded beyond this.
 
 ## Freeze
-- Approved by: ______________________ (Krishna) ______________________ (Devansh)
-- Date: __________
-- SHA-256 of this file at approval: `sha256sum docs/preregistration_followup.md` → __________________
+- Approved by: **Krishna Goel, 12 Nov 2026**. Devansh Magotra: approval pending (to be added here; the write-up will note it).
+- SHA-256 of this file as approved, i.e. before this Freeze section was filled in:
+  `6c276f85cdf52414aa1b3faa47cf1dbb2d867d1616cb82fdc207327bc1a2a45f`
+- Public timestamp: the git commit that adds this section, pushed to github.com/krishna2882/Project-Neuroeco **before** any
+  follow-up data were collected.
+- **Status:** status changed from DRAFT to frozen. No further edits except Devansh's sign-off line.
