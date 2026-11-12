@@ -30,6 +30,18 @@ messages (bodily and behavioural cues only; 100% recognised) on Llama and Qwen f
 - Exploratory: event-free *happy* messages raised generosity (Llama S3b +21 pp; Qwen DG +6.5 pp), which is new and not predicted.
 Details: `results/followup/confirmatory.md`.
 
+## Is there no effect, or just too much noise? (equivalence tests and pooling, 12 Nov; P14, post hoc)
+`results/main/equivalence.md`. Equivalence = 90% CI inside ±10 pp (or OR 2); the stricter ±5 pp / OR 1.5 version is also there.
+- **Qwen's emotion sensitivity is narrow, and that is now a positive finding:** 11 of its 15 main-study effects and 10 of 12
+  follow-up effects are *equivalent to zero*. It recognises every emotion but acts on almost none of them.
+- **The one robust open-model effect is anger lowering trust.** Pooled over 10 messages and both message styles, Qwen
+  −10.1 pp [−14.4, −5.8] (Holm p = .001; the two studies agree, heterogeneity p = .74). Llama shows the same direction
+  (−12.3 pp, FDR p = .023; Holm .081).
+- **Llama is mostly inconclusive** (12 of 15 main effects at ±5 pp): too noisy to show either an effect or its absence.
+  Its happy → rejection effect reverses between message styles (heterogeneity p < .001), so it depends on the wording, not on
+  the emotion.
+- Not pre-registered and the bounds were chosen after the fact: present as a secondary analysis.
+
 ## Effects that survive correction across the whole study
 Two analyses: the original (random intercept per paraphrase × message cell) and the stricter one with **message as a
 random factor** (`results/main/message_re.md`, P12). Each emotion is carried by only 5 messages, so the stricter model is
