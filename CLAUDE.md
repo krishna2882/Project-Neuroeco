@@ -35,6 +35,6 @@ Ultimatum / Dictator / Trust games at fixed payoffs? Authors: Krishna Goel, Deva
   rebuild `followup_*` bank (command in `ada/run_followup.sbatch`) → `sync.sh push` → sbatch per model → analyse with
   `run_all --bank-prefix followup --tag followup --checks-tag followup_checks --out followup`.
 - Sensitivity analysis for messages flagged by raters: `run_all --exclude-msgs <ids> --out main_excl`.
-- Study-wide correction and forest plot: `python -m analysis.forest`; Mistral reasoning-text coding: `python -m analysis.thinking`.
+- Study-wide correction and forest plot: `python -m analysis.forest`; stricter refit with message as a random factor (preferred for claims, P12): `python -m analysis.message_re --out main` (and `--out followup`); Mistral reasoning-text coding: `python -m analysis.thinking`.
 - Still open for the humans: peer rating, qualitative coding (`python -m analysis.qualitative sheet|kappa`),
   sign-off on protocol decisions, verifying † citations in `docs/literature_review.md`.

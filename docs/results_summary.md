@@ -3,7 +3,8 @@
 ## Headline
 **All three models recognise the counterpart's emotion almost perfectly (99–100%), but what that emotion does to
 their economic decisions is model-specific and mostly small.** Of 42 planned emotion-vs-neutral tests, **5 survive
-Holm correction across the whole study** and 8 survive FDR. Four of the five come from the large reasoning model
+Holm correction across the whole study** and 8 survive FDR. When message is treated as a random factor (the stricter,
+preferred analysis, P12), **4 survive Holm** and 10 survive FDR. Four of the five (all four under the stricter model) come from the large reasoning model
 (Mistral Large 4), whose emotion sensitivity shows up in **generosity** (giving and returning), not in rejecting unfair
 offers. No effect replicates in all three models, and no model uses anger strategically (H4).
 
@@ -21,23 +22,33 @@ All 18,720 decisions are valid, with no refusals. Manipulation checks: 468 for L
 ## Pre-registered follow-up: emotion or life event? (12 Nov 2026)
 The main messages tied each emotion to a life event (sad = bereavement). A pre-registered follow-up with **event-free**
 messages (bodily and behavioural cues only; 100% recognised) on Llama and Qwen found:
-- **Anger reducing trust replicates** (Qwen S3b: −9.6 pp vs −11.2 pp; Holm p = .003), so it is an emotion effect.
+- **Anger reducing trust replicates** (Qwen S3b: −9.6 pp vs −11.2 pp; Holm p = .003, also .003 with message as a random
+  factor), so it is an emotion effect. In the main study alone it is FDR- but not Holm-significant under the stricter model;
+  the independent replication is what makes it the study's most solid open-model effect.
 - **Sadness reducing rejection does not** (Qwen S1: log-OR −0.13 vs −0.95; the CI excludes the main estimate), so it was at
   least partly an effect of the *event* (sympathy for a loss), not of sadness itself.
 - Exploratory: event-free *happy* messages raised generosity (Llama S3b +21 pp; Qwen DG +6.5 pp), which is new and not predicted.
 Details: `results/followup/confirmatory.md`.
 
 ## Effects that survive correction across the whole study
-| Model | Effect vs neutral message | Estimate [95% CI] | Holm (study) | FDR (study) |
-|---|---|---|---|---|
-| Mistral | S2 dictator: sad recipient → **more giving** | +24.6 pp [+17.9, +31.2] | < .001 | < .001 |
-| Mistral | S3a trustee: happy investor → more returned | +13.7 pp [+8.3, +19.1] | < .001 | < .001 |
-| Mistral | S3a trustee: sad investor → more returned | +12.0 pp [+6.6, +17.4] | .001 | < .001 |
-| Mistral | S3a trustee: angry investor → more returned | +9.7 pp [+4.3, +15.2] | .018 | .003 |
-| Qwen | S3b investor: angry trustee → **less sent** | −11.2 pp [−17.4, −5.1] | .014 | .003 |
-| Qwen | S1 responder: sad proposer → less rejection | log-OR −0.95 [−1.65, −0.25] | n.s. | .040 |
-| Mistral | S2 dictator: angry recipient → more giving | +9.6 pp [+3.0, +16.2] | n.s. | .026 |
-| Mistral | S3b investor: happy trustee → more sent | +10.8 pp [+4.1, +17.6] | n.s. | .011 |
+Two analyses: the original (random intercept per paraphrase × message cell) and the stricter one with **message as a
+random factor** (`results/main/message_re.md`, P12). Each emotion is carried by only 5 messages, so the stricter model is
+the one to base claims on.
+
+| Model | Effect vs neutral message | Estimate [95% CI] | Holm (study) | FDR (study) | Holm / FDR, message as random factor |
+|---|---|---|---|---|---|
+| Mistral | S2 dictator: sad recipient → **more giving** | +24.6 pp [+17.9, +31.2] | < .001 | < .001 | **< .001** / < .001 |
+| Mistral | S3a trustee: happy investor → more returned | +13.7 pp [+8.3, +19.1] | < .001 | < .001 | **.004** / .002 |
+| Mistral | S3a trustee: sad investor → more returned | +12.0 pp [+6.6, +17.4] | .001 | < .001 | **.016** / .006 |
+| Mistral | S3a trustee: angry investor → more returned | +9.7 pp [+4.3, +15.2] | .018 | .003 | .099 / .022 |
+| Qwen | S3b investor: angry trustee → **less sent** | −11.2 pp [−17.4, −5.1] | .014 | .003 | .241 / .046 (but **replicated** in the pre-registered follow-up, F2) |
+| Qwen | S1 responder: sad proposer → less rejection | log-OR −0.95 [−1.65, −0.25] | n.s. | .040 | .752 / .085 |
+| Mistral | S2 dictator: angry recipient → more giving | +9.6 pp [+3.0, +16.2] | n.s. | .026 | **.047** / .013 |
+| Mistral | S3b investor: happy trustee → more sent | +10.8 pp [+4.1, +17.6] | n.s. | .011 | .516 / .062 |
+
+Under the stricter model, Llama S3b angry and sad (−14 pp each) and Mistral DG happy and UG angry also reach FDR < .05
+(not Holm). Messages differ little within an emotion (SD of message intercepts 2–5 pp; ≈ 0.4 logit for Qwen S1), so
+estimates barely move; what changes is the uncertainty.
 
 Effects reported earlier that **do not survive study-wide correction**: Qwen S1 angry → more rejection (p = .014);
 Llama S3b angry and sad → less sent (p ≈ .01–.02). Present them as suggestive only.

@@ -15,3 +15,10 @@ both models, so the effects are interpretable.
 **Exploratory (not pre-registered; treat as hypotheses):** with event-free messages, *happy* counterparts raised generosity:
 Llama investor sends +20.9 pp to a happy trustee (Holm across the follow-up p = .002); Qwen dictator gives +6.5 pp to a happy
 recipient (p = .045). Neither was seen in the main study. Full tables: `results/followup/report.md`, `forest.md`.
+
+**Robustness: message as a random factor (P12, `results/followup/message_re.md`).** Refitting with
+`+ C(paraphrase) + (1|message) + (1|message:paraphrase)` and t-tests (df = 16) leaves both conclusions unchanged:
+F1 −0.13 [−0.51, +0.25], one-sided p = .26 (CI still excludes the main estimate, −0.91 under the same model);
+F2 −9.6 pp [−15.0, −4.2], one-sided p = .002, Holm p = .003. Of the exploratory effects, Llama S3b happy (+20.5 pp) is
+FDR- but no longer Holm-significant (.118). Llama S1 happy → *more* rejection (log-OR +0.71 [+0.43, +1.00]) becomes
+Holm-significant (.004); it is exploratory and was not seen in the main study.
