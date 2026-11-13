@@ -35,4 +35,4 @@ write-up as deviations.
 1. (Optional) Top up xAI credits to add a genuinely closed model; the code is ready (`--model grok`).
 2. Peer rating of the messages (~10 raters). The current freeze is provisional, but every model saw the same 20 messages, so the comparisons remain valid.
 3. Qualitative coding by both authors (`python -m analysis.qualitative sheet` / `kappa`).
-4. Joint sign-off on `docs/protocol_decisions.md`; verify the † citations in `docs/literature_review.md`.
+4. Joint sign-off on `docs/protocol_decisions.md`. The † citations in `docs/literature_review.md` were checked against DOI/Crossref/publisher records on 13 Nov (3 fixed: Akata volume/pages, Coda-Forno arXiv version, Wang article number; the other 37 are correct); one author should still spot-check them before submission.

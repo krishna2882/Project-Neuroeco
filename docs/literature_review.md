@@ -197,7 +197,7 @@ accommodation, contextual inference) are discussed, not inferred.
 Works marked † were added in this review (not in the approach paper); verify details before submission.
 
 - Aher, G., Arriaga, R. I., & Kalai, A. T. (2023). Using large language models to simulate multiple humans and replicate human subject studies. *ICML*.
-- Akata, E., Schulz, L., Coda-Forno, J., Oh, S. J., Bethge, M., & Schulz, E. (2025). Playing repeated games with large language models. *Nature Human Behaviour*. †
+- Akata, E., Schulz, L., Coda-Forno, J., Oh, S. J., Bethge, M., & Schulz, E. (2025). Playing repeated games with large language models. *Nature Human Behaviour, 9*(7), 1380–1390. †
 - Andrade, E. B., & Ariely, D. (2009). The enduring impact of transient emotions on decision making. *Organizational Behavior and Human Decision Processes, 109*, 1–8. †
 - Argyle, L. P., et al. (2023). Out of one, many: Using language models to simulate human samples. *Political Analysis, 31*, 337–351. †
 - Berg, J., Dickhaut, J., & McCabe, K. (1995). Trust, reciprocity, and social history. *Games and Economic Behavior, 10*, 122–142. †
@@ -205,7 +205,7 @@ Works marked † were added in this review (not in the approach paper); verify d
 - Bolton, G. E., & Ockenfels, A. (2000). ERC: A theory of equity, reciprocity, and competition. *American Economic Review, 90*, 166–193. †
 - Chang, L. J., Smith, A., Dufwenberg, M., & Sanfey, A. G. (2011). Triangulating the neural, psychological, and economic bases of guilt aversion. *Neuron, 70*, 560–572. †
 - Chen, Y., Liu, T. X., Shan, Y., & Zhong, S. (2023). The emergence of economic rationality of GPT. *PNAS, 120*, e2316205120. †
-- Coda-Forno, J., et al. (2023). Inducing anxiety in large language models increases exploration and bias. *arXiv:2304.11111*. †
+- Coda-Forno, J., et al. (2023). Inducing anxiety in large language models increases exploration and bias. *arXiv:2304.11111v1* (v2, 2024, retitled "Inducing anxiety in large language models can induce bias"). †
 - Crockett, M. J., Clark, L., Tabibnia, G., Lieberman, M. D., & Robbins, T. W. (2008). Serotonin modulates behavioral reactions to unfairness. *Science, 320*, 1739.
 - de Quervain, D. J.-F., et al. (2004). The neural basis of altruistic punishment. *Science, 305*, 1254–1258. †
 - Dillion, D., Tandon, N., Gu, Y., & Gray, K. (2023). Can AI language models replace human participants? *Trends in Cognitive Sciences, 27*, 597–600. †
@@ -243,7 +243,7 @@ Works marked † were added in this review (not in the approach paper); verify d
 - van Dijk, E., van Kleef, G. A., Steinel, W., & van Beest, I. (2008). A social functional approach to emotions in bargaining: When communicating anger pays and when it backfires. *Journal of Personality and Social Psychology, 94*, 600–614.
 - van Kleef, G. A., De Dreu, C. K. W., & Manstead, A. S. R. (2004). The interpersonal effects of anger and happiness in negotiations. *Journal of Personality and Social Psychology, 86*, 57–76. †
 - van Kleef, G. A., De Dreu, C. K. W., & Manstead, A. S. R. (2006). Supplication and appeasement in conflict and negotiation: The interpersonal effects of disappointment, worry, guilt, and regret. *Journal of Personality and Social Psychology, 91*, 124–142. †
-- Wang, X., Li, X., Yin, Z., Wu, Y., & Liu, J. (2023). Emotional intelligence of large language models. *Journal of Pacific Rim Psychology, 17*. †
+- Wang, X., Li, X., Yin, Z., Wu, Y., & Liu, J. (2023). Emotional intelligence of large language models. *Journal of Pacific Rim Psychology, 17*, Article 18344909231213958. †
 - Xiang, T., Lohrenz, T., & Montague, P. R. (2013). Computational substrates of norms and their violations during social exchange. *Journal of Neuroscience, 33*, 1099–1108. †
 - Xiao, E., & Houser, D. (2005). Emotion expression in human punishment behavior. *PNAS, 102*, 7398–7401. †
 - Xie, C., et al. (2024). Can large language model agents simulate human trust behavior? *NeurIPS*. †

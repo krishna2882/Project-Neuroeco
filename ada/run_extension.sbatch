@@ -18,7 +18,7 @@ cd "$SLURM_SUBMIT_DIR"
 export OLLAMA_MODELS="$HOME/ollama_models" OLLAMA_HOST=127.0.0.1:11434 OLLAMA_KEEP_ALIVE=60m
 "$HOME/ollama/bin/ollama" serve > "slurm-ollama-$SLURM_JOB_ID.log" 2>&1 &
 OPID=$!
-trap 'kill $OPID 2>/dev/null' EXIT
+trap 'kill $OPID 2>/dev/null || true' EXIT
 for i in $(seq 90); do curl -sf localhost:11434/api/version >/dev/null && break; sleep 2; done
 R=".venv/bin/python -m run.runner --model $MODEL_KEY"
 $R --tag main --extension-only --logprobs
