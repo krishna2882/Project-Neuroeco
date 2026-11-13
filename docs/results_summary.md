@@ -98,6 +98,24 @@ by < 70% of raters, or read as a threat/promise by >= 30%.
 - Llama's curve is nearly flat, and Qwen-3B's never crosses 50%, so their MAO is not identified; this is the same limit as the
   choice-based Fehr–Schmidt fit.
 
+## Wording vs emotion, and the pooled valuation model (13 Nov 2026; P19, exploratory)
+**Prompt wording moves decisions more than emotion does** (`results/wording/wording.md`, `fig_wording.png`). Sequential
+adjusted R², with wording (4 paraphrases, 3 df) compared like for like with emotion (3 df):
+- **Wording explains more variance than emotion in 21 of 28 model × game combinations.** Median: wording 6.7%, emotion 6.1%,
+  which message within an emotion 4.1%; the rest is mostly sampling noise at T = 1.0 (median about 75%).
+- The extreme case is Llama in the ultimatum game: wording 10.6% vs emotion 0.4%; acceptance spans 49 pp across the four
+  paraphrases.
+- **The exceptions are where the robust effect lives:** trust-game sending in Qwen-14B (emotion 54%), Qwen-7B Q8 and Llama's
+  follow-up, where emotion beats wording.
+- Which message within an emotion matters about as much as the emotion itself, consistent with P12.
+
+**Pooled valuation model across all 7 log-probability runs** (`results/value_signal/pooled.md`; message, run × message and
+run × emotion random effects; conservative t with df = 6):
+- Anger: −1.13 logit at a 30% offer [−2.52, +0.25], p = .09 (z: p = .045). The same direction in every run, but the runs
+  differ too much for a pooled claim. **Report as a trend.**
+- **Sadness flattens the valuation curve**: slope on the offer −2.54 [−3.77, −1.30], Holm p = .014 (Qwen only: Holm
+  p = .039). After a sad message the size of the offer matters less: the models become less sensitive to fairness.
+
 ## Effects that survive correction across the whole study
 Two analyses: the original (random intercept per paraphrase × message cell) and the stricter one with **message as a
 random factor** (`results/main/message_re.md`, P12). Each emotion is carried by only 5 messages, so the stricter model is
