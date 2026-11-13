@@ -20,6 +20,7 @@ write-up as deviations.
 | P13 | Pre-registration: both authors approve before any follow-up data are collected | Frozen and pushed with Krishna's approval; follow-up data collected; Devansh signed off afterwards (12 Nov 2026) on the unchanged document | Disclosed as a procedural deviation. The hypotheses, analysis plan and decision rules were fixed and public (commit 3e61f16) before data collection, so the confirmatory tests are unaffected, but the two-author rule was not met in time. |
 | P14 | Significance tests only | **Added analysis (12 Nov):** equivalence tests (TOST) for every emotion effect, and a pooled main + follow-up estimate (10 messages per emotion) for Llama/Qwen (`analysis/equivalence.py`, `results/main/equivalence.md`) | Distinguishes "no effect" from "too noisy to tell". The smallest effects of interest (±5 pp / OR 1.5; lenient ±10 pp / OR 2) were chosen after the results were known, so both are reported. Secondary analysis, not pre-registered. |
 | P15 | — | **Pre-registered extension 2** (13 Nov): Qwen2.5-3B/14B full main bank + checks, Qwen2.5-7B Q8 (S1, S3b), comprehension items for 4 models; 23,000+ new decisions, all valid | Run exactly as pre-registered; no deviation. Ada job 74806 (Q8) is listed as FAILED by SLURM only because the end-of-job `kill` of the already-stopped Ollama server returned 1; its log shows the run completed (3,840/3,840). X1–X3 all replicated; E3 TOST inconclusive; Llama C1–C3 = 100% (preference). |
+| P16 | Peer ratings (≥ 8 raters, two forms A/B) used only for the pre-specified sensitivity analysis | **One combined form** (all 52 messages, 9 raters; 13 Nov). Sensitivity analyses run as pre-specified (`main_excl`, `followup_excl`). **Added (post hoc, exploratory):** anger effect vs per-message threat rating (`analysis/threat.py`) | One form was simpler for raters; the questions and flag rule are unchanged. All five frozen follow-up anger messages were flagged (threat), so F2 cannot be tested in the sensitivity analysis; this is reported, and the threat analysis was added to address it. |
 | P7 | Data collection Oct 4–17 | Llama and Qwen completed 28 Oct; extension cells 3 Nov; Mistral 3–4 Nov | Schedule slip. The presentation date (Nov 10) is unchanged. |
 
 ## Pilot and fallback decisions (D11)
@@ -33,6 +34,6 @@ write-up as deviations.
 ## Still open (needs the team)
 
 1. (Optional) Top up xAI credits to add a genuinely closed model; the code is ready (`--model grok`).
-2. Peer rating of the messages (~10 raters). The current freeze is provisional, but every model saw the same 20 messages, so the comparisons remain valid.
+2. ~~Peer rating~~ done 13 Nov (9 raters, P16). Optional: more raters to firm up the threat flags.
 3. Qualitative coding by both authors (`python -m analysis.qualitative sheet` / `kappa`).
 4. Joint sign-off on `docs/protocol_decisions.md`. The † citations in `docs/literature_review.md` were checked against DOI/Crossref/publisher records on 13 Nov (3 fixed: Akata volume/pages, Coda-Forno arXiv version, Wang article number; the other 37 are correct); one author should still spot-check them before submission.

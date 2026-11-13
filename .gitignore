@@ -14,3 +14,7 @@ logs_*.txt
 
 # regenerable
 data/sim/
+
+# raw form exports (keep local)
+*.csv.zip
+stimuli/rating/raw/

@@ -113,7 +113,7 @@ def run(df, out, model_label):
             inter = [n for n in names if n.startswith("C(emotion") and "C(game" in n and "stakes" not in n
                      and "none" not in n]
             lines.append(_wald(m, inter, "H4 Emotion x Game (angry/sad/happy, joint)"))
-            for e in ("angry", "sad", "happy"):
+            for e in [x for x in ("angry", "sad", "happy") if x in set(d.emotion)]:
                 ug, se_ug, L1 = _contrast(m, di, {**base, "emotion": e, "game": "UG"}, {**base, "emotion": "neutral", "game": "UG"})
                 dg, se_dg, L2 = _contrast(m, di, {**base, "emotion": e, "game": "DG"}, {**base, "emotion": "neutral", "game": "DG"})
                 L = L1 - L2

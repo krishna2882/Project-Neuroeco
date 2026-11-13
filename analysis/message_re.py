@@ -114,7 +114,7 @@ def s1_effects(d, model):
         warnings.simplefilter("ignore")
         r = fit_nested_glmm(X, d.reject.values, d.msg_id.values, d.paraphrase.values)
     rows = []
-    for e in EMOS:
+    for e in [x for x in EMOS if x in set(d.emotion)]:
         k = EMO_TERM.format(e)
         est, se = r.params[k], r.bse[k]
         estimable = se < 5 and d.reject.mean() > 0.005
@@ -153,7 +153,7 @@ def lmm_effects(d_all, model, sub):
     strata = sorted(d[spec["by"]].unique()) if spec["by"] else [None]
     rows = []
     for s in strata:
-        for e in EMOS:
+        for e in [x for x in EMOS if x in set(d.emotion)]:
             ra, rb = {**base, "emotion": e}, {**base, "emotion": "neutral"}
             if s is not None:
                 ra[spec["by"]] = rb[spec["by"]] = s
@@ -235,7 +235,11 @@ def write_md(m, out, out_name):
         lines += ["## Pre-registered confirmatory tests under this model (one-sided, Holm over F1, F2)", ""]
         f = []
         for fid, test, emo in [("F1", "S1 rejection (log-OR)", "sad"), ("F2", "S3b sent (pp)", "angry")]:
-            r = m[(m.model == "qwen25_7b") & (m.test == test) & (m.emotion == emo)].iloc[0]
+            sel = m[(m.model == "qwen25_7b") & (m.test == test) & (m.emotion == emo) & m.se_new.notna()]
+            if sel.empty:
+                f.append(dict(id=fid, estimate="not estimable (no messages left)", p_one_sided=np.nan))
+                continue
+            r = sel.iloc[0]
             f.append(dict(id=fid, estimate=_fmt_ci(r.est_new, r.lo_new, r.hi_new),
                           p_one_sided=stats.t.cdf(r.est_new / r.se_new, r.df)))
         f = pd.DataFrame(f)
