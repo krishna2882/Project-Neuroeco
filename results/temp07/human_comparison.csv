@@ -1,0 +1,11 @@
+model,measure,llm_mean,llm_sd,n,human,source
+llama31_8b,UG proposer offer (share of pie),0.4223958333333333,0.18076879558192657,96,0.4,"Oosterbeek et al., 2004"
+llama31_8b,DG giving (share of pie),0.228125,0.25983927218267266,96,0.28,"Engel, 2011"
+llama31_8b,TG share of endowment sent,0.4232291666666666,0.4026634870110895,96,0.5,"Johnson & Mislin, 2011"
+llama31_8b,TG share of tripled amount returned,0.40219907407407407,0.2661416618214734,288,0.37,"Johnson & Mislin, 2011"
+llama31_8b,UG rejection rate (all grid offers; human ~16% at typical offers),0.38244047619047616,,672,0.16,"Oosterbeek et al., 2004"
+qwen25_7b,UG proposer offer (share of pie),0.5020833333333333,0.014357588616379594,96,0.4,"Oosterbeek et al., 2004"
+qwen25_7b,DG giving (share of pie),0.5,0.0,96,0.28,"Engel, 2011"
+qwen25_7b,TG share of endowment sent,0.43759583333333335,0.15190656679382797,96,0.5,"Johnson & Mislin, 2011"
+qwen25_7b,TG share of tripled amount returned,0.5387731481481483,0.10569039770434803,288,0.37,"Johnson & Mislin, 2011"
+qwen25_7b,UG rejection rate (all grid offers; human ~16% at typical offers),0.53125,,672,0.16,"Oosterbeek et al., 2004"

@@ -149,7 +149,7 @@ Llama S3b angry and sad → less sent (p ≈ .01–.02). Present them as suggest
 | UG − DG gap, neutral message | +7 pp, n.s. | +1.5 pp, n.s. | **+37 pp** (UG 41% vs DG 3%) |
 | **H2** returns rise with amount sent | n.s. | Reversed (p = .001) | **Yes** (p < .001) |
 | **H5** model differences | Emotion × Model significant in **every** sub-experiment (all p < .001) | | |
-| T = 0.7 robustness (S1) | No change | No change | not run |
+| T = 0.7 robustness (whole bank, P20) | Same direction, weaker anger → trust (−9.2 pp) | Unchanged (anger → trust −11.5 pp) | not run |
 
 ## Why the reasoning model gives more (its reasoning text, keyword-coded; exploratory)
 From Mistral's 6,240 reasoning texts (`results/main/thinking.md`):
