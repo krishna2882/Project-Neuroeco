@@ -1,9 +1,6 @@
 # Pre-registration: does non-threatening anger lower trust? (extension 3)
 
-**Status:** DRAFT, 14 Nov 2026. **Both** Krishna Goel and Devansh Magotra must approve it **before any extension-3 human
-ratings or model data are collected.** On approval: record both names and the date in the Freeze section, compute the
-SHA-256 of this file as approved, commit and push to github.com/krishna2882/Project-Neuroeco, and only then send the rating
-form.
+**Status:** FROZEN 13 Nov 2026, approved by both authors (see Freeze section) before any extension-3 ratings or data were collected. (The draft status line read "DRAFT, 14 Nov 2026"; the draft was written and approved on 13 Nov.)
 
 **Written after** the main study, the follow-up, extension 2 and the 13 Nov human ratings were known. Existing data and
 conclusions are not changed.
@@ -85,7 +82,8 @@ About 1,150 decisions + 96 checks + 1,150 probe items in total, under 1 GPU hour
 was tested on simulated data before this draft (`analysis/ext3.py` recovered a planted −12 pp effect).
 
 ## Freeze
-- Approved by: _(both names and the date, before any ratings or data are collected)_
-- SHA-256 of this file as approved: _(filled in at approval)_
+- Approved by: **Krishna Goel and Devansh Magotra, 13 Nov 2026**, together and before any extension-3 ratings or data were collected.
+- SHA-256 of this file as approved (before this section and the status line were filled in):
+  `ba6af92fc9bf252491a4d7b8c8788114afda7ee6370ed658aa57cef9e6afe310`
 - Public timestamp: the commit adding this section, pushed before the rating form is sent.
-- After approval: no further edits. Any deviation is logged in `docs/plan_update.md`.
+- **Status:** no further edits. Any deviation is logged in `docs/plan_update.md`.
