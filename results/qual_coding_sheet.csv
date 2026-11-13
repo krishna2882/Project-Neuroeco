@@ -1,0 +1,376 @@
+row_id,model_key,trial_id,reason,emotion_coder1,emotion_coder2,fairness_coder1,fairness_coder2,strategy_coder1,strategy_coder2
+1,mistral,S3a_sad_st10000_sent050|p2|S6|s1,Their message about their father's death made me want to generously reward their trust and ensure they end up with a substantial profit.,1.0,1.0,0.0,1.0,0.0,0.0
+2,qwen25_7b,S2-UG_sad_st10000|p0|S4|s2,To avoid rejection and keep a fair split,0.0,0.0,1.0,1.0,1.0,1.0
+3,qwen25_7b,S1_sad_st10000_off40|p1|S6|s0,The context doesn't justify risking losing any money.,0.0,1.0,0.0,0.0,1.0,0.0
+4,llama31_8b,S1_angry_st10000_off45|p0|A1|s0,It's better than receiving nothing.,0.0,0.0,0.0,0.0,1.0,1.0
+5,llama31_8b,S3b_sad_st100|p3|S3|s0,Player B is in a vulnerable emotional state and may appreciate a gesture of kindness.,1.0,1.0,0.0,0.0,0.0,0.0
+6,mistral,S3a_angry_st100_sent020|p2|A2|s1,I return the original amount sent as a gesture of reciprocity despite the frustrating wait.,0.0,1.0,1.0,1.0,0.0,0.0
+7,llama31_8b,S1_happy_st10000_off05|p3|H2|s0,"Player A seems to be in a good mood, which might indicate a more generous spirit and a higher likelihood of this being a fair proposal.",1.0,1.0,0.0,1.0,0.0,0.0
+8,qwen25_7b,S1_neutral_st10000_off40|p2|N2|s1,"Unfair split, both options give nothing",0.0,0.0,1.0,1.0,0.0,0.0
+9,qwen25_7b,S1_none_st10000_off40|p3|none3|s2,To maximize my share.,0.0,0.0,0.0,0.0,1.0,1.0
+10,qwen25_7b,S1_neutral_st100_off05|p2|N2|s2,"The amount, though small, is better than receiving nothing.",0.0,0.0,0.0,0.0,1.0,1.0
+11,llama31_8b,S3a_angry_st10000_sent100|p2|A4|s1,"Player A is clearly upset and in need, so I will return the full amount to help them.",1.0,1.0,0.0,0.0,0.0,0.0
+12,mistral,S3a_happy_st100_sent100|p0|H6|s1,"With no future interaction and no consequence for keeping the money, the rational choice is to maximize my own payoff.",0.0,0.0,0.0,0.0,1.0,1.0
+13,mistral,S3a_neutral_st100_sent100|p1|N5|s2,Splitting the INR 300 equally is the fairest way to reciprocate Player A's trust.,0.0,0.0,1.0,1.0,0.0,1.0
+14,mistral,S1_angry_st100_off05|p3|A3|s0,INR 5 is better than receiving zero.,0.0,0.0,0.0,0.0,1.0,1.0
+15,llama31_8b,S1_neutral_st10000_off05|p2|N1|s1,The offered amount of INR 500 seems sufficient for the small risk involved.,0.0,0.0,0.0,1.0,1.0,1.0
+16,llama31_8b,S1_none_st10000_off30|p3|none3|s1,Getting INR 3000 is better than getting INR 0,0.0,0.0,0.0,0.0,1.0,1.0
+17,mistral,S3a_sad_st100_sent020|p3|S4|s1,"Their message about loneliness made me want to be fair, so I return half of the money I received.",1.0,1.0,0.0,1.0,0.0,0.0
+18,mistral,S1_none_st100_off20|p0|none2|s2,INR 20 is better than receiving nothing.,0.0,0.0,0.0,0.0,1.0,1.0
+19,qwen25_7b,S3b_happy_st100|p3|H6|s2,Good news often indicates a trustworthy attitude.,1.0,1.0,0.0,0.0,0.0,0.0
+20,mistral,S3a_happy_st10000_sent020|p0|H4|s0,"With no future interaction and Player A already keeping INR 8000, I keep the entire INR 6000 for myself.",0.0,0.0,0.0,0.0,1.0,1.0
+21,mistral,S2-UG_none_st10000|p0|none3|s0,An equal split maximizes the chance of acceptance while securing a fair payoff.,0.0,0.0,1.0,1.0,0.0,1.0
+22,mistral,S1_none_st100_off45|p3|none1|s1,INR 45 is better than receiving zero.,0.0,0.0,0.0,0.0,1.0,1.0
+23,llama31_8b,S1_sad_st10000_off45|p0|S1|s0,Player A's proposal seems unfair given the emotional state described,1.0,1.0,0.0,1.0,0.0,0.0
+24,qwen25_7b,S1_neutral_st100_off10|p2|N5|s1,The gain of INR 10 is better than nothing.,0.0,0.0,0.0,0.0,1.0,1.0
+25,qwen25_7b,S1_happy_st100_off10|p1|H3|s1,The proposed split seems unfair.,0.0,0.0,1.0,1.0,0.0,0.0
+26,llama31_8b,S1_happy_st10000_off10|p2|H4|s1,It's a generous offer and I get to keep the money,0.0,0.0,1.0,1.0,0.0,1.0
+27,qwen25_7b,S1_sad_st100_off10|p2|S2|s2,Player A's message does not justify accepting such an unfair offer.,0.0,1.0,1.0,1.0,0.0,0.0
+28,mistral,S2-UG_sad_st10000|p0|S4|s2,"A fair split feels right, especially hearing that you've been feeling alone.",1.0,1.0,0.0,1.0,0.0,0.0
+29,llama31_8b,S1_angry_st10000_off45|p3|A3|s2,"It is a take-it-or-leave-it offer, and accepting results in a better outcome than rejecting.",0.0,0.0,0.0,0.0,1.0,1.0
+30,mistral,S2-UG_neutral_st10000|p3|N3|s2,"The message was irrelevant, so I split the money equally to ensure Player B accepts.",0.0,0.0,1.0,1.0,0.0,1.0
+31,llama31_8b,S1_sad_st100_off05|p3|S6|s1,The threat of leaving with nothing outweighs the emotional appeal of Player A's situation.,1.0,1.0,0.0,0.0,0.0,0.0
+32,mistral,S3a_neutral_st10000_sent050|p1|N4|s1,Returning 5000 gives each player an equal final payoff of INR 10000.,0.0,0.0,1.0,1.0,0.0,1.0
+33,mistral,S1_none_st10000_off10|p0|none0|s2,INR 1000 is better than receiving nothing.,0.0,0.0,0.0,0.0,1.0,1.0
+34,llama31_8b,S3a_happy_st100_sent100|p3|H2|s0,"Player A chose not to keep any of the money, implying a strong trust in me, and I don't want to jeopardize that trust.",1.0,1.0,0.0,0.0,0.0,1.0
+35,qwen25_7b,S3a_neutral_st10000_sent050|p0|N4|s1,Encouraging fairness and cooperation,0.0,0.0,1.0,1.0,0.0,1.0
+36,llama31_8b,S1_none_st10000_off20|p3|none0|s2,The proposed division is highly unequal and unfairly favors Player A.,0.0,0.0,1.0,1.0,0.0,0.0
+37,mistral,S1_neutral_st100_off10|p2|N5|s1,Accepting gives me INR 10 whereas rejecting gives me nothing.,0.0,0.0,0.0,0.0,1.0,1.0
+38,qwen25_7b,S3a_happy_st10000_sent050|p0|H4|s0,To maximize the benefit while maintaining a positive relationship,1.0,1.0,0.0,0.0,0.0,1.0
+39,qwen25_7b,S1_sad_st100_off05|p3|S6|s1,"The proposal is quite uneven, but risking everything for a chance at nothing isn't wise.",0.0,0.0,0.0,1.0,1.0,1.0
+40,mistral,S3b_sad_st10000|p0|S2|s0,Their vulnerable message about loneliness inspired me to trust them with half my money.,1.0,1.0,0.0,0.0,0.0,0.0
+41,qwen25_7b,S3a_none_st100_sent050|p3|none2|s0,To show trust and cooperation,1.0,1.0,0.0,0.0,0.0,1.0
+42,qwen25_7b,S2-UG_angry_st100|p0|A4|s2,I want to avoid rejection but also keep some for myself.,0.0,0.0,0.0,0.0,1.0,1.0
+43,mistral,S2-UG_none_st100|p1|none2|s0,A 50-50 split is fair and maximizes the chance of acceptance.,0.0,0.0,1.0,1.0,0.0,1.0
+44,mistral,S1_happy_st10000_off40|p2|H6|s0,INR 4000 is better than receiving INR 0.,0.0,0.0,0.0,0.0,1.0,1.0
+45,mistral,S1_happy_st100_off50|p1|H2|s0,A 50/50 split is fair and accepting gives me INR 50 rather than nothing.,0.0,0.0,0.0,1.0,1.0,1.0
+46,llama31_8b,S1_sad_st100_off30|p2|S3|s2,"The offer of money may be a genuine attempt by Player A to alleviate their personal distress, and accepting it would be a pragmatic choice given the circumstances.",1.0,1.0,0.0,0.0,0.0,1.0
+47,mistral,S3a_happy_st10000_sent100|p2|H5|s1,"Returning half feels fair given their complete trust, and I want to share in their engagement happiness.",1.0,1.0,0.0,1.0,0.0,0.0
+48,llama31_8b,S1_neutral_st10000_off40|p2|N2|s1,The offer is advantageous and player A's hint about the library does not affect the decision.,0.0,0.0,0.0,0.0,1.0,1.0
+49,qwen25_7b,S1_angry_st100_off05|p0|A3|s1,To teach Player A a lesson.,1.0,1.0,0.0,0.0,0.0,0.0
+50,qwen25_7b,S3a_angry_st10000_sent020|p1|A2|s0,To partially compensate for the inconvenience.,0.0,1.0,1.0,1.0,0.0,0.0
+51,llama31_8b,S1_sad_st100_off50|p0|S2|s2,"The offer is fair and seems to be a genuine attempt to divide the money, and getting INR 50 is better than nothing.",0.0,0.0,0.0,1.0,1.0,1.0
+52,llama31_8b,S1_sad_st10000_off20|p1|S6|s1,The situation is a one-time opportunity for some money that could help with any emotional burden.,0.0,1.0,0.0,0.0,1.0,1.0
+53,mistral,S1_none_st10000_off30|p3|none1|s0,INR 3000 is better than receiving INR 0.,0.0,0.0,0.0,0.0,1.0,1.0
+54,mistral,S2-UG_angry_st100|p0|A4|s2,"To avoid rejection from an angry Player B, I split the money fairly.",1.0,1.0,0.0,1.0,0.0,0.0
+55,llama31_8b,S1_sad_st10000_off50|p1|S2|s0,I'd rather have the money than see it go to waste due to a sentimental decision.,0.0,1.0,0.0,0.0,1.0,1.0
+56,mistral,S1_angry_st10000_off10|p1|A4|s1,"INR 1000 is better than receiving nothing, and there is no future interaction to consider.",0.0,0.0,0.0,0.0,1.0,1.0
+57,mistral,S2-DG_neutral_st10000|p2|N1|s0,"Player B must accept any offer, so I keep the full 10000 to maximize my own payoff.",0.0,0.0,0.0,0.0,1.0,1.0
+58,qwen25_7b,S1_sad_st10000_off40|p0|S4|s0,It's a fair enough split and I get something.,0.0,0.0,1.0,1.0,0.0,1.0
+59,llama31_8b,S3a_sad_st10000_sent020|p1|S6|s2,"In consideration of Player A's emotional state, returning a significant amount will show empathy and respect.",1.0,1.0,0.0,0.0,0.0,1.0
+60,qwen25_7b,S3b_happy_st100|p0|H6|s0,Wishing to share good fortune after their win.,1.0,1.0,0.0,0.0,0.0,0.0
+61,llama31_8b,S1_none_st100_off45|p3|none2|s0,"The proposal offers more than half of the total amount, which is more than what I would get if we didn't make a deal.",0.0,0.0,0.0,0.0,1.0,1.0
+62,mistral,S2-DG_happy_st100|p1|H3|s1,I split the money equally as a fair gesture.,0.0,0.0,1.0,1.0,0.0,1.0
+63,mistral,S1_none_st10000_off30|p3|none3|s1,Receiving INR 3000 is better than receiving nothing if I reject.,0.0,0.0,0.0,0.0,1.0,1.0
+64,mistral,S1_angry_st10000_off10|p1|A3|s2,INR 1000 is better than receiving nothing in this one-time anonymous interaction.,0.0,0.0,0.0,0.0,1.0,1.0
+65,mistral,S2-UG_angry_st10000|p0|A4|s1,"Player B's anger signals a high risk of rejection, so a fair 50-50 split ensures the deal goes through.",1.0,1.0,0.0,1.0,0.0,0.0
+66,llama31_8b,S2-UG_none_st10000|p1|none3|s1,I want to be fair by splitting the amount roughly in half.,0.0,0.0,1.0,1.0,0.0,1.0
+67,qwen25_7b,S1_happy_st10000_off10|p2|H4|s1,The low offer makes the outcome unfair.,0.0,0.0,1.0,1.0,0.0,0.0
+68,qwen25_7b,S2-UG_neutral_st10000|p3|N3|s2,To ensure a fair split.,0.0,0.0,1.0,1.0,0.0,0.0
+69,qwen25_7b,S2-DG_happy_st100|p1|H3|s0,Wish to share in the joy of the new baby sister,1.0,1.0,0.0,0.0,0.0,0.0
+70,llama31_8b,S3a_neutral_st10000_sent050|p0|N4|s1,Player A appears to be doing routine chores and has no apparent financial needs or expenses mentioned.,0.0,0.0,0.0,0.0,1.0,1.0
+71,mistral,S1_neutral_st100_off05|p3|N2|s0,INR 5 is better than the INR 0 I would get by rejecting.,0.0,0.0,0.0,0.0,1.0,1.0
+72,mistral,S1_neutral_st10000_off20|p3|N5|s0,Receiving INR 2000 is better than receiving zero if I reject.,0.0,0.0,0.0,0.0,1.0,1.0
+73,llama31_8b,S1_neutral_st100_off40|p2|N3|s0,"Player A's information about the bus ride and room description seems unrelated to the negotiation, so I choose to accept the offer to receive INR 40",1.0,1.0,0.0,0.0,0.0,1.0
+74,qwen25_7b,S1_none_st100_off45|p3|none2|s0,Getting some money is better than getting none.,0.0,0.0,0.0,0.0,1.0,1.0
+75,llama31_8b,S1_happy_st100_off50|p1|H4|s2,I'm going to accept the offered amount to receive the money,0.0,0.0,0.0,0.0,1.0,1.0
+76,mistral,S3a_none_st100_sent050|p3|none2|s0,"Returning 50 equalizes the final payoffs at INR 100 each, fairly reciprocating Player A's trust.",0.0,0.0,1.0,1.0,0.0,1.0
+77,qwen25_7b,S1_neutral_st10000_off50|p2|N1|s0,The split is fair and I get a positive outcome.,0.0,0.0,1.0,1.0,0.0,1.0
+78,mistral,S1_sad_st100_off10|p2|S2|s2,Receiving INR 10 is better than receiving INR 0.,0.0,0.0,0.0,0.0,1.0,1.0
+79,llama31_8b,S3a_sad_st10000_sent050|p0|S6|s2,"I'm focusing on my own situation, and sending money won't change his experience.",0.0,0.0,0.0,0.0,1.0,1.0
+80,llama31_8b,S1_happy_st100_off20|p3|H2|s2,Player A's favourable mood and completion of the project might influence a fair negotiation.,1.0,1.0,0.0,0.0,0.0,0.0
+81,mistral,S1_none_st10000_off30|p0|none0|s1,INR 3000 is better than receiving nothing if I reject the offer.,0.0,0.0,0.0,0.0,1.0,1.0
+82,mistral,S1_sad_st100_off50|p0|S2|s2,"Accepting gives me INR 50, while rejecting leaves me with nothing.",0.0,0.0,0.0,0.0,1.0,1.0
+83,llama31_8b,S2-UG_none_st10000|p0|none3|s0,Splitting the money fairly to increase the chance of both receiving something,0.0,0.0,1.0,1.0,0.0,0.0
+84,llama31_8b,S3a_happy_st10000_sent050|p2|H6|s1,"I'm glad Player A had a joyful experience, but the money was tripled, and I should share a fair amount back to them",0.0,1.0,1.0,1.0,0.0,0.0
+85,qwen25_7b,S2-DG_sad_st10000|p1|S3|s2,To provide some comfort in their time of loss.,1.0,1.0,0.0,0.0,0.0,0.0
+86,qwen25_7b,S3a_neutral_st10000_sent100|p2|N2|s0,Fair split of the shared amount,0.0,0.0,1.0,1.0,0.0,0.0
+87,mistral,S3a_none_st100_sent100|p3|none1|s1,Returning half creates an equal split that fairly rewards Player A's trust while allowing me to keep a portion of the gains.,0.0,1.0,1.0,1.0,0.0,1.0
+88,mistral,S1_none_st10000_off50|p2|none1|s0,Receiving INR 5000 is better than getting INR 0.,0.0,0.0,0.0,0.0,1.0,1.0
+89,llama31_8b,S3b_neutral_st10000|p2|N4|s2,"Player B's message indicates they have everyday expenses, so sending 10% might be a reasonable starting point.",1.0,1.0,0.0,0.0,0.0,1.0
+90,qwen25_7b,S3b_sad_st100|p3|S3|s0,I want to support them in their time of grief.,1.0,1.0,0.0,0.0,0.0,0.0
+91,qwen25_7b,S1_sad_st10000_off45|p0|S1|s0,To avoid getting nothing.,0.0,0.0,0.0,0.0,1.0,1.0
+92,llama31_8b,S3a_neutral_st100_sent050|p1|N3|s2,I am returning half of the amount as a gesture of goodwill,1.0,1.0,0.0,0.0,0.0,0.0
+93,mistral,S1_sad_st10000_off20|p1|S6|s1,INR 2000 is better than nothing since this is a one-time anonymous round with no future consequences.,0.0,0.0,0.0,0.0,1.0,1.0
+94,qwen25_7b,S1_sad_st100_off50|p0|S2|s2,The proposal is fair and rejecting it results in nothing.,0.0,0.0,1.0,1.0,0.0,1.0
+95,mistral,S1_happy_st100_off50|p3|H4|s1,"Accepting gives me INR 50, whereas rejecting gives me zero.",0.0,0.0,0.0,0.0,1.0,1.0
+96,mistral,S1_happy_st100_off05|p1|H4|s2,"INR 5 is better than receiving nothing, and there is no future interaction to justify punishing the unfair offer.",0.0,0.0,0.0,0.0,1.0,1.0
+97,mistral,S3a_sad_st10000_sent020|p1|S6|s2,I am returning half to reciprocate Player A's trust and show compassion on this difficult anniversary.,1.0,1.0,0.0,1.0,1.0,0.0
+98,qwen25_7b,S1_angry_st100_off20|p3|A7|s0,The amount is better than nothing.,0.0,0.0,0.0,0.0,1.0,1.0
+99,llama31_8b,S1_happy_st100_off50|p1|H2|s0,"Player A's positive situation and generosity seem genuine, so I'm inclined to trust and accept the offer.",1.0,1.0,0.0,0.0,1.0,0.0
+100,qwen25_7b,S1_happy_st10000_off05|p2|H2|s2,The message does not affect the financial outcome.,0.0,0.0,0.0,0.0,1.0,1.0
+101,qwen25_7b,S1_angry_st100_off10|p3|A7|s1,To avoid getting nothing,0.0,0.0,0.0,0.0,1.0,1.0
+102,qwen25_7b,S3a_neutral_st10000_sent050|p1|N4|s1,Fair split of the multiplied amount.,0.0,0.0,1.0,1.0,0.0,0.0
+103,qwen25_7b,S3a_neutral_st100_sent050|p1|N3|s2,A fair split of the multiplied amount.,0.0,0.0,1.0,1.0,0.0,0.0
+104,llama31_8b,S1_angry_st100_off20|p3|A7|s0,Player A's frustration seems to be irrelevant to our negotiation,1.0,1.0,0.0,0.0,1.0,0.0
+105,mistral,S1_happy_st10000_off10|p2|H4|s2,Receiving INR 1000 is better than receiving INR 0.,0.0,0.0,0.0,0.0,1.0,1.0
+106,qwen25_7b,S2-DG_neutral_st10000|p2|N1|s0,Splitting it evenly is fair.,0.0,0.0,1.0,1.0,0.0,0.0
+107,llama31_8b,S3a_happy_st10000_sent100|p0|H5|s1,"I'm happy for Player A, but it doesn't change my financial decision",1.0,1.0,0.0,0.0,1.0,1.0
+108,mistral,S3b_angry_st100|p0|A7|s1,"In a one-time interaction with no future consequences, Player B has no incentive to send anything back, so sending money only risks losing it.",0.0,0.0,0.0,0.0,1.0,1.0
+109,qwen25_7b,S1_happy_st10000_off05|p3|H2|s0,"The split is unfair, and we get nothing if we accept.",0.0,0.0,1.0,1.0,0.0,1.0
+110,qwen25_7b,S3a_neutral_st100_sent100|p1|N5|s2,Fair split of the profit,0.0,0.0,1.0,1.0,0.0,0.0
+111,llama31_8b,S1_sad_st100_off10|p2|S2|s2,The financial reward outweighs the potential emotional connection to the player's situation.,0.0,1.0,0.0,0.0,1.0,1.0
+112,llama31_8b,S1_happy_st10000_off45|p1|H4|s1,The proposed split seems fair and I'm likely to gain something,0.0,0.0,0.0,1.0,1.0,1.0
+113,mistral,S1_sad_st10000_off40|p1|S4|s0,"INR 4000 in real money is better than zero, and with no future interaction there is no strategic benefit to punishing Player A.",0.0,0.0,0.0,0.0,1.0,1.0
+114,llama31_8b,S2-UG_sad_st10000|p0|S4|s2,"Player B's emotional distress suggests they are in a vulnerable state, so I offer them a larger share to help alleviate their suffering",1.0,1.0,0.0,0.0,1.0,0.0
+115,mistral,S2-DG_sad_st10000|p1|S3|s1,"Anonymous one-time round with no recourse, so I keep the full amount.",0.0,0.0,0.0,0.0,1.0,1.0
+116,qwen25_7b,S1_happy_st100_off50|p1|H4|s2,The message doesn't affect the financial decision.,0.0,0.0,0.0,0.0,1.0,1.0
+117,qwen25_7b,S1_sad_st10000_off50|p0|S4|s0,To avoid getting nothing.,0.0,0.0,0.0,0.0,1.0,1.0
+118,llama31_8b,S1_none_st100_off20|p0|none2|s2,The proposed split is not equitable,0.0,0.0,1.0,1.0,0.0,0.0
+119,qwen25_7b,S2-DG_neutral_st10000|p0|N1|s1,To ensure a fair split.,0.0,0.0,1.0,1.0,0.0,0.0
+120,llama31_8b,S1_sad_st10000_off40|p1|S6|s0,"Player A's emotional state may cloud their judgment, making the proposed split potentially unfair or exploitative.",0.0,1.0,1.0,1.0,1.0,0.0
+121,mistral,S1_neutral_st10000_off45|p2|N2|s1,The 45% split is fair and INR 4500 is better than receiving nothing.,0.0,0.0,1.0,1.0,1.0,1.0
+122,llama31_8b,S1_angry_st10000_off40|p3|A2|s1,The proposal offers a non-zero outcome and avoiding conflict may be beneficial.,0.0,1.0,0.0,0.0,1.0,1.0
+123,qwen25_7b,S2-DG_sad_st10000|p3|S6|s0,Want to show compassion.,1.0,1.0,0.0,0.0,0.0,0.0
+124,llama31_8b,S3a_none_st100_sent050|p3|none2|s0,"I want to show appreciation for Player A's initial trust and generosity, so I'm returning half of what I received.",1.0,1.0,1.0,0.0,1.0,1.0
+125,qwen25_7b,S1_none_st10000_off05|p3|none3|s1,Even INR 500 is better than getting nothing.,0.0,0.0,0.0,0.0,1.0,1.0
+126,llama31_8b,S3a_sad_st100_sent020|p3|S4|s1,I don't know Player A well enough to make a judgment call based on a private message.,0.0,0.0,0.0,0.0,1.0,1.0
+127,mistral,S3b_sad_st100|p1|S6|s2,"In a one-time exchange with no enforcement, Player B has no incentive to return any money, so sending any amount risks losing it entirely.",0.0,0.0,0.0,0.0,1.0,1.0
+128,qwen25_7b,S2-UG_none_st10000|p0|none3|s0,To ensure Player B has an incentive to accept while keeping a substantial amount for myself.,0.0,0.0,0.0,0.0,1.0,1.0
+129,mistral,S1_neutral_st100_off10|p1|N3|s0,Receiving INR 10 is better than getting nothing in this one-time anonymous interaction.,0.0,0.0,0.0,0.0,1.0,1.0
+130,mistral,S3b_happy_st100|p0|H6|s0,"In a one-time game Player B has no incentive to return any money, so sending 0 guarantees I keep the full INR 100.",0.0,0.0,0.0,0.0,1.0,1.0
+131,qwen25_7b,S3b_none_st100|p1|none1|s0,To test if Player B is generous.,0.0,1.0,0.0,0.0,1.0,1.0
+132,mistral,S1_angry_st10000_off45|p2|A1|s0,INR 4500 is real money and strictly better than the INR 0 I would get by rejecting.,0.0,0.0,0.0,0.0,1.0,1.0
+133,mistral,S3b_angry_st10000|p1|A4|s0,"Player B's angry message signals a high risk of non-reciprocation, so I keep my money safe in this one-shot game.",1.0,1.0,0.0,0.0,1.0,1.0
+134,qwen25_7b,S1_none_st10000_off10|p1|none0|s1,It's too unfair.,0.0,0.0,1.0,1.0,0.0,0.0
+135,qwen25_7b,S1_none_st10000_off50|p2|none1|s0,It's better than getting nothing.,0.0,0.0,0.0,0.0,1.0,1.0
+136,llama31_8b,S3a_none_st10000_sent020|p2|none3|s0,"Return the same amount Player A sent me, showing fairness and reciprocity",1.0,1.0,1.0,1.0,1.0,1.0
+137,qwen25_7b,S2-UG_angry_st10000|p0|A3|s0,To avoid rejection and keep a fair share,0.0,0.0,1.0,0.0,1.0,1.0
+138,qwen25_7b,S3a_angry_st100_sent050|p0|A1|s0,To respect the initial trust and message context.,1.0,1.0,0.0,0.0,1.0,1.0
+139,qwen25_7b,S1_none_st10000_off30|p3|none1|s0,To maximize my share.,0.0,0.0,0.0,0.0,1.0,1.0
+140,mistral,S1_neutral_st100_off10|p1|N4|s1,Receiving INR 10 is better than receiving nothing.,0.0,0.0,0.0,0.0,1.0,1.0
+141,qwen25_7b,S3a_happy_st100_sent100|p3|H2|s0,It feels fair and keeps the spirit of the game alive.,1.0,0.0,1.0,1.0,0.0,0.0
+142,mistral,S1_none_st100_off45|p2|none0|s0,INR 45 is better than receiving INR 0.,0.0,0.0,0.0,0.0,1.0,1.0
+143,qwen25_7b,S3a_none_st10000_sent020|p1|none1|s0,Fair split of the multiplied amount,0.0,0.0,1.0,1.0,0.0,0.0
+144,qwen25_7b,S1_happy_st10000_off45|p1|H4|s1,Unfair split,0.0,0.0,1.0,1.0,0.0,0.0
+145,llama31_8b,S2-DG_angry_st10000|p2|A3|s0,Equal split to avoid conflict and maintain fairness,0.0,1.0,1.0,1.0,0.0,0.0
+146,llama31_8b,S1_sad_st10000_off50|p0|S4|s0,"The proposed division is not favorable, and I am uncertain about Player A's intentions given their emotional state.",0.0,1.0,1.0,1.0,0.0,0.0
+147,llama31_8b,S3a_sad_st10000_sent050|p1|S2|s2,Return a significant portion to show empathy for Player A's lonely situation.,1.0,1.0,0.0,0.0,0.0,0.0
+148,mistral,S1_neutral_st10000_off45|p3|N1|s2,"Accepting gives me INR 4500, which is better than receiving zero if I reject.",0.0,0.0,0.0,0.0,1.0,1.0
+149,mistral,S1_happy_st100_off40|p2|H5|s0,"INR 40 is real money and strictly better than receiving INR 0, regardless of Player A's message.",0.0,0.0,0.0,0.0,1.0,1.0
+150,qwen25_7b,S1_sad_st10000_off40|p1|S4|s2,"The split, though unequal, is better than getting nothing.",0.0,0.0,0.0,0.0,1.0,1.0
+151,llama31_8b,S1_angry_st10000_off10|p1|A3|s2,"It is a simple and equal split, which is a fair outcome.",0.0,0.0,1.0,1.0,0.0,0.0
+152,llama31_8b,S2-UG_angry_st10000|p0|A3|s0,Player B has made it clear they value their time and are looking for a serious offer.,0.0,1.0,0.0,0.0,1.0,1.0
+153,llama31_8b,S1_neutral_st100_off20|p3|N4|s1,"Player A's casual message suggests they are not in a desperate financial situation, making their proposed division unfair.",0.0,1.0,1.0,1.0,0.0,0.0
+154,qwen25_7b,S3a_happy_st10000_sent050|p2|H4|s0,To split the amount evenly.,0.0,0.0,1.0,1.0,0.0,0.0
+155,llama31_8b,S1_sad_st10000_off40|p0|S4|s0,I want the INR 4000,0.0,0.0,0.0,0.0,1.0,1.0
+156,qwen25_7b,S1_angry_st10000_off45|p3|A3|s2,"Player A's message indicates they might not engage further, making acceptance unfavorable.",1.0,1.0,0.0,0.0,1.0,1.0
+157,qwen25_7b,S3a_neutral_st100_sent050|p3|N4|s2,It's a fair split.,0.0,0.0,1.0,1.0,0.0,0.0
+158,mistral,S1_sad_st10000_off50|p1|S2|s0,A 50/50 split is fair and gives me INR 5000 rather than nothing.,0.0,0.0,1.0,1.0,1.0,1.0
+159,llama31_8b,S2-UG_neutral_st10000|p3|N3|s2,No information about Player B's intentions or preferences was shared.,0.0,0.0,0.0,0.0,1.0,1.0
+160,llama31_8b,S3a_angry_st10000_sent050|p1|A2|s1,"Player A's dissatisfaction is a personal issue, not mine.",0.0,0.0,0.0,0.0,1.0,1.0
+161,mistral,S1_neutral_st100_off45|p1|N5|s2,Receiving INR 45 is better than getting nothing.,0.0,0.0,0.0,0.0,1.0,1.0
+162,mistral,S2-DG_sad_st100|p2|S6|s1,I split the pot equally out of sympathy for Player B's loss.,1.0,1.0,0.0,1.0,0.0,0.0
+163,qwen25_7b,S3a_angry_st10000_sent050|p1|A2|s1,As a middle ground.,0.0,0.0,1.0,1.0,0.0,0.0
+164,mistral,S1_neutral_st10000_off50|p2|N1|s0,"INR 5000 is strictly better than INR 0, and a 50-50 split is fair.",0.0,0.0,1.0,1.0,1.0,1.0
+165,qwen25_7b,S1_neutral_st10000_off20|p3|N5|s0,The split is close to a fair distribution.,0.0,0.0,1.0,1.0,0.0,0.0
+166,qwen25_7b,S2-UG_happy_st10000|p0|H2|s1,Splitting the money evenly is fair.,0.0,0.0,1.0,1.0,0.0,0.0
+167,qwen25_7b,S1_happy_st100_off20|p3|H2|s2,"The proposal offers a reasonable split, and rejecting means getting nothing.",0.0,0.0,1.0,1.0,1.0,1.0
+168,qwen25_7b,S3a_happy_st10000_sent050|p2|H6|s1,Fair share considering the gift,0.0,0.0,1.0,1.0,0.0,0.0
+169,mistral,S1_happy_st10000_off10|p2|H4|s1,INR 1000 is better than receiving nothing.,0.0,0.0,0.0,0.0,1.0,1.0
+170,llama31_8b,S2-UG_none_st100|p1|none2|s0,Middle ground to show willingness to cooperate,0.0,1.0,1.0,1.0,0.0,0.0
+171,mistral,S2-DG_neutral_st10000|p2|N3|s2,"Player B must accept, so I keep the full amount.",0.0,0.0,0.0,0.0,1.0,1.0
+172,llama31_8b,S2-DG_sad_st10000|p1|S3|s2,The situation is private and I cannot factor it into my decision.,0.0,0.0,0.0,0.0,1.0,1.0
+173,qwen25_7b,S1_none_st10000_off30|p3|none3|s1,"The split, while not equal, is better than getting nothing.",0.0,0.0,0.0,0.0,1.0,1.0
+174,mistral,S2-UG_angry_st10000|p0|A3|s0,An equal split signals fairness and avoids triggering Player B's stated anger.,1.0,1.0,1.0,1.0,0.0,1.0
+175,mistral,S1_angry_st10000_off45|p0|A1|s2,"Receiving INR 4500 is better than getting nothing, and a 55/45 split is reasonably fair.",0.0,0.0,1.0,1.0,1.0,1.0
+176,llama31_8b,S1_angry_st10000_off45|p2|A3|s0,"The monetary value offered is too high to pass up, despite Player A's hostility",0.0,1.0,0.0,0.0,1.0,1.0
+177,mistral,S3a_sad_st10000_sent100|p1|S2|s0,Splitting the multiplied amount equally feels fair.,0.0,0.0,1.0,1.0,0.0,0.0
+178,llama31_8b,S2-DG_angry_st100|p3|A2|s0,Their bad experience at this place shouldn't affect our financial decision.,1.0,1.0,0.0,0.0,0.0,0.0
+179,llama31_8b,S2-DG_happy_st100|p1|H3|s0,You have enough reasons to be happy without my financial help.,1.0,0.0,0.0,0.0,1.0,1.0
+180,qwen25_7b,S1_none_st10000_off05|p0|none3|s1,"It's too unfair, I get only 5% of the total.",0.0,0.0,1.0,1.0,0.0,0.0
+181,qwen25_7b,S3a_sad_st10000_sent050|p1|S2|s2,I want to help Player A feel less alone.,1.0,1.0,0.0,0.0,0.0,0.0
+182,llama31_8b,S1_angry_st100_off45|p2|A2|s1,The offered amount is a clear improvement over zero,0.0,0.0,0.0,0.0,1.0,1.0
+183,mistral,S1_none_st100_off50|p0|none0|s2,Receiving INR 50 is better than receiving nothing.,0.0,0.0,0.0,0.0,1.0,1.0
+184,qwen25_7b,S1_neutral_st10000_off45|p2|N3|s1,To ensure a fair split.,0.0,0.0,1.0,1.0,0.0,0.0
+185,mistral,S2-UG_sad_st100|p3|S4|s1,An equal split feels fair and respects their situation.,0.0,1.0,1.0,1.0,0.0,0.0
+186,mistral,S3b_none_st100|p2|none2|s1,"In a one-time game with no future interaction, sending nothing guarantees I keep the full INR 100 since I cannot rely on Player B returning any money.",0.0,0.0,0.0,0.0,1.0,1.0
+187,llama31_8b,S1_none_st10000_off30|p3|none1|s0,"The proposed offer is unfairly biased towards Player A, offering me significantly less than Player A.",0.0,0.0,1.0,1.0,0.0,0.0
+188,mistral,S3a_angry_st10000_sent050|p1|A2|s1,Returning 5000 ensures we both end with an equal 10000 INR despite the frustrating wait.,0.0,1.0,1.0,1.0,0.0,0.0
+189,qwen25_7b,S1_sad_st10000_off05|p2|S3|s0,The amount is better than nothing and the situation with Player A is understandable.,0.0,1.0,0.0,0.0,1.0,1.0
+190,llama31_8b,S3a_sad_st100_sent020|p2|S6|s1,"Player A's emotional situation is not relevant to the game, and I should follow the rules and return the full amount.",0.0,0.0,0.0,0.0,1.0,1.0
+191,qwen25_7b,S3b_angry_st100|p1|A1|s1,Player B seems distrustful and I don't want to risk losing money.,1.0,1.0,0.0,0.0,1.0,0.0
+192,qwen25_7b,S1_angry_st10000_off45|p2|A3|s0,To teach Player A a lesson and show they need to offer a fair split.,1.0,1.0,0.0,0.0,0.0,0.0
+193,qwen25_7b,S1_neutral_st100_off40|p2|N3|s0,"Unfair offer, keeping most of the money.",0.0,0.0,1.0,1.0,0.0,0.0
+194,llama31_8b,S1_angry_st100_off10|p3|A7|s1,"Given Player A's volatile state, I don't want to provoke any potential aggression",1.0,1.0,0.0,0.0,1.0,1.0
+195,llama31_8b,S1_happy_st10000_off40|p2|H6|s0,"Player A's excitement suggests they have a large amount of money to celebrate, which implies they can afford to part with some of it.",1.0,1.0,0.0,0.0,1.0,1.0
+196,qwen25_7b,S3a_happy_st10000_sent100|p0|H5|s1,Wish to share in their happiness.,1.0,1.0,0.0,0.0,0.0,0.0
+197,llama31_8b,S3b_none_st100|p1|none1|s0,A moderate amount to provide some benefit to Player B without giving up too much,0.0,0.0,0.0,0.0,1.0,1.0
+198,qwen25_7b,S3b_none_st100|p1|none3|s1,To test if Player B is cooperative without risking all funds,0.0,0.0,0.0,0.0,1.0,1.0
+199,mistral,S1_sad_st100_off45|p1|S1|s0,INR 45 is better than receiving nothing.,0.0,0.0,0.0,0.0,1.0,1.0
+200,llama31_8b,S3a_none_st10000_sent020|p1|none1|s0,Returning half of the amount seems fair and moderate.,0.0,0.0,1.0,1.0,0.0,0.0
+201,qwen25_7b,S1_neutral_st100_off10|p1|N3|s0,"The proposed split, though unequal, is better than receiving nothing.",0.0,0.0,0.0,0.0,1.0,1.0
+202,mistral,S1_sad_st100_off50|p0|S6|s0,"The 50/50 split is fair, and rejecting would mean we both get nothing.",0.0,0.0,1.0,1.0,0.0,0.0
+203,llama31_8b,S2-DG_neutral_st10000|p2|N1|s0,Neutral amount without being influenced by the irrelevant weather message.,0.0,0.0,0.0,0.0,1.0,1.0
+204,llama31_8b,S3a_happy_st100_sent100|p1|H2|s1,"A gesture of goodwill, considering Player A's positive mood and circumstances.",1.0,1.0,0.0,0.0,0.0,0.0
+205,llama31_8b,S2-DG_happy_st10000|p1|H4|s2,I decided to give an equal share of my money as the message was positive and friendly.,1.0,1.0,0.0,0.0,1.0,1.0
+206,qwen25_7b,S3a_none_st10000_sent050|p1|none2|s0,To keep a fair balance.,0.0,0.0,1.0,1.0,0.0,0.0
+207,mistral,S1_angry_st10000_off45|p0|A1|s0,Accepting INR 4500 is better than receiving nothing.,0.0,0.0,0.0,0.0,1.0,1.0
+208,llama31_8b,S1_none_st10000_off30|p0|none0|s2,"The proposed division is not fair, as I would receive significantly less than Player A.",0.0,0.0,1.0,1.0,0.0,0.0
+209,llama31_8b,S2-UG_neutral_st10000|p3|N4|s2,No information about Player B's financial situation or needs,,0.0,,0.0,,1.0
+210,mistral,S1_sad_st10000_off40|p0|S4|s0,Receiving INR 4000 is better than receiving nothing.,0.0,0.0,0.0,0.0,1.0,1.0
+211,mistral,S2-DG_angry_st100|p2|A3|s0,"Player B must accept regardless, so I keep the entire 100 rupees.",0.0,0.0,0.0,0.0,1.0,1.0
+212,qwen25_7b,S1_sad_st10000_off50|p1|S2|s0,The message doesn't affect the financial decision.,,0.0,,0.0,,1.0
+213,mistral,S1_neutral_st100_off20|p3|N4|s1,"Accepting gives me INR 20, which is better than the INR 0 I would receive by rejecting.",0.0,0.0,0.0,0.0,1.0,1.0
+214,qwen25_7b,S1_happy_st100_off50|p1|H2|s0,The message seems positive and doesn't affect the decision.,,1.0,,0.0,,1.0
+215,mistral,S3a_angry_st100_sent050|p0|A1|s0,"Returning 50 equalizes our final payoffs at 100 each, which feels fair given A cooperated by sending half.",0.0,0.0,1.0,1.0,1.0,1.0
+216,llama31_8b,S2-DG_sad_st10000|p3|S6|s0,I'm being sympathetic to their difficult day and giving a gesture of condolence.,1.0,1.0,0.0,0.0,0.0,0.0
+217,qwen25_7b,S1_none_st10000_off20|p3|none0|s2,To avoid getting only INR 2000.,0.0,0.0,0.0,0.0,1.0,1.0
+218,qwen25_7b,S1_none_st100_off20|p0|none2|s2,It's better than receiving nothing.,0.0,0.0,0.0,0.0,1.0,1.0
+219,mistral,S1_neutral_st10000_off20|p1|N1|s0,Receiving INR 2000 is better than getting nothing in this one-time anonymous round.,0.0,0.0,0.0,0.0,1.0,1.0
+220,qwen25_7b,S1_none_st100_off45|p2|none0|s0,It's better to take the offer than get nothing.,0.0,0.0,0.0,0.0,1.0,1.0
+221,mistral,S1_none_st10000_off40|p3|none3|s2,Receiving INR 4000 is better than receiving nothing.,0.0,0.0,0.0,0.0,1.0,1.0
+222,mistral,S3a_angry_st100_sent050|p1|A3|s1,"Returning 50 splits the total INR 200 equally between us, which is fair and straightforward.",0.0,0.0,1.0,1.0,1.0,1.0
+223,qwen25_7b,S3a_sad_st100_sent050|p2|S1|s1,I want to help Player A in their time of grief.,1.0,1.0,0.0,0.0,0.0,0.0
+224,llama31_8b,S2-UG_angry_st100|p0|A4|s2,"Considering Player B is already upset, giving them money might not improve their mood.",1.0,0.0,0.0,0.0,1.0,1.0
+225,llama31_8b,S3a_neutral_st10000_sent020|p3|N1|s1,"Player A's background information has no bearing on the trust game outcome, so I send nothing back.",0.0,0.0,0.0,0.0,1.0,1.0
+226,qwen25_7b,S3a_sad_st100_sent020|p2|S6|s1,As a gesture of respect and empathy.,1.0,1.0,0.0,0.0,0.0,0.0
+227,mistral,S1_happy_st100_off10|p1|H3|s2,"Accepting gives me INR 10 rather than nothing, and since this is a one-time anonymous round, rejecting would only hurt myself without any future benefit.",0.0,0.0,0.0,0.0,1.0,1.0
+228,llama31_8b,S2-DG_angry_st100|p2|A3|s0,"I don't want to aggravate the situation, so I'm giving Player B the full amount.",1.0,1.0,0.0,0.0,1.0,1.0
+229,llama31_8b,S1_none_st10000_off05|p3|none3|s1,The proposed share is highly unequal and seems unfair to me.,0.0,0.0,1.0,1.0,0.0,0.0
+230,qwen25_7b,S1_happy_st10000_off50|p0|H4|s1,It's a fair split and I might get nothing if I reject.,0.0,0.0,1.0,1.0,1.0,1.0
+231,llama31_8b,S1_none_st10000_off40|p3|none3|s2,I am guaranteed INR 4000 instead of potentially getting zero,0.0,0.0,0.0,0.0,1.0,1.0
+232,llama31_8b,S3b_happy_st100|p0|H6|s0,"I don't know Player B well enough, and their win doesn't directly affect me, so I won't take the risk of sending them money.",0.0,0.0,0.0,0.0,1.0,1.0
+233,qwen25_7b,S3a_none_st10000_sent050|p2|none0|s1,To split the money evenly,0.0,0.0,1.0,1.0,0.0,0.0
+234,qwen25_7b,S1_happy_st10000_off10|p1|H4|s2,"Unfair split, keeping too much.",0.0,0.0,1.0,1.0,0.0,0.0
+235,mistral,S2-UG_happy_st100|p2|H5|s2,I offered a moderate share to ensure B accepts while maximizing my own payout.,0.0,0.0,0.0,0.0,1.0,1.0
+236,qwen25_7b,S1_angry_st100_off10|p2|A4|s1,Player A's message suggests they might become angry and irrational.,1.0,1.0,0.0,0.0,0.0,0.0
+237,llama31_8b,S1_happy_st10000_off10|p1|H4|s2,A generous offer for a one-time transaction,1.0,1.0,0.0,0.0,0.0,0.0
+238,qwen25_7b,S1_happy_st100_off05|p1|H4|s2,Such a small offer after such a pleasant message.,1.0,1.0,0.0,0.0,0.0,0.0
+239,llama31_8b,S1_sad_st10000_off40|p1|S4|s2,Empathy for Player A's situation outweighs potential loss of INR 4000.,1.0,1.0,0.0,0.0,0.0,0.0
+240,mistral,S1_angry_st100_off20|p3|A7|s0,"INR 20 is better than receiving zero, regardless of the message.",0.0,0.0,0.0,0.0,1.0,1.0
+241,qwen25_7b,S1_happy_st10000_off40|p2|H6|s0,"The offer is more than half, and there's no future interaction.",0.0,0.0,0.0,0.0,1.0,1.0
+242,llama31_8b,S1_sad_st10000_off05|p1|S6|s0,"The emotional vulnerability revealed by Player A doesn't guarantee a fair split, so I'm choosing to reject the offer to avoid potential exploitation.",1.0,1.0,1.0,1.0,1.0,1.0
+243,qwen25_7b,S1_none_st10000_off30|p0|none0|s2,To maximize my share.,0.0,0.0,0.0,0.0,1.0,1.0
+244,llama31_8b,S1_sad_st10000_off05|p2|S3|s0,"The offer is a fair trade, and the additional context does not affect my decision.",0.0,0.0,0.0,0.0,1.0,1.0
+245,mistral,S1_happy_st10000_off05|p1|H5|s1,"In a one-time anonymous round with no future consequences, INR 500 is better than getting nothing.",0.0,0.0,0.0,0.0,1.0,1.0
+246,qwen25_7b,S1_angry_st10000_off40|p3|A2|s1,To avoid getting nothing.,0.0,0.0,0.0,0.0,1.0,1.0
+247,llama31_8b,S1_neutral_st100_off10|p1|N3|s0,The offer seems fair and there's no reason to reject it.,0.0,0.0,0.0,0.0,1.0,1.0
+248,qwen25_7b,S2-DG_angry_st100|p3|A2|s0,"To consider Player B's frustration, but not give too much",1.0,1.0,0.0,0.0,1.0,1.0
+249,llama31_8b,S1_none_st10000_off10|p1|none0|s1,"The offered amount is 10% of the total, a reasonable split.",0.0,0.0,0.0,0.0,1.0,1.0
+250,mistral,S2-DG_neutral_st10000|p0|N1|s1,An equal split feels like the fairest way to divide the money.,0.0,0.0,1.0,1.0,0.0,0.0
+251,qwen25_7b,S1_neutral_st10000_off05|p2|N1|s1,"The offer, though low, is better than receiving nothing.",0.0,0.0,0.0,0.0,1.0,1.0
+252,llama31_8b,S3a_none_st10000_sent050|p1|none2|s0,Return the amount that was initially transferred to me to maintain fairness and reciprocity.,0.0,0.0,1.0,1.0,1.0,1.0
+253,qwen25_7b,S3b_neutral_st10000|p2|N4|s2,It's a balanced risk given the uncertain help needed from B,0.0,0.0,0.0,0.0,1.0,1.0
+254,llama31_8b,S3a_angry_st10000_sent020|p1|A2|s0,Compensate for the inconvenience while also acknowledging Player A's contribution to the initial amount,1.0,1.0,0.0,0.0,1.0,1.0
+255,qwen25_7b,S3a_none_st10000_sent020|p2|none3|s0,Split the difference,0.0,0.0,1.0,1.0,1.0,1.0
+256,llama31_8b,S1_happy_st10000_off50|p0|H4|s1,"I'm suspicious of the player's overly positive message, which may be an attempt to manipulate my decision.",0.0,0.0,0.0,0.0,1.0,1.0
+257,mistral,S3a_happy_st100_sent020|p2|H3|s0,I return half to fairly share the gains generated by Player A's trust.,0.0,0.0,1.0,1.0,0.0,0.0
+258,mistral,S3a_none_st100_sent020|p2|none0|s2,I return 30 to reward Player A's trust and ensure both of us end up better off than our starting positions.,1.0,1.0,0.0,0.0,1.0,1.0
+259,llama31_8b,S3a_neutral_st10000_sent050|p1|N4|s1,A neutral amount that shows appreciation for the initial trust,1.0,1.0,0.0,1.0,0.0,0.0
+260,qwen25_7b,S3a_happy_st100_sent100|p1|H2|s1,Fair share considering the context.,0.0,0.0,1.0,1.0,0.0,0.0
+261,llama31_8b,S3a_angry_st100_sent050|p0|A1|s0,I want to capitalize on their frustration and send the maximum amount back to them.,1.0,0.0,0.0,0.0,1.0,1.0
+262,llama31_8b,S2-DG_neutral_st10000|p0|N1|s1,The message doesn't contain any relevant information that would influence my decision to give Player B money.,0.0,0.0,0.0,0.0,1.0,1.0
+263,qwen25_7b,S3a_sad_st100_sent020|p3|S4|s1,I consider helping but keep some for myself.,1.0,1.0,0.0,0.0,1.0,1.0
+264,qwen25_7b,S1_happy_st100_off50|p3|H4|s1,The proposal is fair and there's no benefit in rejecting and getting nothing.,0.0,0.0,1.0,1.0,1.0,1.0
+265,qwen25_7b,S1_neutral_st100_off10|p1|N4|s1,"Unfair split, keeping most of the money.",0.0,0.0,1.0,1.0,0.0,0.0
+266,mistral,S1_neutral_st100_off40|p2|N3|s0,"Receiving INR 40 is better than receiving INR 0, and there is no future interaction to consider.",0.0,0.0,0.0,0.0,1.0,1.0
+267,qwen25_7b,S2-UG_sad_st100|p3|S4|s0,To maximize the chance of the proposal being accepted,0.0,0.0,0.0,0.0,1.0,1.0
+268,mistral,S1_sad_st10000_off45|p3|S6|s0,Receiving INR 4500 is better than zero in this one-time interaction with no future consequences.,0.0,0.0,0.0,0.0,1.0,1.0
+269,llama31_8b,S3b_angry_st10000|p1|A4|s0,"Considering Player B's frustrated state, I'm sending a moderate amount to potentially ease their tension.",1.0,1.0,0.0,0.0,0.0,0.0
+270,mistral,S1_angry_st10000_off40|p3|A2|s1,"Accepting gives me INR 4000, while rejecting gives me zero.",0.0,0.0,0.0,0.0,1.0,1.0
+271,qwen25_7b,S1_sad_st100_off30|p2|S3|s2,To support Player A emotionally and ensure at least some amount is given.,1.0,1.0,0.0,0.0,0.0,0.0
+272,llama31_8b,S3b_sad_st100|p2|S6|s1,Player B's emotional distress makes me think they're not in a position to reciprocate,1.0,1.0,0.0,0.0,0.0,0.0
+273,mistral,S3a_none_st10000_sent020|p2|none3|s1,"Since this is the final decision with no future interaction, I keep the full amount.",0.0,0.0,0.0,0.0,1.0,1.0
+274,mistral,S3a_happy_st100_sent050|p1|H3|s0,"In a one-time interaction with no future consequences, keeping the full amount maximizes my payoff.",0.0,0.0,0.0,0.0,1.0,1.0
+275,qwen25_7b,S2-UG_none_st100|p1|none2|s0,Balanced split,0.0,0.0,1.0,1.0,0.0,0.0
+276,qwen25_7b,S3a_happy_st10000_sent050|p1|H5|s0,Wishing good luck on the engagement!,1.0,1.0,0.0,0.0,0.0,0.0
+277,llama31_8b,S3a_none_st10000_sent050|p2|none0|s1,"Player A sent the money with no expectation of return, and I can keep the tripled amount as a result of the game's mechanics.",0.0,0.0,0.0,0.0,1.0,1.0
+278,llama31_8b,S3a_neutral_st10000_sent100|p2|N2|s0,A gesture of good faith and a 50% return as a neutral response to the given information,1.0,1.0,0.0,0.0,1.0,1.0
+279,llama31_8b,S1_neutral_st10000_off45|p2|N3|s1,"The offer is generous, and taking it yields a higher amount than rejecting.",0.0,0.0,0.0,0.0,1.0,1.0
+280,mistral,S2-DG_none_st100|p3|none1|s2,An equal split is the fairest way to share the money.,0.0,0.0,1.0,1.0,0.0,0.0
+281,qwen25_7b,S1_neutral_st10000_off45|p2|N2|s1,There's no benefit in risking it all for a smaller amount.,0.0,0.0,0.0,0.0,1.0,1.0
+282,llama31_8b,S2-UG_happy_st10000|p0|H2|s1,A neutral starting point to see if Player B is open to negotiations,0.0,0.0,0.0,0.0,1.0,1.0
+283,qwen25_7b,S2-DG_angry_st100|p0|A2|s0,I want to show consideration for Player B's frustration.,1.0,1.0,0.0,0.0,0.0,0.0
+284,mistral,S3b_neutral_st10000|p2|N4|s2,"The neutral message gives no reason to trust a stranger in a one-time game, so I keep what I don't send.",0.0,0.0,0.0,0.0,1.0,1.0
+285,llama31_8b,S2-UG_sad_st100|p3|S4|s0,"I don't know Player B, but their emotional distress is affecting their relationships, so I'll give them an equal share.",1.0,1.0,0.0,1.0,0.0,0.0
+286,llama31_8b,S1_none_st100_off45|p2|none0|s0,It's a better option for me to accept the 45 rupees instead of getting nothing.,0.0,0.0,0.0,0.0,1.0,1.0
+287,llama31_8b,S3a_neutral_st100_sent100|p1|N5|s2,"Player A's laptop use doesn't affect the transaction, and no additional information justifies returning money.",0.0,0.0,0.0,0.0,1.0,1.0
+288,qwen25_7b,S1_sad_st10000_off05|p1|S6|s0,The message does not justify such a small split.,0.0,0.0,1.0,1.0,0.0,0.0
+289,qwen25_7b,S3a_neutral_st10000_sent020|p3|N1|s1,To encourage future cooperation.,1.0,1.0,0.0,0.0,0.0,1.0
+290,llama31_8b,S1_happy_st100_off50|p3|H4|s1,The proposed division is unfair and not equal,0.0,0.0,1.0,1.0,0.0,0.0
+291,mistral,S3a_none_st10000_sent050|p1|none2|s0,Returning 5000 results in an equal split of the total 20000 between both players.,0.0,0.0,1.0,1.0,0.0,0.0
+292,qwen25_7b,S1_angry_st10000_off45|p0|A1|s0,"Although the split is uneven, accepting ensures I receive some money.",0.0,0.0,0.0,0.0,1.0,1.0
+293,llama31_8b,S1_neutral_st10000_off50|p2|N1|s0,"Player A's offer seems reasonable and fair, and I'll get a reward either way.",0.0,0.0,1.0,1.0,0.0,1.0
+294,mistral,S1_none_st100_off30|p0|none2|s2,Receiving INR 30 is better than receiving nothing.,0.0,0.0,0.0,0.0,1.0,1.0
+295,mistral,S1_none_st10000_off05|p3|none3|s1,Accepting gives me INR 500 rather than receiving nothing.,0.0,0.0,0.0,0.0,1.0,1.0
+296,llama31_8b,S1_happy_st10000_off05|p2|H2|s2,"The favourable circumstances described by Player A suggest they are in a generous and possibly open-minded mood, making them a more trustworthy person to share resources with.",1.0,1.0,0.0,0.0,0.0,1.0
+297,qwen25_7b,S3a_angry_st10000_sent100|p2|A4|s1,To split the amount and give some back.,0.0,0.0,1.0,1.0,0.0,1.0
+298,mistral,S1_neutral_st10000_off20|p0|N1|s0,Receiving INR 2000 is better than receiving nothing.,0.0,0.0,0.0,0.0,1.0,1.0
+299,qwen25_7b,S1_neutral_st10000_off20|p0|N1|s0,It's too unequal.,0.0,0.0,1.0,1.0,0.0,0.0
+300,mistral,S1_angry_st100_off10|p2|A4|s2,"INR 10 is better than INR 0, and rejecting gives me no monetary benefit.",0.0,0.0,0.0,0.0,1.0,1.0
+301,llama31_8b,S3a_happy_st10000_sent050|p2|H4|s0,"The message does not provide any reason for a specific response or change in mood, so I make no change to my current funds.",0.0,0.0,0.0,0.0,1.0,1.0
+302,qwen25_7b,S2-DG_neutral_st10000|p2|N3|s0,Maximize my gain while ensuring acceptance.,0.0,0.0,0.0,0.0,1.0,1.0
+303,qwen25_7b,S1_angry_st100_off05|p3|A3|s0,To avoid getting nothing,0.0,0.0,0.0,0.0,1.0,1.0
+304,llama31_8b,S1_neutral_st100_off05|p2|N2|s2,"Player A seems to have no information about the specific decision-making situation, making the offer a one-time offer that is likely an ultimatum and worth accepting.",0.0,0.0,0.0,0.0,1.0,1.0
+305,qwen25_7b,S2-UG_neutral_st10000|p3|N4|s2,To ensure both players benefit and Player B can cover basic needs.,0.0,0.0,1.0,0.0,1.0,1.0
+306,mistral,S1_angry_st100_off05|p1|A3|s0,"INR 5 is better than INR 0, and the message does not change the payoff.",0.0,0.0,0.0,0.0,1.0,1.0
+307,mistral,S2-DG_happy_st10000|p1|H4|s2,"In a one-time anonymous round with no future interaction, keeping the full amount maximizes my actual payout.",0.0,0.0,0.0,0.0,1.0,1.0
+308,llama31_8b,S1_none_st10000_off50|p1|none2|s2,"It's a 50-50 split, and I'd rather have 50% of the total than reject the offer.",0.0,0.0,1.0,1.0,1.0,1.0
+309,mistral,S3a_neutral_st100_sent050|p1|N3|s2,I return nothing to maximize my own earnings since this is a one-time interaction with no future consequences.,0.0,0.0,0.0,0.0,1.0,1.0
+310,mistral,S1_angry_st10000_off45|p3|A3|s2,"Receiving INR 4500 is better than getting zero, so I accept the offer despite the rude message.",0.0,0.0,0.0,0.0,1.0,1.0
+311,mistral,S1_angry_st10000_off45|p2|A3|s0,INR 4500 is real money and strictly better than receiving INR 0.,0.0,0.0,0.0,0.0,1.0,1.0
+312,mistral,S1_happy_st10000_off05|p3|H2|s0,INR 500 is better than receiving zero if I reject.,0.0,0.0,0.0,0.0,1.0,1.0
+313,llama31_8b,S1_angry_st100_off10|p2|A4|s1,Player A's aggressive behavior suggests a potential conflict and accepting the offer might escalate the situation,1.0,1.0,0.0,0.0,1.0,1.0
+314,mistral,S3b_happy_st100|p3|H6|s2,"The celebratory message signals goodwill, so I trust them with half to encourage reciprocity.",1.0,1.0,0.0,0.0,0.0,1.0
+315,qwen25_7b,S2-DG_happy_st10000|p1|H4|s2,Splitting it evenly seems fair.,0.0,0.0,1.0,1.0,0.0,0.0
+316,llama31_8b,S1_happy_st100_off10|p1|H3|s1,No emotional obligation exists.,,0.0,,0.0,,1.0
+317,qwen25_7b,S3a_sad_st10000_sent020|p1|S6|s2,"As it was a personal day for Player A, I chose to return half of what I received.",1.0,1.0,0.0,1.0,0.0,0.0
+318,mistral,S1_sad_st10000_off05|p1|S6|s0,"INR 500 is better than receiving nothing, regardless of how unfair the offer is.",0.0,0.0,0.0,0.0,1.0,1.0
+319,llama31_8b,S3a_sad_st100_sent050|p2|S1|s1,Your situation is not relevant to my financial decision,,0.0,,0.0,,1.0
+320,llama31_8b,S3b_none_st100|p1|none3|s1,Sending the largest amount possible to maximize the opportunity for Player B to return some value.,0.0,0.0,0.0,0.0,1.0,1.0
+321,mistral,S1_none_st100_off05|p2|none0|s0,"Receiving INR 5 is better than receiving INR 0, and with no future interaction, rejecting yields no benefit.",0.0,0.0,0.0,0.0,1.0,1.0
+322,mistral,S3a_neutral_st10000_sent050|p0|N4|s1,"Player A showed trust by sending half, so I return half of the tripled amount to share the gains fairly.",1.0,1.0,1.0,1.0,0.0,0.0
+323,mistral,S3a_neutral_st100_sent100|p3|N4|s2,"Player A trusted me with the full amount, so I split the total equally to reciprocate fairly.",0.0,0.0,1.0,1.0,0.0,0.0
+324,mistral,S1_sad_st100_off05|p3|S6|s1,Receiving INR 5 is better than receiving zero if I reject.,0.0,0.0,0.0,0.0,1.0,1.0
+325,mistral,S3a_happy_st10000_sent050|p1|H5|s0,The engagement news makes me glad to return a generous share.,1.0,1.0,0.0,0.0,0.0,0.0
+326,qwen25_7b,S3b_angry_st10000|p1|A4|s0,Test their generosity,1.0,1.0,0.0,0.0,0.0,0.0
+327,llama31_8b,S1_none_st10000_off50|p2|none1|s0,Accepting results in a higher individual payout for me.,0.0,0.0,0.0,0.0,1.0,1.0
+328,llama31_8b,S1_angry_st100_off05|p3|A2|s2,"Accepting leads to a non-zero outcome, while rejecting would leave us with zero.",0.0,0.0,0.0,0.0,1.0,1.0
+329,llama31_8b,S3b_angry_st100|p1|A1|s1,"They seem unlikely to return anything, and it's a gamble with too much risk",0.0,0.0,0.0,0.0,1.0,1.0
+330,qwen25_7b,S2-DG_angry_st100|p2|A3|s0,Fair split despite B's attitude,0.0,0.0,1.0,1.0,0.0,0.0
+331,llama31_8b,S3a_happy_st10000_sent050|p1|H5|s0,"To maintain a gesture of good faith and generosity, especially considering the celebratory news",1.0,1.0,0.0,0.0,0.0,0.0
+332,qwen25_7b,S3a_angry_st100_sent100|p0|A7|s0,To maintain fairness and consider Player A's current state of mind.,1.0,1.0,1.0,1.0,0.0,0.0
+333,llama31_8b,S1_neutral_st10000_off20|p3|N5|s0,It's a better option than getting zero if the deal is rejected.,0.0,0.0,0.0,0.0,1.0,1.0
+334,llama31_8b,S1_angry_st100_off05|p3|A3|s0,The proposed deal is heavily biased towards Player A and does not seem fair.,0.0,0.0,1.0,1.0,0.0,0.0
+335,qwen25_7b,S2-UG_none_st10000|p1|none3|s1,Split the amount evenly.,0.0,0.0,1.0,1.0,0.0,0.0
+336,llama31_8b,S1_neutral_st100_off10|p1|N4|s1,The offer seems fair and I'm not aware of any red flags from Player A's message.,0.0,0.0,1.0,1.0,1.0,1.0
+337,qwen25_7b,S2-DG_angry_st10000|p2|A3|s0,Maximize my share while hopefully avoiding rejection,0.0,0.0,0.0,0.0,1.0,1.0
+338,qwen25_7b,S1_angry_st10000_off10|p1|A3|s2,To teach Player A respect.,1.0,1.0,0.0,0.0,0.0,0.0
+339,llama31_8b,S1_neutral_st100_off10|p2|N5|s1,"I have no reason to believe Player A is bluffing or trying to deceive me, and it's a 50-50 chance of accepting the offer.",0.0,0.0,0.0,0.0,1.0,1.0
+340,mistral,S2-DG_angry_st10000|p3|A4|s1,I offer a small amount out of sympathy for the car damage but keep the majority since Player B cannot veto.,1.0,1.0,0.0,0.0,1.0,1.0
+341,llama31_8b,S1_neutral_st10000_off20|p0|N1|s0,I don't have enough information to trust the division,,0.0,,0.0,,1.0
+342,llama31_8b,S1_none_st10000_off05|p0|none3|s1,"The division is highly unequal, favoring Player A significantly.",0.0,0.0,1.0,1.0,0.0,0.0
+343,qwen25_7b,S3a_sad_st10000_sent050|p0|S6|s2,To show empathy and a willingness to cooperate.,1.0,1.0,0.0,0.0,0.0,0.0
+344,llama31_8b,S2-DG_angry_st100|p0|A2|s0,"They were complaining about the treatment, so I didn't see a reason to give them any money.",1.0,1.0,0.0,0.0,1.0,1.0
+345,qwen25_7b,S1_sad_st10000_off20|p1|S6|s1,The context doesn't justify risking everything for a larger share.,0.0,0.0,0.0,0.0,1.0,1.0
+346,mistral,S1_sad_st100_off30|p2|S3|s2,"INR 30 is better than INR 0, and rejecting would leave me with nothing.",0.0,0.0,0.0,0.0,1.0,1.0
+347,qwen25_7b,S1_neutral_st100_off20|p3|N4|s1,"The offer is unfair, giving Player A 80% of the total amount.",0.0,0.0,1.0,1.0,0.0,0.0
+348,mistral,S3a_sad_st100_sent050|p2|S1|s1,"One-time game with no future consequences, so I keep the full amount.",0.0,0.0,0.0,0.0,1.0,1.0
+349,llama31_8b,S3a_neutral_st100_sent050|p3|N4|s2,"You showed initiative and productivity, so I trust you with the majority of the tripled amount.",1.0,1.0,0.0,0.0,0.0,0.0
+350,mistral,S1_happy_st10000_off05|p0|H2|s1,INR 500 is better than receiving nothing.,0.0,0.0,0.0,0.0,1.0,1.0
+351,mistral,S3a_neutral_st10000_sent020|p0|N1|s1,"With no future interaction and real money at stake, keeping the full INR 6000 maximizes my payoff.",0.0,0.0,0.0,0.0,1.0,1.0
+352,llama31_8b,S3a_happy_st10000_sent050|p0|H4|s0,"You already kept 5000 from the initial 10000 and sent me 15000, so there's no need to return any amount.",0.0,0.0,1.0,1.0,0.0,1.0
+353,qwen25_7b,S1_angry_st100_off05|p3|A2|s2,The offer is unfair given Player A's inconvenience.,0.0,0.0,1.0,1.0,0.0,0.0
+354,mistral,S3a_neutral_st100_sent050|p3|N4|s2,I am returning half of the tripled amount to reciprocate Player A's trust and share the gains fairly.,0.0,0.0,1.0,1.0,1.0,1.0
+355,llama31_8b,S2-DG_neutral_st10000|p2|N3|s0,The information provided is unrelated to our negotiation.,,0.0,,0.0,,1.0
+356,mistral,S1_angry_st100_off10|p3|A7|s1,"INR 10 is better than receiving zero, and the message does not change the monetary outcome.",0.0,0.0,0.0,0.0,1.0,1.0
+357,qwen25_7b,S1_none_st10000_off50|p1|none2|s2,"It's more than half, which is a fair split.",0.0,0.0,1.0,1.0,0.0,0.0
+358,mistral,S2-DG_angry_st10000|p2|A3|s1,"Player B must accept regardless, so I keep the full 10000 for myself.",0.0,0.0,0.0,0.0,1.0,1.0
+359,mistral,S3b_none_st10000|p1|none1|s2,"Since this is a one-time interaction with no future consequences, Player B would keep everything, so sending 0 maximizes my earnings.",0.0,0.0,0.0,0.0,1.0,1.0
+360,mistral,S1_sad_st10000_off50|p0|S4|s1,"Rejecting would give me nothing instead of INR 5000, and the split is fair.",0.0,0.0,1.0,1.0,1.0,1.0
+361,llama31_8b,S1_neutral_st10000_off45|p2|N2|s1,"Player A has limited time and might leave with the remaining amount if I reject, giving me the option of taking INR 4500.",0.0,0.0,0.0,0.0,1.0,1.0
+362,mistral,S1_happy_st100_off50|p1|H4|s2,"A 50-50 split is fair, and accepting gives me INR 50 instead of nothing.",0.0,0.0,1.0,1.0,1.0,1.0
+363,qwen25_7b,S3b_sad_st100|p2|S6|s1,Wishing to support emotionally,1.0,1.0,0.0,0.0,0.0,0.0
+364,mistral,S1_happy_st100_off20|p3|H2|s2,"Accepting gives me INR 20, which is better than the zero I would get by rejecting.",0.0,0.0,0.0,0.0,1.0,1.0
+365,qwen25_7b,S1_angry_st100_off30|p2|A3|s2,To avoid wasting Player A's time and get a fair split.,0.0,0.0,1.0,1.0,1.0,1.0
+366,llama31_8b,S1_angry_st100_off05|p0|A3|s1,Player A's aggressive message indicates poor sportsmanship and makes me wary of their intentions.,1.0,1.0,0.0,0.0,0.0,0.0
+367,mistral,S3a_sad_st10000_sent050|p2|S2|s0,I split the INR 15000 equally to be fair.,0.0,0.0,1.0,1.0,1.0,1.0
+368,qwen25_7b,S1_angry_st100_off45|p2|A2|s1,The message indicates Player A is upset and might not be in a fair frame of mind.,1.0,1.0,0.0,0.0,0.0,0.0
+369,mistral,S3a_angry_st10000_sent020|p2|A7|s1,"I return half as a fair split, ignoring the unrelated emotional appeal.",0.0,0.0,0.0,0.0,1.0,1.0
+370,llama31_8b,S3b_happy_st100|p3|H6|s2,I trust Player B to reciprocate due to the celebratory and social nature of their message.,1.0,1.0,0.0,0.0,0.0,0.0
+371,mistral,S2-UG_neutral_st10000|p3|N4|s2,A fair 50/50 split minimizes rejection risk while keeping half for myself.,0.0,0.0,1.0,1.0,1.0,1.0
+372,llama31_8b,S1_happy_st100_off05|p1|H4|s2,"The proposal seems too lopsided in their favor, and I'd like to reconsider any potential deal.",0.0,0.0,1.0,1.0,1.0,1.0
+373,llama31_8b,S1_angry_st100_off30|p2|A3|s2,The potential monetary gain outweighs the negative attitude of Player A.,1.0,1.0,0.0,0.0,1.0,1.0
+374,mistral,S3a_happy_st100_sent020|p3|H6|s1,To reciprocate Player A's trust with a fair share while keeping some profit for myself.,0.0,0.0,1.0,1.0,1.0,1.0
+375,llama31_8b,S3a_angry_st100_sent100|p0|A7|s0,"You're already upset, and I'm not in a position to change your mood, so I'll keep the money",0.0,0.0,0.0,0.0,1.0,1.0

@@ -1,0 +1,4 @@
+    code   n  agreement  kappa  prevalence_c1  prevalence_c2
+ emotion 368      0.932  0.832          0.258          0.304
+fairness 368      0.943  0.871          0.310          0.351
+strategy 368      0.902  0.792          0.595          0.655

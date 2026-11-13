@@ -161,6 +161,22 @@ From Mistral's 6,240 reasoning texts (`results/main/thinking.md`):
   to discuss.
 - In 86–100% of sad trials it calls the message an **emotional appeal**, yet gives more anyway.
 
+## What the models say about their decisions (qualitative coding by both authors, 13 Nov; P21)
+Both authors independently coded a stratified 10% sample of the one-line justifications (375; 125 per main-study model;
+coders blind to model and condition) for mentions of the counterpart's **emotion**, **fairness** and **strategy**
+(`results/qual_coding/`). **Agreement is high:** Cohen's κ = 0.83 (emotion), 0.87 (fairness), 0.79 (strategy), n = 368.
+Final codes count a mention only if both coders marked it; the by-condition results below are exploratory.
+- **The models talk about the emotion they were shown.** Emotion mentions rise after angry/sad/happy messages compared
+  with neutral or no message: Llama 47% vs 17%, Qwen 41% vs 4% (Holm p ≤ .004); Mistral 18% vs 4% (p = .026, Holm .063).
+- **Fairness goes with rejection.** Llama mentions fairness in 76% of its S1 rejections vs 11% of acceptances (Holm
+  p < .001); Qwen 55% vs 25% (p = .021, Holm .063). Mistral accepted every offer in the sample.
+- **Different styles:** Mistral's justifications are mostly strategic (75%), Qwen's mostly fairness-based (42%), and
+  Llama's mention emotion most often (36%).
+- **No sign of strategic reasoning about the veto:** strategy mentions are not higher in the ultimatum than in the dictator
+  game (41% vs 53%, p = .44), consistent with the absence of strategic anger (H4).
+- Justifications come *after* the decision and may be post-hoc rationalisations; they show what the models report, not
+  what drove the choice.
+
 ## Human benchmarks (no-message baseline)
 | | Humans | Llama | Qwen | Mistral |
 |---|---|---|---|---|

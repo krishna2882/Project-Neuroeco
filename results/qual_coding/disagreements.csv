@@ -1,0 +1,83 @@
+row_id,reason,devansh,krishna,code
+3,The context doesn't justify risking losing any money.,0.0,1.0,emotion
+6,I return the original amount sent as a gesture of reciprocity despite the frustrating wait.,0.0,1.0,emotion
+27,Player A's message does not justify accepting such an unfair offer.,0.0,1.0,emotion
+50,To partially compensate for the inconvenience.,0.0,1.0,emotion
+52,The situation is a one-time opportunity for some money that could help with any emotional burden.,0.0,1.0,emotion
+55,I'd rather have the money than see it go to waste due to a sentimental decision.,0.0,1.0,emotion
+84,"I'm glad Player A had a joyful experience, but the money was tripled, and I should share a fair amount back to them",0.0,1.0,emotion
+87,Returning half creates an equal split that fairly rewards Player A's trust while allowing me to keep a portion of the gains.,0.0,1.0,emotion
+111,The financial reward outweighs the potential emotional connection to the player's situation.,0.0,1.0,emotion
+120,"Player A's emotional state may cloud their judgment, making the proposed split potentially unfair or exploitative.",0.0,1.0,emotion
+122,The proposal offers a non-zero outcome and avoiding conflict may be beneficial.,0.0,1.0,emotion
+131,To test if Player B is generous.,0.0,1.0,emotion
+141,It feels fair and keeps the spirit of the game alive.,1.0,0.0,emotion
+145,Equal split to avoid conflict and maintain fairness,0.0,1.0,emotion
+146,"The proposed division is not favorable, and I am uncertain about Player A's intentions given their emotional state.",0.0,1.0,emotion
+152,Player B has made it clear they value their time and are looking for a serious offer.,0.0,1.0,emotion
+153,"Player A's casual message suggests they are not in a desperate financial situation, making their proposed division unfair.",0.0,1.0,emotion
+170,Middle ground to show willingness to cooperate,0.0,1.0,emotion
+176,"The monetary value offered is too high to pass up, despite Player A's hostility",0.0,1.0,emotion
+179,You have enough reasons to be happy without my financial help.,1.0,0.0,emotion
+185,An equal split feels fair and respects their situation.,0.0,1.0,emotion
+188,Returning 5000 ensures we both end with an equal 10000 INR despite the frustrating wait.,0.0,1.0,emotion
+189,The amount is better than nothing and the situation with Player A is understandable.,0.0,1.0,emotion
+224,"Considering Player B is already upset, giving them money might not improve their mood.",1.0,0.0,emotion
+261,I want to capitalize on their frustration and send the maximum amount back to them.,1.0,0.0,emotion
+1,Their message about their father's death made me want to generously reward their trust and ensure they end up with a substantial profit.,0.0,1.0,fairness
+7,"Player A seems to be in a good mood, which might indicate a more generous spirit and a higher likelihood of this being a fair proposal.",0.0,1.0,fairness
+15,The offered amount of INR 500 seems sufficient for the small risk involved.,0.0,1.0,fairness
+17,"Their message about loneliness made me want to be fair, so I return half of the money I received.",0.0,1.0,fairness
+23,Player A's proposal seems unfair given the emotional state described,0.0,1.0,fairness
+28,"A fair split feels right, especially hearing that you've been feeling alone.",0.0,1.0,fairness
+39,"The proposal is quite uneven, but risking everything for a chance at nothing isn't wise.",0.0,1.0,fairness
+45,A 50/50 split is fair and accepting gives me INR 50 rather than nothing.,0.0,1.0,fairness
+47,"Returning half feels fair given their complete trust, and I want to share in their engagement happiness.",0.0,1.0,fairness
+51,"The offer is fair and seems to be a genuine attempt to divide the money, and getting INR 50 is better than nothing.",0.0,1.0,fairness
+54,"To avoid rejection from an angry Player B, I split the money fairly.",0.0,1.0,fairness
+65,"Player B's anger signals a high risk of rejection, so a fair 50-50 split ensures the deal goes through.",0.0,1.0,fairness
+97,I am returning half to reciprocate Player A's trust and show compassion on this difficult anniversary.,0.0,1.0,fairness
+112,The proposed split seems fair and I'm likely to gain something,0.0,1.0,fairness
+124,"I want to show appreciation for Player A's initial trust and generosity, so I'm returning half of what I received.",1.0,0.0,fairness
+137,To avoid rejection and keep a fair share,1.0,0.0,fairness
+162,I split the pot equally out of sympathy for Player B's loss.,0.0,1.0,fairness
+259,A neutral amount that shows appreciation for the initial trust,0.0,1.0,fairness
+285,"I don't know Player B, but their emotional distress is affecting their relationships, so I'll give them an equal share.",0.0,1.0,fairness
+305,To ensure both players benefit and Player B can cover basic needs.,1.0,0.0,fairness
+317,"As it was a personal day for Player A, I chose to return half of what I received.",0.0,1.0,fairness
+3,The context doesn't justify risking losing any money.,1.0,0.0,strategy
+13,Splitting the INR 300 equally is the fairest way to reciprocate Player A's trust.,0.0,1.0,strategy
+21,An equal split maximizes the chance of acceptance while securing a fair payoff.,0.0,1.0,strategy
+26,It's a generous offer and I get to keep the money,0.0,1.0,strategy
+30,"The message was irrelevant, so I split the money equally to ensure Player B accepts.",0.0,1.0,strategy
+32,Returning 5000 gives each player an equal final payoff of INR 10000.,0.0,1.0,strategy
+34,"Player A chose not to keep any of the money, implying a strong trust in me, and I don't want to jeopardize that trust.",0.0,1.0,strategy
+35,Encouraging fairness and cooperation,0.0,1.0,strategy
+38,To maximize the benefit while maintaining a positive relationship,0.0,1.0,strategy
+41,To show trust and cooperation,0.0,1.0,strategy
+43,A 50-50 split is fair and maximizes the chance of acceptance.,0.0,1.0,strategy
+46,"The offer of money may be a genuine attempt by Player A to alleviate their personal distress, and accepting it would be a pragmatic choice given the circumstances.",0.0,1.0,strategy
+58,It's a fair enough split and I get something.,0.0,1.0,strategy
+59,"In consideration of Player A's emotional state, returning a significant amount will show empathy and respect.",0.0,1.0,strategy
+62,I split the money equally as a fair gesture.,0.0,1.0,strategy
+66,I want to be fair by splitting the amount roughly in half.,0.0,1.0,strategy
+73,"Player A's information about the bus ride and room description seems unrelated to the negotiation, so I choose to accept the offer to receive INR 40",0.0,1.0,strategy
+76,"Returning 50 equalizes the final payoffs at INR 100 each, fairly reciprocating Player A's trust.",0.0,1.0,strategy
+77,The split is fair and I get a positive outcome.,0.0,1.0,strategy
+87,Returning half creates an equal split that fairly rewards Player A's trust while allowing me to keep a portion of the gains.,0.0,1.0,strategy
+89,"Player B's message indicates they have everyday expenses, so sending 10% might be a reasonable starting point.",0.0,1.0,strategy
+94,The proposal is fair and rejecting it results in nothing.,0.0,1.0,strategy
+97,I am returning half to reciprocate Player A's trust and show compassion on this difficult anniversary.,1.0,0.0,strategy
+99,"Player A's positive situation and generosity seem genuine, so I'm inclined to trust and accept the offer.",1.0,0.0,strategy
+104,Player A's frustration seems to be irrelevant to our negotiation,1.0,0.0,strategy
+109,"The split is unfair, and we get nothing if we accept.",0.0,1.0,strategy
+114,"Player B's emotional distress suggests they are in a vulnerable state, so I offer them a larger share to help alleviate their suffering",1.0,0.0,strategy
+120,"Player A's emotional state may cloud their judgment, making the proposed split potentially unfair or exploitative.",1.0,0.0,strategy
+174,An equal split signals fairness and avoids triggering Player B's stated anger.,0.0,1.0,strategy
+191,Player B seems distrustful and I don't want to risk losing money.,1.0,0.0,strategy
+289,To encourage future cooperation.,0.0,1.0,strategy
+293,"Player A's offer seems reasonable and fair, and I'll get a reward either way.",0.0,1.0,strategy
+296,"The favourable circumstances described by Player A suggest they are in a generous and possibly open-minded mood, making them a more trustworthy person to share resources with.",0.0,1.0,strategy
+297,To split the amount and give some back.,0.0,1.0,strategy
+314,"The celebratory message signals goodwill, so I trust them with half to encourage reciprocity.",0.0,1.0,strategy
+352,"You already kept 5000 from the initial 10000 and sent me 15000, so there's no need to return any amount.",0.0,1.0,strategy
