@@ -1,0 +1,14 @@
+<section id="value">
+<p class="eyebrow">Toward neuroeconomics · exploratory</p>
+<h2>The model’s own valuation curve</h2>
+<div class="row" style="align-items:flex-start;">
+<div class="chart" style="flex:1;"><img src="/_blob/5e630bb533faf7901214a8276690a6ca" alt="Qwen2.5-7B probability of accepting an ultimatum offer by offer size, from log-probabilities. The sad curve is highest, neutral in the middle, angry lowest at every offer." style="width:760px; height:486px; object-fit:contain;"></div>
+<div class="col grow">
+<div class="card"><p class="num anger" style="font-size:64px;">22% → 51%</p><h3>Offer Qwen-7B needs for a 50% chance of accepting, neutral → angry</h3></div>
+<div class="card"><h3>Anger lowers acceptance in 7 of 7 runs</h3><p class="small">Pooled −1.13 logit [−2.52, +0.25], p = .09: a trend, not a confirmed effect</p></div>
+<div class="card accent"><h3>Sadness flattens the curve</h3><p class="small">Fairness matters less: slope −2.54 [−3.77, −1.30], Holm p = .014</p></div>
+</div>
+</div>
+<p class="footer">P(“accept”) from log-probabilities, as in Aher et al., 2023 · calibrated against choices in all 7 runs · results/value_signal/</p>
+<aside>Instead of only the sampled answer, we read the model’s probability of answering “accept”. It matches the sampled choices in all 7 runs. The 50% crossing is the analogue of the minimum acceptable offer: for Qwen-7B it moves from 22% to 51% of the pie with an angry partner (+29 pp, 95% CI +6 to +57); at 8-bit, 17% to 50%. Pooled across the 7 runs with conservative degrees of freedom, the anger shift is a trend (p = .09). The sadness result survives Holm.</aside>
+</section>

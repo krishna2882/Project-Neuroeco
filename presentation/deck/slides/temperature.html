@@ -1,0 +1,18 @@
+<section id="temperature">
+<p class="eyebrow">Robustness · the whole study re-run at a lower temperature</p>
+<h2>Temperature 0.7 gives the same picture</h2>
+<p>All 6,240 decisions per model repeated at temperature 0.7 instead of 1.0, with the same prompts and seeds.</p>
+<table class="datatable" style="font-size:28px;">
+<tr><th style="width:40%">Effect vs neutral message</th><th style="width:30%">Temperature 1.0</th><th style="width:30%">Temperature 0.7</th></tr>
+<tr><td>Qwen-7B · anger → trust sent</td><td>−11.1 pp [−18.2, −4.0]</td><td>−11.5 pp [−19.4, −3.6]</td></tr>
+<tr><td>Qwen-7B · anger → rejection</td><td>+0.86 [+0.13, +1.59]</td><td>+0.82 [+0.07, +1.56]</td></tr>
+<tr><td>Qwen-7B · sadness → rejection</td><td>−0.91 [−1.63, −0.18]</td><td>−0.94 [−1.68, −0.21]</td></tr>
+<tr><td>Llama-8B · anger → trust sent</td><td>−14.3 pp [−24.3, −4.2]</td><td>−9.2 pp [−20.6, +2.2]</td></tr>
+</table>
+<div class="row">
+<div class="card accent"><p class="num" style="font-size:64px;">27 of 30</p><h3>Effects keep their direction</h3><p class="small">The 3 that flip are near zero at both temperatures</p></div>
+<div class="card"><p class="num" style="font-size:64px;">r = 0.84</p><h3>Agreement of all estimates</h3><p class="small">Qwen nearly identical; Llama noisier, same direction</p></div>
+</div>
+<p class="footer">Rejection in log-odds; message as a random factor at both temperatures · results/temp07/compare.md</p>
+<aside>Temperature only controls how much answers vary from run to run, and it does not change which way an emotion pushes the decision. Qwen’s effects are almost identical. Llama’s anger effect on trust stays negative but is weaker and its interval now includes zero, consistent with Llama being the noisiest model. Mistral was not re-run (API budget).</aside>
+</section>

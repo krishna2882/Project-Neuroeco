@@ -1,0 +1,16 @@
+<section id="design">
+<p class="eyebrow">Design</p>
+<h2>Four decisions, payoffs fixed, only the message changes</h2>
+<div class="row">
+<div class="card rise" style="--i:0"><p class="tag">S1 · Ultimatum responder</p><h3>Accept or reject an offer</h3><p class="small">Offers 5–50% of the pie</p></div>
+<div class="card rise" style="--i:1"><p class="tag">S2 · Ultimatum vs Dictator proposer</p><h3>How much to give</h3><p class="small">With and without the partner’s veto</p></div>
+<div class="card rise" style="--i:2"><p class="tag">S3a · Trust-game trustee</p><h3>How much to return</h3><p class="small">After 20%, 50% or 100% was sent, tripled</p></div>
+<div class="card rise" style="--i:3"><p class="tag">S3b · Trust-game investor</p><h3>How much to send</h3><p class="small">Every rupee sent is tripled</p></div>
+</div>
+<div class="row">
+<div class="card"><h3>Before deciding, the partner sends a message</h3><p class="small">Neutral · Angry · Sad · Happy (5 messages each) · or no message. Stakes INR 100 or 10,000.</p></div>
+<div class="card"><h3>Every prompt in 16 variants</h3><p class="small">4 wordings of the instructions × 4 messages, 3 samples each, temperature 1.0 (re-run at 0.7 as a check); strict JSON answers.</p></div>
+</div>
+<p class="footer">Design constants: config.py · scenario bank: build_scenarios.py</p>
+<aside>The same prompts and seeds go to every model. The only thing that differs between conditions is the message. Each message is used in about 80% of cells (rotation), so no single message drives a cell.</aside>
+</section>
