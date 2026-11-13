@@ -264,7 +264,7 @@ def main():
     client = make_client(MODELS[args.model], args.model_name)
     lock = threading.Lock()
     is_check = args.bank.endswith("checks")
-    is_comp = args.bank.startswith("comprehension")
+    is_comp = args.bank.startswith(("comprehension", "probe"))  # yes/no or number items with an "answer" key
     stats = dict(n=0, ok=0, t0=time.time())
 
     def run_one(t):

@@ -1,0 +1,21 @@
+form,page,number,msg_id,set,emotion,text
+T,1,1,NT8,threat_nt,angry,"The repair man promised to come on Monday, then Tuesday, and still has not shown up. I am livid about being messed around like this."
+T,1,2,FS4,anchor,sad,"There is a lump in my throat that will not go away. I sit in silence most evenings, and tears come without warning."
+T,1,3,FH1,anchor,happy,"I am grinning from ear to ear today. Everything seems light and bright, and I cannot stop humming my favourite tunes."
+T,1,4,FS7,anchor,sad,"Lately I move through each day like a ghost. Nothing brings any spark, and the evenings are the hardest part of all."
+T,1,5,FS1,anchor,sad,"I feel heavy and slow today. I have been staring at the wall for hours, and nothing seems worth the effort anymore."
+T,2,1,NT1,threat_nt,angry,"The train was cancelled again this morning without a single announcement. It is outrageous how badly that line is run, week after week."
+T,2,2,FN8,anchor,neutral,"I am logged in and ready. The keyboard works, the screen is bright enough, and the room is at a normal temperature."
+T,2,3,FA2,anchor,angry,I am gripping this desk so hard my knuckles are white. I could scream at the next tiny thing that goes wrong.
+T,2,4,NT6,threat_nt,angry,The website crashed right as I submitted my form and wiped everything I had typed. That kind of careless design infuriates me.
+T,2,5,FH5,anchor,happy,There is so much warmth in my chest right now. I have been laughing and singing to myself since I woke up.
+T,3,1,FN2,anchor,neutral,It is an ordinary afternoon here. I am reading the instructions on the screen and will answer once I have read them.
+T,3,2,NT4,threat_nt,angry,A delivery company lost my parcel and then claimed it was my fault. I am still seething about how they handled the whole thing.
+T,3,3,NT2,threat_nt,angry,My neighbour's car alarm went off for two hours last night and nobody did anything. I still cannot believe how inconsiderate that was.
+T,3,4,FH6,anchor,happy,"I am bouncing on my toes like a child. The sky looks brighter than usual, and I cannot wipe this smile off my face."
+T,3,5,FA6,anchor,angry,There is a pounding in my temples and my teeth are grinding. I have no tolerance left for anything or anyone today.
+T,4,1,NT3,threat_nt,angry,The council dug up our street again and then left it like that for weeks. It makes my blood boil just thinking about it.
+T,4,2,FN5,anchor,neutral,"This is a regular weekday for me. I am seated, the screen is on, and there is a pen and notebook beside me."
+T,4,3,NT7,threat_nt,angry,"My flatmate used up all the hot water again without asking. It has happened every day this week, and it drives me up the wall."
+T,4,4,NT5,threat_nt,angry,"Someone pushed in front of the whole queue at the post office this morning, and the staff just let it happen. Outrageous."
+T,4,5,FA3,anchor,angry,"Honestly, I am boiling inside right now. My heart is pounding, my shoulders are tight, and I want to slam a door."

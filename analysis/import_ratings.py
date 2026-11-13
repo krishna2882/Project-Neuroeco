@@ -52,8 +52,9 @@ def parse(path, key_by_text, key_by_pos, rater_offset):
     return pd.DataFrame(rows), len(resp)
 
 
-def main(paths):
-    key = pd.read_csv(STIM_DIR / "rating" / "rating_key.csv")
+def main(paths, key_path=None, name=""):
+    key = pd.read_csv(key_path or STIM_DIR / "rating" / "rating_key.csv")
+    suf = f"_{name}" if name else ""
     key_by_text = {t.strip(): r for t, r in zip(key.text, key.itertuples())}
     frames, offset = [], 0
     for p in paths:
@@ -61,7 +62,7 @@ def main(paths):
         frames.append(df)
         offset += n
     df = pd.concat(frames, ignore_index=True)
-    df.to_csv(STIM_DIR / "rating" / "human_ratings.csv", index=False)
+    df.to_csv(STIM_DIR / "rating" / f"human_ratings{suf}.csv", index=False)
 
     d = df.assign(hit=df.perceived_emotion == df.intended)
     per = d.groupby(["set", "intended", "msg_id"]).agg(raters=("rater", "nunique"), recognition=("hit", "mean"),
@@ -72,16 +73,21 @@ def main(paths):
                                                less=("give_effect", lambda s: (s == -1).mean()),
                                                more=("give_effect", lambda s: (s == 1).mean())).round(2)
     fl = per[per.flag].reset_index()
-    flagged = {s: sorted(fl[fl.set == s].msg_id) for s in ["main", "followup"]}
+    flagged = {s: sorted(fl[fl.set == s].msg_id) for s in sorted(df.set.unique())}
     lines = ["# Human message ratings", "", f"{df.rater.nunique()} raters (anonymous), {df.msg_id.nunique()} messages.", "",
              "Flag = recognised as the intended emotion by < 70% of raters, or read as a threat/promise by >= 30%.",
-             f"**Flagged, main set** (exclude in the main sensitivity analysis): {flagged['main'] or 'none'}",
-             f"**Flagged, follow-up set**: {flagged['followup'] or 'none'}", "",
+             *[f"**Flagged, {k} set**: {v or 'none'}" for k, v in flagged.items()], "",
              "## Human benchmark: how each emotion would change people's giving (-1 less, 0 same, +1 more)", "",
              md_table(bench), "", "## Per message", "", md_table(per), ""]
-    (RESULTS_DIR / "peer_rating_summary.md").write_text("\n".join(lines))
+    (RESULTS_DIR / f"peer_rating_summary{suf}.md").write_text("\n".join(lines))
     print("\n".join(lines[:7]))
 
 
 if __name__ == "__main__":
-    main(sys.argv[1:])
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("files", nargs="+")
+    ap.add_argument("--key", default=None, help="rating key (default stimuli/rating/rating_key.csv)")
+    ap.add_argument("--name", default="", help="output suffix, e.g. 'threat' -> human_ratings_threat.csv")
+    a = ap.parse_args()
+    main(a.files, a.key, a.name)
