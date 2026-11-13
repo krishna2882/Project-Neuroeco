@@ -1,6 +1,6 @@
 # Presentation
 
-Live deck (19 slides, blue/white): https://claude.ai/artifact/1j1RRPkYjsrr3iPz5mAoQG (private until shared from its Share
+Live deck (20 slides, blue/white): https://claude.ai/artifact/1j1RRPkYjsrr3iPz5mAoQG (private until shared from its Share
 menu, which also exports PowerPoint/PDF).
 
 `deck/` is the source of that deck: `deck.json` (slide order, sections, fonts), `deck.css` (shared look) and one HTML

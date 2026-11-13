@@ -1,0 +1,17 @@
+<section id="qual">
+<p class="eyebrow">What the models say · qualitative coding by both authors</p>
+<h2>The models talk about the emotion</h2>
+<div class="row">
+<div class="card rise" style="--i:0"><p class="num" style="font-size:64px;">κ 0.79–0.87</p><h3>Agreement between the two coders</h3><p class="small">368 justifications, coded blind to model and condition</p></div>
+<div class="card rise" style="--i:1"><p class="num" style="font-size:64px;">41% vs 4%</p><h3>Qwen mentions the emotion</h3><p class="small">After an emotional vs a neutral or no message (Holm p &lt; .001); Llama 47% vs 17%</p></div>
+<div class="card accent rise" style="--i:2"><p class="num" style="font-size:64px;">76% vs 11%</p><h3>Llama mentions fairness</h3><p class="small">When it rejects vs when it accepts an offer (Holm p &lt; .001)</p></div>
+</div>
+<table class="datatable" style="font-size:26px;">
+<tr><th style="width:31%">Share of justifications</th><th style="width:23%">Emotion</th><th style="width:23%">Fairness</th><th style="width:23%">Strategy</th></tr>
+<tr><td>Llama-3.1-8B</td><td>36%</td><td>22%</td><td>57%</td></tr>
+<tr><td>Qwen2.5-7B</td><td>26%</td><td>42%</td><td>40%</td></tr>
+<tr><td>Mistral Large 4</td><td>13%</td><td>26%</td><td>75%</td></tr>
+</table>
+<p class="footer">A code counts only if both coders marked it · results/qual_coding/analysis.md, kappa.txt</p>
+<aside>Each model has its own style: Llama mentions emotion most, Qwen reasons about fairness, Mistral about strategy. Strategy mentions are not higher in the ultimatum than in the dictator game (41% vs 53%, p = .44), consistent with no strategic use of anger. Justifications come after the decision, so they show what the models report, not what drove the choice. Exploratory; Fisher’s exact tests with Holm correction.</aside>
+</section>
