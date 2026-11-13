@@ -141,7 +141,11 @@ From Mistral's 6,240 reasoning texts (`results/main/thinking.md`):
 ## Caveats
 - **Emotion is confounded with life events** in the main messages. The pre-registered follow-up shows that this matters for sadness
   (S1 effect not replicated) but not for anger (S3b replicated).
-- The message set is a provisional freeze until the human peer rating is done; flagged messages get a sensitivity analysis.
+- **Anger is partly confounded with perceived threat** in the human ratings (main A3, A4; all five frozen follow-up anger messages flagged
+  at >= 3 of 9 raters). An exploratory check finds no link between threat ratings and the size of the trust drop, but all 10 anger
+  messages were at least somewhat threatening. A pre-registered test with non-threatening anger (extension 3) was frozen but **not
+  run** (P17).
+- Human ratings: 9 raters, the pre-registered minimum was 8; flags at the 30% threat cut-off rest on 3 of 9 raters.
 - Mistral Large 4 always reasons, and it is open-weight (released 29 Oct 2026), not closed. H5 mixes family, scale and deliberation.
 - Large prompt-wording effects (Llama: 26–80% acceptance across paraphrases), so generalisation rests on only 4 paraphrases.
 - The MAO and Fehr–Schmidt α are identified only for Qwen-neutral (and Llama-sad, with a very wide CI); the computational-model
