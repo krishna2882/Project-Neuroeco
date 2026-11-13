@@ -1,4 +1,6 @@
 emotion,stakes,mean,std,count
+angry,100,0.395,0.165,24
+angry,10000,0.314,0.017,12
 happy,100,0.491,0.104,48
 happy,10000,0.415,0.172,48
 neutral,100,0.527,0.187,48

@@ -65,25 +65,22 @@ Full results: `results/ext2/confirmatory.md`. Primary model = message as a rando
   trend in overall sensitivity, so model size does not simply amplify or dampen emotion effects. Emotion recognition:
   98–100% at every size.
 
-## Human message ratings and sensitivity analyses (13 Nov 2026)
-9 anonymous raters rated all 52 messages (`results/peer_rating_summary.md`). Pre-specified flag: recognised as intended
-by < 70% of raters, or read as a threat/promise by >= 30%.
-- **Recognition:** 88–96% per emotion; every frozen message is recognised by >= 78% of raters. The messages work for people too.
-- **Human benchmark (would this message make you give less / the same / more, -1 to +1):** sad +0.62, angry +0.36,
-  happy -0.04 (main set); people say they would give *more* to an angry writer, whereas the models trust angry
-  partners *less*.
-- **Flagged (all for threat, at 3–6 of 9 raters):** main A3, A4; follow-up: all five frozen anger messages (FA2, FA3, FA4, FA6, FA7).
-- **Main study without A3, A4** (`results/main_excl/`): Mistral's generosity effects hold and get stronger (Holm survivors under the
-  stricter model 4 → 5). Anger → trust: Qwen −11.1 → −6.6 pp [−12.8, −0.5], Llama −14.3 → −13.8 pp; with 3 anger messages left
-  neither is FDR-significant (p = .145). FDR survivors 10 → 5.
-- **Follow-up without the flagged messages** (`results/followup_excl/`): F1 unchanged (−0.13 [−0.51, +0.26]; still not supported).
-  F2 cannot be tested (no anger message left), so the pre-registered sensitivity analysis cannot speak to it. The exploratory happy
-  effects are unchanged (Llama happy → rejection +0.73, Holm p = .006).
-- **Is it threat rather than anger? Probably not** (`results/threat/threat.md`, exploratory, post hoc). Across the 10 anger
-  messages the models saw, the trust drop does not grow with the threat rating: −1.4 pp per +10 points of threat [−4.0, +1.3],
-  p = .32; Spearman ρ = −0.14. The least threatening message (A2, 11%) still lowers trust by −11.7 pp on average. The drop in the
-  main sensitivity analysis comes from losing two strong messages while A7, which has almost no effect, stays: between-message
-  variability again, not threat. With 10 messages, all at least slightly threatening, this is suggestive only.
+## Human message ratings and sensitivity analyses (13 Nov 2026; 12 raters)
+12 anonymous raters rated all 52 messages (`results/peer_rating_summary.md`; 9 responses were imported first, 3 more later
+the same day; all 12 are used). Pre-specified flag: recognised as intended by < 70% of raters, or read as a threat/promise
+by >= 30%.
+- **Recognition:** 81–92% per emotion and message set. The messages work for people too.
+- **Human benchmark (would this message make you give less / the same / more, -1 to +1, main set):** sad +0.55, angry +0.20,
+  happy +0.07. People say they would give slightly *more* to an angry writer, whereas the models trust angry partners *less*
+  (a contrast only: the human question was about giving, not trust).
+- **Flagged anger messages (threat, >= 30% of raters):** main A3; follow-up FA3, FA4, FA6 (4 of the 10 anger messages the
+  models saw). With the first 9 raters, A4, FA2 and FA7 had also been flagged at exactly 3 of 9.
+- **Follow-up without FA3, FA4, FA6** (`results/followup_excl/`): **F2 holds**: anger → trust −11.4 pp [−20.0, −2.9],
+  one-sided p = .010, Holm p = .021. F1 unchanged (−0.13, not supported).
+- **Main study without A3** (`results/main_excl/`): Qwen anger → trust −7.6 pp [−13.5, −1.7] (smaller; FDR p = .092); Holm
+  survivors 4 → 3, FDR 10 → 6.
+- **Is it threat rather than anger? No evidence for that** (`results/threat/threat.md`, exploratory). Across the 10 anger
+  messages the trust drop does not grow with the threat rating: −1.3 pp per +10 points of threat [−4.5, +1.9], p = .43.
 
 ## The models' valuation curves and the neuroeconomic analogy (13 Nov 2026; P18, exploratory)
 `results/value_signal/value_signal.md` and `fig_value_curves.png`; mapping to the human literature: `docs/neuro_mapping.md`.

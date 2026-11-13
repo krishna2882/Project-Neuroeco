@@ -1,5 +1,5 @@
 intended,neutral,angry,sad,happy
 neutral,80,0,0,0
-angry,0,0,0,0
+angry,0,32,0,0
 sad,0,0,80,0
 happy,0,0,0,80

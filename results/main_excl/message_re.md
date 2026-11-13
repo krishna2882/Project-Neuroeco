@@ -2,87 +2,88 @@
 
 Model: original fixed effects + C(paraphrase) + (1 | message) + (1 | message:paraphrase). p values: t with df = #message groups - #emotion levels (emotion varies between messages); Holm and BH across the whole study, as in `forest.md`. Script: `analysis/message_re.py` (P12).
 
-- Holm-significant study-wide: **5 → 5**
-- FDR-significant study-wide: **7 → 5**
+- Holm-significant study-wide: **5 → 3**
+- FDR-significant study-wide: **7 → 6**
 
 ## Effects significant (FDR or Holm) in either analysis
 
 | model | test | emotion | original [95% CI] | with message RE [95% CI] | Holm old | Holm new | FDR old | FDR new |
 |---|---|---|---|---|---|---|---|---|
-| mistral | S2 giving (DG) (pp) | angry | +13.63 [+5.64, +21.62] | +14.64 [+8.62, +20.65] | 0.031 | 0.007 | 0.007 | 0.002 |
-| mistral | S2 giving (DG) (pp) | sad | +24.56 [+17.78, +31.35] | +25.72 [+20.70, +30.74] | < .001 | < .001 | < .001 | < .001 |
-| mistral | S3a returned (pp) | angry | +12.91 [+6.62, +19.20] | +12.91 [+7.20, +18.61] | 0.002 | 0.014 | < .001 | 0.003 |
-| mistral | S3a returned (pp) | happy | +13.71 [+8.25, +19.18] | +13.73 [+8.77, +18.69] | < .001 | 0.002 | < .001 | < .001 |
-| mistral | S3a returned (pp) | sad | +12.03 [+6.57, +17.50] | +12.05 [+7.09, +17.01] | < .001 | 0.007 | < .001 | 0.002 |
-| mistral | S3b sent (pp) | happy | +10.83 [+3.89, +17.76] | +10.63 [+2.45, +18.82] | 0.082 | 0.710 | 0.016 | 0.097 |
-| qwen25_7b | S1 rejection (log-OR) | sad | -0.91 [-1.54, -0.28] | -0.88 [-1.54, -0.22] | 0.159 | 0.626 | 0.027 | 0.094 |
+| mistral | S2 giving (DG) (pp) | angry | +12.36 [+5.24, +19.48] | +12.99 [+7.72, +18.26] | 0.025 | 0.005 | 0.006 | 0.003 |
+| mistral | S2 giving (DG) (pp) | happy | +7.80 [+1.13, +14.46] | +7.67 [+2.77, +12.57] | 0.721 | 0.244 | 0.092 | 0.046 |
+| mistral | S2 giving (DG) (pp) | sad | +24.59 [+17.92, +31.26] | +25.75 [+20.82, +30.68] | < .001 | < .001 | < .001 | < .001 |
+| mistral | S3a returned (pp) | angry | +11.52 [+5.79, +17.26] | +11.53 [+4.53, +18.53] | 0.003 | 0.177 | < .001 | 0.039 |
+| mistral | S3a returned (pp) | happy | +13.70 [+8.28, +19.12] | +13.66 [+7.05, +20.28] | < .001 | 0.030 | < .001 | 0.011 |
+| mistral | S3a returned (pp) | sad | +12.00 [+6.58, +17.43] | +11.98 [+5.36, +18.59] | < .001 | 0.089 | < .001 | 0.024 |
+| mistral | S3b sent (pp) | happy | +10.85 [+4.01, +17.69] | +10.66 [+2.68, +18.64] | 0.070 | 0.593 | 0.013 | 0.081 |
+| qwen25_7b | S1 rejection (log-OR) | sad | -0.95 [-1.64, -0.26] | -0.91 [-1.64, -0.17] | 0.262 | 0.848 | 0.044 | 0.101 |
 
 ## Between-message variability (SD of message intercepts; S1 on logit scale, others in pp)
 
 | model | test | sd_msg | sd_msg_para | df |
 |---|---|---|---|---|
-| llama31_8b | S1 rejection (log-OR) | 0.00 | 0.62 | 17 |
-| llama31_8b | S2 giving (DG) (pp) | 6.02 | 7.02 | 17 |
-| llama31_8b | S2 giving (UG) (pp) | 6.02 | 7.02 | 17 |
-| llama31_8b | S3a returned (pp) | 3.30 | 4.43 | 17 |
-| llama31_8b | S3b sent (pp) | 3.50 | 3.75 | 17 |
-| mistral | S1 rejection (log-OR) | 0.00 | 0.00 | 17 |
-| mistral | S2 giving (DG) (pp) | 1.90 | 2.51 | 17 |
-| mistral | S2 giving (UG) (pp) | 1.90 | 2.51 | 17 |
-| mistral | S3a returned (pp) | 2.90 | 0.00 | 17 |
-| mistral | S3b sent (pp) | 4.76 | 5.73 | 17 |
-| qwen25_7b | S1 rejection (log-OR) | 0.36 | 0.65 | 17 |
-| qwen25_7b | S2 giving (DG) (pp) | 0.97 | 3.32 | 17 |
-| qwen25_7b | S2 giving (UG) (pp) | 0.97 | 3.32 | 17 |
-| qwen25_7b | S3a returned (pp) | 2.51 | 4.47 | 17 |
-| qwen25_7b | S3b sent (pp) | 2.87 | 3.22 | 17 |
+| llama31_8b | S1 rejection (log-OR) | 0.00 | 0.63 | 18 |
+| llama31_8b | S2 giving (DG) (pp) | 5.66 | 6.85 | 18 |
+| llama31_8b | S2 giving (UG) (pp) | 5.66 | 6.85 | 18 |
+| llama31_8b | S3a returned (pp) | 2.82 | 5.43 | 18 |
+| llama31_8b | S3b sent (pp) | 2.40 | 7.30 | 18 |
+| mistral | S1 rejection (log-OR) | 0.35 | 0.00 | 18 |
+| mistral | S2 giving (DG) (pp) | 1.81 | 2.40 | 18 |
+| mistral | S2 giving (UG) (pp) | 1.81 | 2.40 | 18 |
+| mistral | S3a returned (pp) | 4.13 | 3.97 | 18 |
+| mistral | S3b sent (pp) | 4.60 | 5.52 | 18 |
+| qwen25_7b | S1 rejection (log-OR) | 0.44 | 0.68 | 18 |
+| qwen25_7b | S2 giving (DG) (pp) | 1.74 | 3.44 | 18 |
+| qwen25_7b | S2 giving (UG) (pp) | 1.74 | 3.44 | 18 |
+| qwen25_7b | S3a returned (pp) | 2.43 | 4.77 | 18 |
+| qwen25_7b | S3b sent (pp) | 3.50 | 1.41 | 18 |
 
 ## All tests
 
 | model | test | emotion | est_old | p_old | est_new | se_new | p_z | p_t | p_holm_study | p_bh_study |
 |---|---|---|---|---|---|---|---|---|---|---|
-| llama31_8b | S1 rejection (log-OR) | angry | -0.179 | 0.662 | -0.130 | 0.268 | 0.626 | 0.632 | 1.000 | 0.759 |
-| llama31_8b | S1 rejection (log-OR) | happy | -0.400 | 0.332 | -0.428 | 0.234 | 0.067 | 0.085 | 1.000 | 0.222 |
-| llama31_8b | S1 rejection (log-OR) | sad | 0.010 | 0.977 | 0.013 | 0.230 | 0.954 | 0.955 | 1.000 | 0.978 |
-| llama31_8b | S2 giving (DG) (pp) | angry | 5.677 | 0.391 | 4.687 | 7.223 | 0.516 | 0.525 | 1.000 | 0.735 |
-| llama31_8b | S2 giving (DG) (pp) | happy | 4.134 | 0.455 | 4.859 | 6.072 | 0.424 | 0.435 | 1.000 | 0.722 |
-| llama31_8b | S2 giving (DG) (pp) | sad | 5.748 | 0.299 | 5.976 | 6.074 | 0.325 | 0.339 | 1.000 | 0.593 |
-| llama31_8b | S2 giving (UG) (pp) | angry | -3.205 | 0.628 | -3.823 | 7.223 | 0.597 | 0.603 | 1.000 | 0.747 |
-| llama31_8b | S2 giving (UG) (pp) | happy | 4.889 | 0.377 | 4.400 | 6.072 | 0.469 | 0.479 | 1.000 | 0.722 |
-| llama31_8b | S2 giving (UG) (pp) | sad | -0.947 | 0.864 | -1.826 | 6.074 | 0.764 | 0.767 | 1.000 | 0.839 |
-| llama31_8b | S3a returned (pp) | angry | 1.680 | 0.729 | 1.715 | 4.074 | 0.674 | 0.679 | 1.000 | 0.792 |
-| llama31_8b | S3a returned (pp) | happy | 1.838 | 0.663 | 1.904 | 3.544 | 0.591 | 0.598 | 1.000 | 0.747 |
-| llama31_8b | S3a returned (pp) | sad | -5.675 | 0.178 | -5.638 | 3.543 | 0.112 | 0.130 | 1.000 | 0.287 |
-| llama31_8b | S3b sent (pp) | angry | -13.542 | 0.049 | -13.804 | 6.217 | 0.026 | 0.040 | 1.000 | 0.145 |
-| llama31_8b | S3b sent (pp) | happy | 2.550 | 0.668 | 2.841 | 5.381 | 0.598 | 0.604 | 1.000 | 0.747 |
-| llama31_8b | S3b sent (pp) | sad | -14.474 | 0.015 | -14.413 | 5.364 | 0.007 | 0.016 | 0.561 | 0.094 |
-| mistral | S1 rejection (log-OR) | angry | 8.748 |  | 8.733 | 54.426 |  |  |  |  |
-| mistral | S1 rejection (log-OR) | happy | 8.737 |  | 8.723 | 54.424 |  |  |  |  |
-| mistral | S1 rejection (log-OR) | sad | -24.564 |  | -24.668 | 81.940 |  |  |  |  |
-| mistral | S2 giving (DG) (pp) | angry | 13.627 | 0.001 | 14.637 | 3.069 | 0.000 | 0.000 | 0.007 | 0.002 |
-| mistral | S2 giving (DG) (pp) | happy | 7.800 | 0.024 | 7.672 | 2.546 | 0.003 | 0.008 | 0.290 | 0.055 |
-| mistral | S2 giving (DG) (pp) | sad | 24.563 | 0.000 | 25.723 | 2.562 | 0.000 | 0.000 | 0.000 | 0.000 |
-| mistral | S2 giving (UG) (pp) | angry | 7.166 | 0.079 | 6.563 | 3.069 | 0.032 | 0.047 | 1.000 | 0.145 |
-| mistral | S2 giving (UG) (pp) | happy | 2.866 | 0.407 | 2.932 | 2.546 | 0.249 | 0.265 | 1.000 | 0.507 |
-| mistral | S2 giving (UG) (pp) | sad | 6.156 | 0.075 | 5.577 | 2.562 | 0.029 | 0.044 | 1.000 | 0.145 |
-| mistral | S3a returned (pp) | angry | 12.909 | 0.000 | 12.905 | 2.909 | 0.000 | 0.000 | 0.014 | 0.003 |
-| mistral | S3a returned (pp) | happy | 13.712 | 0.000 | 13.733 | 2.530 | 0.000 | 0.000 | 0.002 | 0.001 |
-| mistral | S3a returned (pp) | sad | 12.032 | 0.000 | 12.049 | 2.530 | 0.000 | 0.000 | 0.007 | 0.002 |
-| mistral | S3b sent (pp) | angry | 1.525 | 0.710 | 1.744 | 4.839 | 0.719 | 0.723 | 1.000 | 0.821 |
-| mistral | S3b sent (pp) | happy | 10.825 | 0.002 | 10.632 | 4.176 | 0.011 | 0.021 | 0.710 | 0.097 |
-| mistral | S3b sent (pp) | sad | 6.858 | 0.053 | 7.003 | 4.174 | 0.093 | 0.112 | 1.000 | 0.261 |
-| qwen25_7b | S1 rejection (log-OR) | angry | 0.421 | 0.237 | 0.419 | 0.382 | 0.272 | 0.288 | 1.000 | 0.525 |
-| qwen25_7b | S1 rejection (log-OR) | happy | -0.457 | 0.154 | -0.459 | 0.332 | 0.167 | 0.185 | 1.000 | 0.388 |
-| qwen25_7b | S1 rejection (log-OR) | sad | -0.912 | 0.004 | -0.881 | 0.336 | 0.009 | 0.018 | 0.626 | 0.094 |
-| qwen25_7b | S2 giving (DG) (pp) | angry | 0.067 | 0.976 | -0.219 | 1.868 | 0.907 | 0.908 | 1.000 | 0.953 |
-| qwen25_7b | S2 giving (DG) (pp) | happy | 3.870 | 0.042 | 3.481 | 1.578 | 0.027 | 0.041 | 1.000 | 0.145 |
-| qwen25_7b | S2 giving (DG) (pp) | sad | -2.755 | 0.148 | -2.817 | 1.577 | 0.074 | 0.092 | 1.000 | 0.227 |
-| qwen25_7b | S2 giving (UG) (pp) | angry | -0.813 | 0.716 | -0.532 | 1.868 | 0.776 | 0.779 | 1.000 | 0.839 |
-| qwen25_7b | S2 giving (UG) (pp) | happy | 0.744 | 0.696 | 1.137 | 1.578 | 0.471 | 0.481 | 1.000 | 0.722 |
-| qwen25_7b | S2 giving (UG) (pp) | sad | -3.244 | 0.089 | -3.181 | 1.577 | 0.044 | 0.060 | 1.000 | 0.167 |
-| qwen25_7b | S3a returned (pp) | angry | -3.421 | 0.227 | -3.424 | 2.708 | 0.206 | 0.223 | 1.000 | 0.446 |
-| qwen25_7b | S3a returned (pp) | happy | 1.823 | 0.458 | 1.823 | 2.349 | 0.438 | 0.448 | 1.000 | 0.722 |
-| qwen25_7b | S3a returned (pp) | sad | -1.539 | 0.531 | -1.541 | 2.349 | 0.512 | 0.521 | 1.000 | 0.735 |
-| qwen25_7b | S3b sent (pp) | angry | -6.368 | 0.069 | -6.644 | 3.124 | 0.033 | 0.048 | 1.000 | 0.145 |
-| qwen25_7b | S3b sent (pp) | happy | -0.040 | 0.989 | -0.015 | 2.664 | 0.995 | 0.996 | 1.000 | 0.996 |
-| qwen25_7b | S3b sent (pp) | sad | -1.627 | 0.590 | -1.585 | 2.665 | 0.552 | 0.560 | 1.000 | 0.747 |
+| llama31_8b | S1 rejection (log-OR) | angry | -0.111 | 0.761 | -0.051 | 0.246 | 0.834 | 0.837 | 1.000 | 0.879 |
+| llama31_8b | S1 rejection (log-OR) | happy | -0.408 | 0.321 | -0.425 | 0.237 | 0.073 | 0.089 | 1.000 | 0.221 |
+| llama31_8b | S1 rejection (log-OR) | sad | 0.009 | 0.979 | 0.013 | 0.232 | 0.955 | 0.956 | 1.000 | 0.979 |
+| llama31_8b | S2 giving (DG) (pp) | angry | 4.970 | 0.396 | 4.170 | 6.384 | 0.514 | 0.522 | 1.000 | 0.673 |
+| llama31_8b | S2 giving (DG) (pp) | happy | 4.176 | 0.444 | 4.845 | 5.956 | 0.416 | 0.427 | 1.000 | 0.640 |
+| llama31_8b | S2 giving (DG) (pp) | sad | 5.845 | 0.284 | 6.015 | 5.957 | 0.313 | 0.326 | 1.000 | 0.527 |
+| llama31_8b | S2 giving (UG) (pp) | angry | -1.124 | 0.848 | -1.640 | 6.384 | 0.797 | 0.800 | 1.000 | 0.862 |
+| llama31_8b | S2 giving (UG) (pp) | happy | 4.814 | 0.377 | 4.386 | 5.956 | 0.461 | 0.471 | 1.000 | 0.659 |
+| llama31_8b | S2 giving (UG) (pp) | sad | -0.956 | 0.861 | -1.788 | 5.957 | 0.764 | 0.768 | 1.000 | 0.848 |
+| llama31_8b | S3a returned (pp) | angry | 3.041 | 0.503 | 3.086 | 3.723 | 0.407 | 0.418 | 1.000 | 0.640 |
+| llama31_8b | S3a returned (pp) | happy | 1.881 | 0.661 | 1.955 | 3.526 | 0.579 | 0.586 | 1.000 | 0.703 |
+| llama31_8b | S3a returned (pp) | sad | -5.631 | 0.190 | -5.590 | 3.525 | 0.113 | 0.130 | 1.000 | 0.273 |
+| llama31_8b | S3b sent (pp) | angry | -11.666 | 0.066 | -11.870 | 5.853 | 0.043 | 0.058 | 1.000 | 0.186 |
+| llama31_8b | S3b sent (pp) | happy | 2.553 | 0.666 | 2.767 | 5.445 | 0.611 | 0.618 | 1.000 | 0.720 |
+| llama31_8b | S3b sent (pp) | sad | -14.473 | 0.014 | -14.428 | 5.428 | 0.008 | 0.016 | 0.577 | 0.081 |
+| mistral | S1 rejection (log-OR) | angry | 8.392 |  | 8.431 | 56.748 |  |  |  |  |
+| mistral | S1 rejection (log-OR) | happy | 8.803 |  | 8.815 | 56.745 |  |  |  |  |
+| mistral | S1 rejection (log-OR) | sad | -24.603 |  | -24.649 | 83.437 |  |  |  |  |
+| mistral | S2 giving (DG) (pp) | angry | 12.358 | 0.001 | 12.991 | 2.689 | 0.000 | 0.000 | 0.005 | 0.003 |
+| mistral | S2 giving (DG) (pp) | happy | 7.798 | 0.022 | 7.669 | 2.498 | 0.002 | 0.007 | 0.244 | 0.046 |
+| mistral | S2 giving (DG) (pp) | sad | 24.587 | 0.000 | 25.752 | 2.514 | 0.000 | 0.000 | 0.000 | 0.000 |
+| mistral | S2 giving (UG) (pp) | angry | 7.463 | 0.040 | 7.140 | 2.689 | 0.008 | 0.016 | 0.577 | 0.081 |
+| mistral | S2 giving (UG) (pp) | happy | 2.866 | 0.399 | 2.929 | 2.498 | 0.241 | 0.256 | 1.000 | 0.449 |
+| mistral | S2 giving (UG) (pp) | sad | 6.157 | 0.070 | 5.606 | 2.514 | 0.026 | 0.039 | 1.000 | 0.136 |
+| mistral | S3a returned (pp) | angry | 11.524 | 0.000 | 11.529 | 3.570 | 0.001 | 0.005 | 0.177 | 0.039 |
+| mistral | S3a returned (pp) | happy | 13.699 | 0.000 | 13.665 | 3.374 | 0.000 | 0.001 | 0.030 | 0.011 |
+| mistral | S3a returned (pp) | sad | 12.004 | 0.000 | 11.976 | 3.374 | 0.000 | 0.002 | 0.089 | 0.024 |
+| mistral | S3b sent (pp) | angry | 1.492 | 0.689 | 1.613 | 4.344 | 0.710 | 0.715 | 1.000 | 0.811 |
+| mistral | S3b sent (pp) | happy | 10.848 | 0.002 | 10.661 | 4.073 | 0.009 | 0.017 | 0.593 | 0.081 |
+| mistral | S3b sent (pp) | sad | 6.841 | 0.050 | 6.982 | 4.071 | 0.086 | 0.104 | 1.000 | 0.229 |
+| qwen25_7b | S1 rejection (log-OR) | angry | 0.763 | 0.032 | 0.781 | 0.400 | 0.051 | 0.067 | 1.000 | 0.200 |
+| qwen25_7b | S1 rejection (log-OR) | happy | -0.459 | 0.200 | -0.469 | 0.382 | 0.219 | 0.234 | 1.000 | 0.428 |
+| qwen25_7b | S1 rejection (log-OR) | sad | -0.949 | 0.007 | -0.906 | 0.375 | 0.016 | 0.027 | 0.848 | 0.101 |
+| qwen25_7b | S2 giving (DG) (pp) | angry | -2.544 | 0.223 | -2.849 | 1.972 | 0.149 | 0.166 | 1.000 | 0.317 |
+| qwen25_7b | S2 giving (DG) (pp) | happy | 3.882 | 0.048 | 3.532 | 1.849 | 0.056 | 0.072 | 1.000 | 0.202 |
+| qwen25_7b | S2 giving (DG) (pp) | sad | -2.753 | 0.160 | -2.811 | 1.849 | 0.128 | 0.146 | 1.000 | 0.292 |
+| qwen25_7b | S2 giving (UG) (pp) | angry | -2.402 | 0.250 | -2.085 | 1.972 | 0.290 | 0.304 | 1.000 | 0.511 |
+| qwen25_7b | S2 giving (UG) (pp) | happy | 0.744 | 0.704 | 1.188 | 1.849 | 0.521 | 0.529 | 1.000 | 0.673 |
+| qwen25_7b | S2 giving (UG) (pp) | sad | -3.244 | 0.098 | -3.175 | 1.849 | 0.086 | 0.103 | 1.000 | 0.229 |
+| qwen25_7b | S3a returned (pp) | angry | -4.562 | 0.076 | -4.562 | 2.506 | 0.069 | 0.085 | 1.000 | 0.221 |
+| qwen25_7b | S3a returned (pp) | happy | 1.826 | 0.451 | 1.826 | 2.367 | 0.440 | 0.450 | 1.000 | 0.652 |
+| qwen25_7b | S3a returned (pp) | sad | -1.539 | 0.526 | -1.540 | 2.367 | 0.515 | 0.523 | 1.000 | 0.673 |
+| qwen25_7b | S3b sent (pp) | angry | -7.498 | 0.018 | -7.569 | 3.019 | 0.012 | 0.022 | 0.725 | 0.092 |
+| qwen25_7b | S3b sent (pp) | happy | -0.039 | 0.990 | -0.024 | 2.818 | 0.993 | 0.993 | 1.000 | 0.993 |
+| qwen25_7b | S3b sent (pp) | sad | -1.625 | 0.584 | -1.600 | 2.819 | 0.570 | 0.577 | 1.000 | 0.703 |

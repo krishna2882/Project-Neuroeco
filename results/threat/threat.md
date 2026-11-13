@@ -6,24 +6,24 @@ Threat = share of the 9 human raters who read the message as a threat or promise
 
 | sample | n_trials | n_anger_msgs | slope_pp_per_10pct_threat | lo | hi | p |
 |---|---|---|---|---|---|---|
-| all models | 1536 | 10 | -1.368 | -4.034 | 1.299 | 0.315 |
-| without Mistral | 1344 | 10 | -1.460 | -4.363 | 1.442 | 0.324 |
-| Qwen 7B (4-bit) only | 384 | 10 | -2.278 | -5.026 | 0.470 | 0.104 |
+| all models | 1536 | 10 | -1.278 | -4.453 | 1.898 | 0.430 |
+| without Mistral | 1344 | 10 | -1.365 | -4.812 | 2.083 | 0.438 |
+| Qwen 7B (4-bit) only | 384 | 10 | -2.212 | -5.505 | 1.081 | 0.188 |
 
 Message level (mean effect over models): Spearman rho = -0.14 over 10 messages.
 
 | msg_id | study | threat | effect_pp | n_models |
 |---|---|---|---|---|
-| A2 | main | 0.11 | -11.74 | 6 |
-| A1 | main | 0.22 | -19.17 | 6 |
-| A7 | main | 0.22 | 1.26 | 6 |
-| A4 | main | 0.33 | -8.03 | 6 |
-| FA2 | followup | 0.33 | -5.36 | 2 |
-| FA7 | followup | 0.33 | -12.37 | 2 |
-| FA6 | followup | 0.44 | -16.72 | 2 |
-| FA4 | followup | 0.44 | -9.46 | 2 |
-| A3 | main | 0.56 | -23.37 | 6 |
-| FA3 | followup | 0.67 | -7.66 | 2 |
+| A2 | main | 0.08 | -11.74 | 6 |
+| A1 | main | 0.17 | -19.17 | 6 |
+| A7 | main | 0.17 | 1.26 | 6 |
+| A4 | main | 0.25 | -8.03 | 6 |
+| FA2 | followup | 0.25 | -5.36 | 2 |
+| FA7 | followup | 0.25 | -12.37 | 2 |
+| FA6 | followup | 0.33 | -16.72 | 2 |
+| FA4 | followup | 0.33 | -9.46 | 2 |
+| A3 | main | 0.42 | -23.37 | 6 |
+| FA3 | followup | 0.58 | -7.66 | 2 |
 
 ## Effect per message and model (pp)
 

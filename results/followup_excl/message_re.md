@@ -9,47 +9,55 @@ Model: original fixed effects + C(paraphrase) + (1 | message) + (1 | message:par
 
 | model | test | emotion | original [95% CI] | with message RE [95% CI] | Holm old | Holm new | FDR old | FDR new |
 |---|---|---|---|---|---|---|---|---|
-| llama31_8b | S1 rejection (log-OR) | happy | +0.73 [+0.12, +1.33] | +0.72 [+0.43, +1.01] | 0.243 | 0.006 | 0.075 | 0.006 |
-| llama31_8b | S3b sent (pp) | happy | +20.83 [+9.35, +32.31] | +20.46 [+6.24, +34.67] | 0.006 | 0.216 | 0.006 | 0.082 |
-| qwen25_7b | S2 giving (DG) (pp) | happy | +6.48 [+2.09, +10.86] | +6.42 [+2.19, +10.64] | 0.057 | 0.173 | 0.030 | 0.082 |
+| llama31_8b | S1 rejection (log-OR) | happy | +0.73 [+0.12, +1.33] | +0.72 [+0.45, +1.00] | 0.368 | 0.005 | 0.088 | 0.005 |
+| llama31_8b | S3b sent (pp) | happy | +20.84 [+9.79, +31.89] | +20.46 [+6.72, +34.19] | 0.005 | 0.275 | 0.005 | 0.115 |
+| qwen25_7b | S2 giving (DG) (pp) | happy | +6.47 [+2.06, +10.87] | +6.42 [+1.96, +10.87] | 0.092 | 0.317 | 0.048 | 0.115 |
 
 ## Between-message variability (SD of message intercepts; S1 on logit scale, others in pp)
 
 | model | test | sd_msg | sd_msg_para | df |
 |---|---|---|---|---|
-| llama31_8b | S1 rejection (log-OR) | 0.12 | 0.12 | 12 |
-| llama31_8b | S2 giving (DG) (pp) | 3.28 | 4.89 | 12 |
-| llama31_8b | S2 giving (UG) (pp) | 3.28 | 4.89 | 12 |
-| llama31_8b | S3b sent (pp) | 8.11 | 7.48 | 12 |
-| qwen25_7b | S1 rejection (log-OR) | 0.12 | 0.44 | 12 |
-| qwen25_7b | S2 giving (DG) (pp) | 1.49 | 5.37 | 12 |
-| qwen25_7b | S2 giving (UG) (pp) | 1.49 | 5.37 | 12 |
-| qwen25_7b | S3b sent (pp) | 0.00 | 5.66 | 12 |
+| llama31_8b | S1 rejection (log-OR) | 0.08 | 0.17 | 13 |
+| llama31_8b | S2 giving (DG) (pp) | 3.34 | 4.64 | 13 |
+| llama31_8b | S2 giving (UG) (pp) | 3.34 | 4.64 | 13 |
+| llama31_8b | S3b sent (pp) | 7.63 | 8.10 | 13 |
+| qwen25_7b | S1 rejection (log-OR) | 0.12 | 0.40 | 13 |
+| qwen25_7b | S2 giving (DG) (pp) | 2.04 | 5.05 | 13 |
+| qwen25_7b | S2 giving (UG) (pp) | 2.04 | 5.05 | 13 |
+| qwen25_7b | S3b sent (pp) | 3.06 | 5.84 | 13 |
 
 ## All tests
 
 | model | test | emotion | est_old | p_old | est_new | se_new | p_z | p_t | p_holm_study | p_bh_study |
 |---|---|---|---|---|---|---|---|---|---|---|
-| llama31_8b | S1 rejection (log-OR) | happy | 0.726 | 0.019 | 0.725 | 0.148 | 0.000 | 0.000 | 0.006 | 0.006 |
-| llama31_8b | S1 rejection (log-OR) | sad | 0.200 | 0.509 | 0.192 | 0.145 | 0.185 | 0.210 | 1.000 | 0.549 |
-| llama31_8b | S2 giving (DG) (pp) | happy | 4.087 | 0.488 | 4.237 | 5.537 | 0.444 | 0.459 | 1.000 | 0.667 |
-| llama31_8b | S2 giving (DG) (pp) | sad | 11.304 | 0.055 | 11.411 | 5.521 | 0.039 | 0.061 | 0.733 | 0.195 |
-| llama31_8b | S2 giving (UG) (pp) | happy | 6.866 | 0.244 | 6.842 | 5.537 | 0.217 | 0.240 | 1.000 | 0.549 |
-| llama31_8b | S2 giving (UG) (pp) | sad | 5.305 | 0.368 | 5.213 | 5.521 | 0.345 | 0.364 | 1.000 | 0.647 |
-| llama31_8b | S3b sent (pp) | happy | 20.831 | 0.000 | 20.457 | 7.251 | 0.005 | 0.015 | 0.216 | 0.082 |
-| llama31_8b | S3b sent (pp) | sad | -0.491 | 0.933 | -0.283 | 7.246 | 0.969 | 0.969 | 1.000 | 0.969 |
-| qwen25_7b | S1 rejection (log-OR) | happy | 0.031 | 0.888 | 0.032 | 0.194 | 0.870 | 0.873 | 1.000 | 0.931 |
-| qwen25_7b | S1 rejection (log-OR) | sad | -0.131 | 0.548 | -0.127 | 0.195 | 0.516 | 0.528 | 1.000 | 0.704 |
-| qwen25_7b | S2 giving (DG) (pp) | happy | 6.476 | 0.004 | 6.416 | 2.155 | 0.003 | 0.012 | 0.173 | 0.082 |
-| qwen25_7b | S2 giving (DG) (pp) | sad | 0.838 | 0.708 | 0.585 | 2.155 | 0.786 | 0.791 | 1.000 | 0.904 |
-| qwen25_7b | S2 giving (UG) (pp) | happy | 5.354 | 0.017 | 5.478 | 2.155 | 0.011 | 0.026 | 0.336 | 0.103 |
-| qwen25_7b | S2 giving (UG) (pp) | sad | 1.466 | 0.512 | 1.731 | 2.155 | 0.422 | 0.438 | 1.000 | 0.667 |
-| qwen25_7b | S3b sent (pp) | happy | 1.599 | 0.639 | 1.300 | 2.473 | 0.599 | 0.609 | 1.000 | 0.749 |
-| qwen25_7b | S3b sent (pp) | sad | -2.517 | 0.460 | -2.754 | 2.467 | 0.264 | 0.286 | 1.000 | 0.572 |
+| llama31_8b | S1 rejection (log-OR) | angry | 0.410 | 0.295 | 0.395 | 0.186 | 0.033 | 0.053 | 1.000 | 0.190 |
+| llama31_8b | S1 rejection (log-OR) | happy | 0.726 | 0.018 | 0.724 | 0.142 | 0.000 | 0.000 | 0.005 | 0.005 |
+| llama31_8b | S1 rejection (log-OR) | sad | 0.200 | 0.508 | 0.192 | 0.139 | 0.168 | 0.191 | 1.000 | 0.573 |
+| llama31_8b | S2 giving (DG) (pp) | angry | -7.851 | 0.343 | -7.648 | 7.643 | 0.317 | 0.335 | 1.000 | 0.728 |
+| llama31_8b | S2 giving (DG) (pp) | happy | 4.122 | 0.485 | 4.247 | 5.440 | 0.435 | 0.449 | 1.000 | 0.728 |
+| llama31_8b | S2 giving (DG) (pp) | sad | 11.298 | 0.056 | 11.412 | 5.425 | 0.035 | 0.055 | 1.000 | 0.190 |
+| llama31_8b | S2 giving (UG) (pp) | angry | -3.257 | 0.694 | -3.377 | 7.643 | 0.659 | 0.666 | 1.000 | 0.841 |
+| llama31_8b | S2 giving (UG) (pp) | happy | 6.918 | 0.242 | 6.851 | 5.440 | 0.208 | 0.230 | 1.000 | 0.613 |
+| llama31_8b | S2 giving (UG) (pp) | sad | 5.320 | 0.368 | 5.214 | 5.425 | 0.337 | 0.354 | 1.000 | 0.728 |
+| llama31_8b | S3b sent (pp) | angry | -6.776 | 0.389 | -6.820 | 9.660 | 0.480 | 0.493 | 1.000 | 0.728 |
+| llama31_8b | S3b sent (pp) | happy | 20.839 | 0.000 | 20.456 | 7.008 | 0.004 | 0.012 | 0.275 | 0.115 |
+| llama31_8b | S3b sent (pp) | sad | -0.496 | 0.930 | -0.282 | 7.003 | 0.968 | 0.968 | 1.000 | 0.968 |
+| qwen25_7b | S1 rejection (log-OR) | angry | 0.203 | 0.463 | 0.206 | 0.249 | 0.407 | 0.422 | 1.000 | 0.728 |
+| qwen25_7b | S1 rejection (log-OR) | happy | 0.030 | 0.885 | 0.031 | 0.187 | 0.867 | 0.870 | 1.000 | 0.908 |
+| qwen25_7b | S1 rejection (log-OR) | sad | -0.130 | 0.536 | -0.126 | 0.189 | 0.504 | 0.516 | 1.000 | 0.728 |
+| qwen25_7b | S2 giving (DG) (pp) | angry | 1.034 | 0.734 | 0.666 | 3.070 | 0.828 | 0.832 | 1.000 | 0.908 |
+| qwen25_7b | S2 giving (DG) (pp) | happy | 6.468 | 0.004 | 6.417 | 2.274 | 0.005 | 0.014 | 0.317 | 0.115 |
+| qwen25_7b | S2 giving (DG) (pp) | sad | 0.832 | 0.711 | 0.585 | 2.274 | 0.797 | 0.801 | 1.000 | 0.908 |
+| qwen25_7b | S2 giving (UG) (pp) | angry | -0.184 | 0.952 | 0.562 | 3.070 | 0.855 | 0.858 | 1.000 | 0.908 |
+| qwen25_7b | S2 giving (UG) (pp) | happy | 5.350 | 0.017 | 5.480 | 2.274 | 0.016 | 0.032 | 0.631 | 0.151 |
+| qwen25_7b | S2 giving (UG) (pp) | sad | 1.470 | 0.513 | 1.731 | 2.274 | 0.447 | 0.460 | 1.000 | 0.728 |
+| qwen25_7b | S3b sent (pp) | angry | -11.653 | 0.014 | -11.443 | 4.348 | 0.008 | 0.021 | 0.435 | 0.124 |
+| qwen25_7b | S3b sent (pp) | happy | 1.618 | 0.640 | 1.552 | 3.160 | 0.623 | 0.632 | 1.000 | 0.841 |
+| qwen25_7b | S3b sent (pp) | sad | -2.501 | 0.470 | -2.554 | 3.159 | 0.419 | 0.433 | 1.000 | 0.728 |
 
 ## Pre-registered confirmatory tests under this model (one-sided, Holm over F1, F2)
 
 | id | estimate | p_one_sided | p_holm |
 |---|---|---|---|
-| F1 | -0.13 [-0.51, +0.26] | 0.264 | 0.528 |
-| F2 | not estimable (no messages left) |  | 0.528 |
+| F1 | -0.13 [-0.50, +0.24] | 0.258 | 0.258 |
+| F2 | -11.44 [-19.97, -2.92] | 0.010 | 0.021 |
