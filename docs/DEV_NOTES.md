@@ -1,4 +1,4 @@
-# Project Neuroeco — notes for Claude
+# Project Neuroeco — developer notes
 
 Study: does a counterpart's expressed emotion (Neutral/Angry/Sad/Happy or no message) shift LLM decisions in
 Ultimatum / Dictator / Trust games at fixed payoffs? Authors: Krishna Goel, Devansh Magotra. Presentation Nov 10, 2026.
@@ -12,7 +12,7 @@ Ultimatum / Dictator / Trust games at fixed payoffs? Authors: Krishna Goel, Deva
 - **Python:** always use `.venv/bin/python` (laptop) — system Python lacks statsmodels.
 
 ## Data collection (open-weight models run on Ada, not the laptop)
-- Ada general setup: see `~/.claude/CLAUDE.md`. This project lives at `~/projects/neuroeco` on Ada.
+- Ada general setup: see `ada/setup_ada.sh`. This project lives at `~/projects/neuroeco` on Ada.
 - New local model: add it to `MODELS` in `config.py`, `bash ada/sync.sh push`, then on the gateway
   `setsid nohup bash ada/pull_model_gw.sh <ollama-tag> <model_key> > pull_<key>.log 2>&1 < /dev/null & disown`
   (pulls the model, then submits `ada/run_model.sbatch`: pilot → D11 → S1 (logprobs) → S2 → S3 → checks → T=0.7 S1).
@@ -25,8 +25,8 @@ Ultimatum / Dictator / Trust games at fixed payoffs? Authors: Krishna Goel, Deva
   free API from the laptop: `bash run/run_api_model.sh mistral 22`; reasoning model; 20k tokens/min cap; free budget ran
   out during checks → 106/468 checks). Llama's S1 logprobs live in tag `main_lp` (first-run values mis-parsed, ignored).
 - xAI key in `.env` is valid but the team has no credits (403); `--model grok` works once topped up.
-- Secrets live only in `.env` (gitignored-by-convention, chmod 600, excluded from Ada sync). Never print or write keys
-  yourself; ask the user to add them (e.g. `read -rsp` one-liner).
+- Secrets live only in `.env` (gitignored-by-convention, chmod 600, excluded from Ada sync). Never print or commit keys;
+  add them with a `read -rsp` one-liner.
 - Message set is a *provisional* freeze (human peer rating pending); changing `stimuli/messages_frozen.csv` requires
   rebuilding the bank and re-collecting — don't do it casually.
 - **Follow-up study (pre-registered, not yet run):** event-free messages in `stimuli/followup/`; pre-registration
@@ -40,5 +40,5 @@ Ultimatum / Dictator / Trust games at fixed payoffs? Authors: Krishna Goel, Deva
 - Peer ratings imported (13 Nov, 9 raters): `results/peer_rating_summary.md`; sensitivity `results/main_excl`, `results/followup_excl` (Ada: `PART=main|followup sbatch ada/run_sensitivity.sbatch`); threat check `python -m analysis.threat`.
 - Extension 3 (non-threatening anger): pre-registration FROZEN 13 Nov but NOT RUN (P17; decided before any ratings/data). If ever run, order: rating form `stimuli/threat/create_form_threat.gs` (>= 8 raters) → `import_ratings --key stimuli/threat/rating_key_threat.csv --name threat <csv>` → `python stimuli/threat/select_nt.py` → build banks (commands in `ada/run_ext3.sbatch`) → push → sbatch → `python -m analysis.ext3`.
 - Valuation curves from log-probs (P18): `python -m analysis.value_signal` → `results/value_signal/` (pooled across runs: `python -m analysis.value_pooled`); wording vs emotion (P19): `python -m analysis.wording`; neuro analogy table for slides: `docs/neuro_mapping.md`.
-- Still open for the humans: peer rating, qualitative coding (`python -m analysis.qualitative sheet|kappa`),
-  sign-off on protocol decisions, verifying † citations in `docs/literature_review.md`.
+- Done 13 Nov: peer rating (P16), qualitative coding (P21; `python -m analysis.qualitative sheet|split|merge|kappa|analyze`).
+- Still open: sign-off on protocol decisions, spot-check of the † citations in `docs/literature_review.md`.
