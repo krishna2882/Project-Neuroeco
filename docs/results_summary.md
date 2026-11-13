@@ -85,6 +85,19 @@ by < 70% of raters, or read as a threat/promise by >= 30%.
   main sensitivity analysis comes from losing two strong messages while A7, which has almost no effect, stays: between-message
   variability again, not threat. With 10 messages, all at least slightly threatening, this is suggestive only.
 
+## The models' valuation curves and the neuroeconomic analogy (13 Nov 2026; P18, exploratory)
+`results/value_signal/value_signal.md` and `fig_value_curves.png`; mapping to the human literature: `docs/neuro_mapping.md`.
+- **The log-probability of "accept" is a valid graded value signal:** it is calibrated against the sampled choices in all 7 runs
+  (Llama r ≈ .5 because its P(accept) sits near .5; Qwen r ≈ .95). Choices are slightly more extreme than P at the ends, which suggests
+  the sampler truncates unlikely tokens.
+- **Anger lowers the value of accepting in every run** (7 of 7 negative; Qwen −1.1 to −2.2 logit at a 30% offer). For Qwen-7B the
+  offer needed for a 50% chance of acceptance (the MAO analogue) rises from 22% to 51% of the pie (Q4) and from 17% to 50% (Q8).
+  No single test survives Holm across 21, so the evidence is a consistent direction, not a confirmed effect.
+- **Qwen-14B: sad messages make offers acceptable regardless of fairness** (+4.08 logit, slope −7.0; both Holm p = .003).
+  **Llama follow-up: happy messages lower acceptance** (−0.79, Holm p < .001), matching the choice-based result.
+- Llama's curve is nearly flat, and Qwen-3B's never crosses 50%, so their MAO is not identified; this is the same limit as the
+  choice-based Fehr–Schmidt fit.
+
 ## Effects that survive correction across the whole study
 Two analyses: the original (random intercept per paraphrase × message cell) and the stricter one with **message as a
 random factor** (`results/main/message_re.md`, P12). Each emotion is carried by only 5 messages, so the stricter model is
