@@ -1,15 +1,14 @@
 <section id="neuro">
 <p class="eyebrow">Interpretation · analogy, not mechanism</p>
-<h2>Parallels with human brain findings</h2>
+<h2>Where the models match people, and where they don’t</h2>
 <table class="datatable" style="font-size:26px;">
-<tr><th style="width:36%">LLM finding</th><th style="width:40%">Human counterpart</th><th style="width:24%">How close</th></tr>
-<tr><td>Llama knows the payoffs, ignores fairness</td><td>DLPFC disrupted: unfair accepted (Knoch 2006)</td><td>Partial parallel</td></tr>
-<tr><td>Anger raises the bar to accept</td><td>Insula; responder anger (Sanfey 2003)</td><td>Partial: their own anger</td></tr>
-<tr><td>Anger lowers trust</td><td>Anger as information (van Kleef 2004)</td><td>Functional</td></tr>
-<tr><td>The loss, not sadness, may drive the effect</td><td>Carry-over emotion (Lerner 2004)</td><td>Suggestive</td></tr>
-<tr><td>A latent value signal drives choice</td><td>Value signals (Rilling &amp; Sanfey 2011)</td><td>Formal analogy</td></tr>
+<tr><th style="width:36%">Our result</th><th style="width:40%">Human finding</th><th style="width:24%">Verdict</th></tr>
+<tr><td>Llama knows the payoffs, yet accepts unfair offers</td><td>Right DLPFC disrupted: unfair offers accepted, still judged unfair (Knoch 2006)</td><td>Partial parallel</td></tr>
+<tr><td>Models trust an angry partner less</td><td>People concede more to an angry negotiator (van Kleef 2004)</td><td>Contrast</td></tr>
+<tr><td>Anger → more rejection: a trend only (p = .09)</td><td>Anger and insula activity predict rejection (Pillutla 1996; Sanfey 2003)</td><td>Not confirmed</td></tr>
 </table>
-<div class="card"><h3>What we can and cannot say</h3><p class="small">The models behave in ways that functionally resemble human findings. We measured no neural data and no model internals, so we claim no shared mechanism and nothing about feelings.</p></div>
-<p class="footer">Full table with evidence strength: docs/neuro_mapping.md</p>
-<aside>KRISHNA · 0:30 — How does this relate to the brain findings we started with? As analogies only. Llama is a partial parallel to Knoch’s DLPFC result: it knows the payoffs and does rate low offers as less fair, 2.1 versus 3.7 out of 7, yet its acceptance barely depends on the offer, and it also rejects fair offers about half the time. Anger lowering trust fits anger being read as information about the other person. The loss-versus-sadness link is only suggestive. We measured no brain data and no model internals, so we claim no shared mechanism.</aside>
+<div class="card"><h3>What we can and cannot say</h3><p class="small">These are behavioural comparisons. We measured no neural data and no model internals, so we claim no shared mechanism and nothing about feelings.</p></div>
+<p class="footer">Human findings are about the decider’s own state; ours is the partner’s message · docs/neuro_mapping.md</p>
+<aside>KRISHNA · 0:30 — How do our results relate to the human findings we started with? One partial parallel: Llama answers every payoff question correctly and even rates low offers as less fair, yet its acceptance barely depends on the offer, much like people whose right DLPFC is disrupted. One contrast: people tend to concede to an angry negotiator, and our own raters said they would give slightly more, but the models withdraw trust. And one prediction not confirmed: in people anger drives rejection, while in the models that shift is only a trend. We measured no brain data and no model internals, so these are behavioural comparisons only.
+If asked: Llama rates a 5% offer 2.1 and a 50% offer 3.7 out of 7, yet rejects about half of fair offers. Lerner 2004 and Rilling &amp; Sanfey 2011 remain in the references.</aside>
 </section>
