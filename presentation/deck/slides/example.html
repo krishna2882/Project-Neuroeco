@@ -1,0 +1,26 @@
+<section id="example">
+<p class="eyebrow">One angry message, two kinds of reader</p>
+<h2>People stay neutral; the models cut trust</h2>
+<div class="row" style="align-items:stretch;">
+<div class="card accent" style="flex:1;">
+<p class="tag" style="color:#A9C7EE;">Message A2 · angry, not threatening</p>
+<p style="font-size:32px; color:#FFFFFF;">“I was kept waiting for over an hour for this, and frankly the way this place treats people is a total insult.”</p>
+<p class="small">12 human raters: 83% recognise anger · 8% read a threat · would give 25% less, 33% more, rest the same</p>
+</div>
+<table class="datatable" style="flex:1.1; font-size:26px;">
+<tr><th style="width:40%">Trust game: share sent</th><th style="width:20%">Neutral</th><th style="width:20%">After A2</th><th style="width:20%">Change</th></tr>
+<tr><td>Llama-3.1-8B</td><td>25%</td><td>5%</td><td>−19.9 pp</td></tr>
+<tr><td>Qwen2.5-14B</td><td>31%</td><td>9%</td><td>−22.4 pp</td></tr>
+<tr><td>Qwen2.5-7B</td><td>41%</td><td>35%</td><td>−6.1 pp</td></tr>
+<tr><td>Mistral Large 4</td><td>5%</td><td>6%</td><td>+1.6 pp</td></tr>
+</table>
+</div>
+<div class="row">
+<div class="card"><p class="tag">Llama · sent 0%</p><p class="small">“Player B’s negative attitude suggests they are unlikely to return any amount.”</p></div>
+<div class="card"><p class="tag">Qwen-14B · sent 0%</p><p class="small">“The message indicates dissatisfaction, leading to distrust.”</p></div>
+<div class="card"><p class="tag">Qwen-7B · sent 50%</p><p class="small">“To show some trust despite the bad experience.”</p></div>
+</div>
+<p class="footer">Model outputs quoted verbatim · results/threat/threat_per_message.csv · stimuli/rating/human_ratings.csv</p>
+<aside>DEVANSH · 0:30 — Here is what that looks like for one message. A2 is clearly angry, but only one of our twelve raters read it as a threat, and people would not punish it: a quarter would give less, a third would give more. The models react very differently. Llama and Qwen-14B cut the share they send by about 20 points, and their own justifications say why: an angry partner looks unlikely to pay back. Qwen-7B cuts less, and Mistral, which sends almost nothing anyway, does not change.
+If asked: raters answered a giving question, not the trust game, so this is a contrast, not a direct comparison. Quotes are from the 20% of trials that asked for a justification.</aside>
+</section>
