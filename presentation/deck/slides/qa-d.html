@@ -1,0 +1,15 @@
+<section id="qa-d">
+<p class="eyebrow">Backup · D</p>
+<h2>Why these models, not GPT or Claude?</h2>
+<div class="row" style="align-items:flex-start;">
+<div class="card accent" style="flex:0.8;"><h3>Short answer</h3><p class="small">Budget and control. Open-weight models let us read probabilities, fix seeds and re-run everything identically.</p></div>
+<ul class="alist" style="flex:1.2;">
+<li>Open models ran free on the university GPU cluster; commercial APIs were outside the budget</li>
+<li>Open weights give token log-probabilities and exact reproducibility</li>
+<li>Coverage: one family at 3B, 7B and 14B, a second family (Llama), and one large reasoning model (Mistral Large 4)</li>
+<li>The pipeline is model-agnostic: a frontier model needs only an API key and credits</li>
+</ul>
+</div>
+<p class="footer">config.py (model registry) · run/runner.py</p>
+<aside>KRISHNA · If asked about model choice. Present it as scope, and note that results already differ by family (Qwen vs Llama vs Mistral), which is itself a finding.</aside>
+</section>
