@@ -2,16 +2,18 @@
 <p class="eyebrow">Scale and rigour</p>
 <h2>55,200 game decisions in total</h2>
 <div class="row">
-<div class="card rise" style="--i:0"><p class="num">18,720</p><h3>Main study</h3><p class="small">Llama-3.1-8B, Qwen2.5-7B, Mistral Large 4 · 6,240 each</p></div>
-<div class="card rise" style="--i:1"><p class="num">7,680</p><h3>Follow-up, pre-registered</h3><p class="small">Event-free messages · Llama and Qwen</p></div>
-<div class="card rise" style="--i:2"><p class="num">16,320</p><h3>Extension 2, pre-registered</h3><p class="small">Qwen 3B, 14B and 7B at 8-bit · plus 960 comprehension answers</p></div>
+<div class="card rise" style="--i:0"><p class="num" style="font-size:72px;">18,720</p><h3>Main study</h3><p class="small">130 conditions × 48 decisions × 3 models (Llama, Qwen, Mistral)</p></div>
+<div class="card rise" style="--i:1"><p class="num" style="font-size:72px;">7,680</p><h3>Follow-up</h3><p class="small">80 conditions × 48 × 2 models; new event-free messages</p></div>
+<div class="card rise" style="--i:2"><p class="num" style="font-size:72px;">16,320</p><h3>Extension 2</h3><p class="small">6,240 × 2 (Qwen 3B, 14B) + 3,840 (Qwen-7B 8-bit)</p></div>
+<div class="card rise" style="--i:3"><p class="num" style="font-size:72px;">12,480</p><h3>Temperature 0.7</h3><p class="small">6,240 × 2 models, re-run as a check</p></div>
 </div>
+<p style="font-size:32px; color:#0B2545;"><b>18,720 + 7,680 + 16,320 + 12,480 = 55,200</b> · one model’s full design = 130 × 48 = 6,240</p>
 <div class="row">
 <div class="card"><h3>Statistics</h3><p class="small">Message as a random factor: for emotion claims the effective sample is 5 messages per emotion · Holm and FDR across the whole study</p></div>
 <div class="card"><h3>Transparency</h3><p class="small">Pre-registrations frozen and pushed to GitHub before data · 21 deviations logged · every attempt kept</p></div>
-<div class="card"><h3>Validity checks</h3><p class="small">Emotion recognition checks · game-comprehension questions · 12 human raters · 12,480 decisions re-run at temperature 0.7</p></div>
+<div class="card"><h3>Validity checks</h3><p class="small">Emotion recognition checks · 960 game-comprehension answers · 12 human raters</p></div>
 </div>
 <p class="footer">All 18,720 main-study decisions valid, no refusals · deviations: docs/plan_update.md (P1–P21)</p>
-<aside>KRISHNA · 0:25 — Altogether that is 55,200 decisions: 18,720 in the main study on Llama, Qwen and Mistral, two pre-registered extensions, and a full re-run at a lower temperature. We used mixed models with the message as a random factor, corrected for multiple tests across the whole study, and froze every pre-registration on GitHub before collecting data. One caution: despite the large number of decisions, for emotion claims the real sample is the messages, 5 per emotion.
-If asked: open models ran on the IIIT Ada GPU cluster; Mistral through its API. The follow-up pre-registration was frozen and public before data collection, but Devansh’s sign-off came afterwards; this is disclosed (P13).</aside>
+<aside>KRISHNA · 0:25 — Altogether that is 55,200 decisions. The building block is one condition, 48 decisions. One model’s full design has 130 conditions, so 6,240 decisions; three models give the 18,720 of the main study. The follow-up adds 7,680, the second pre-registered extension 16,320, and the full re-run at temperature 0.7 another 12,480. One caution: for emotion claims the real sample is the messages, 5 per emotion.
+If asked about the 130 conditions: 5 message conditions (neutral, angry, sad, happy, none) × [ultimatum responder 7 offers × 2 stakes = 14, proposer 2 games × 2 stakes = 4, trust trustee 3 amounts × 2 stakes = 6, trust investor 2 stakes = 2] = 5 × 26 = 130. Follow-up: 4 emotions × (14 + 4 + 2) = 80. Qwen-7B 8-bit ran only the ultimatum responder (70 × 48 = 3,360) and trust investor (10 × 48 = 480) roles = 3,840. Comprehension answers (240 × 4 models) and manipulation checks are not counted as game decisions. The follow-up pre-registration was frozen and public before data collection, but Devansh’s sign-off came afterwards; this is disclosed (P13).</aside>
 </section>
