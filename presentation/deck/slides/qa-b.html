@@ -1,15 +1,16 @@
 <section id="qa-b">
 <p class="eyebrow">Backup · B</p>
-<h2>Can 5 messages per emotion generalise?</h2>
+<h2>Does it generalise beyond our messages?</h2>
 <div class="row" style="align-items:flex-start;">
-<div class="card accent" style="flex:0.8;"><h3>Short answer</h3><p class="small">It is our main limit, and we built the analysis around it rather than ignoring it.</p></div>
+<div class="card accent" style="flex:0.8;"><h3>Short answer</h3><p class="small">We designed for this from the start, and the anger effect passed every check we could run.</p></div>
 <ul class="alist" style="flex:1.2;">
-<li>The statistics treat the message as a random factor, so results are meant to hold for other messages, with wider intervals</li>
-<li>The follow-up used 5 completely new messages per emotion: anger replicated, sadness did not</li>
-<li>Between-message variation is estimated and reported for every effect; it is often large (A7 has almost no anger effect)</li>
-<li>More messages per emotion is the clearest next step for future work</li>
+<li>The message is a random factor in every model, so our intervals already account for which messages were used</li>
+<li>Replicated with 5 completely new, event-free anger messages (F2, Holm p = .003)</li>
+<li>Holds without the 4 messages raters found threatening (−11.4 pp, Holm p = .021), and threat ratings do not predict its size (p = .43)</li>
+<li>Even the least threatening message, A2, cuts trust by about 20 pp in Llama and Qwen-14B</li>
+<li>Ready next: more messages per emotion, and a pre-registered test with non-threatening anger</li>
 </ul>
 </div>
-<p class="footer">results/main/message_re.md (message variance) · results/threat/threat.md (per-message effects)</p>
-<aside>KRISHNA · If asked about the small number of messages. Admit it directly: 5 per emotion is the real sample size for emotion claims, even with 55,200 decisions. Then explain the random-factor model, the replication with new messages, and the power projection.</aside>
+<p class="footer">results/main/message_re.md · results/followup_excl · results/threat/threat.md · docs/preregistration_extension3.md</p>
+<aside>DEVANSH · If asked whether five messages per emotion, or threat in the anger messages, could explain the result. Walk through the four checks in order: random-factor model, replication with new messages, removal of threat-flagged messages, the A2 example. Then the planned next steps. If pressed: the size of the effect does vary between messages, which is exactly why message is modelled as a random factor.</aside>
 </section>
