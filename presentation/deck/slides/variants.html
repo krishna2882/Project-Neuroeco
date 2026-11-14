@@ -1,0 +1,20 @@
+<section id="variants">
+<p class="eyebrow">Design · how each condition is built</p>
+<h2>One condition = 48 decisions</h2>
+<div class="row" style="align-items:stretch;">
+<div class="card rise" style="--i:0"><p class="num" style="font-size:72px;">4</p><h3>wordings</h3><p class="small">Same rules and money, different phrasing</p></div>
+<p style="font-size:64px; align-self:center; color:#1F5FBF;">×</p>
+<div class="card rise" style="--i:1"><p class="num" style="font-size:72px;">4</p><h3>messages</h3><p class="small">4 of the 5 for that emotion</p></div>
+<p style="font-size:64px; align-self:center; color:#1F5FBF;">×</p>
+<div class="card rise" style="--i:2"><p class="num" style="font-size:72px;">3</p><h3>samples</h3><p class="small">Fixed seeds, temperature 1.0</p></div>
+<p style="font-size:64px; align-self:center; color:#1F5FBF;">=</p>
+<div class="card accent rise" style="--i:3"><p class="num" style="font-size:72px;">48</p><h3>decisions</h3><p class="small">per condition, per model</p></div>
+</div>
+<div class="row">
+<div class="card"><p class="tag">Example · trust game, angry partner, INR 100 · wordings</p><p class="small">1: “You are Player A and you have INR 100. You may send any part of it to Player B…”</p><p class="small">4: “This is a trust game. You are Player A and hold INR 100…”</p></div>
+<div class="card"><p class="tag">Messages used here: A1, A2, A3, A7 (A4 rotated out)</p><p class="small">A2: “I was kept waiting for over an hour for this…”</p><p class="small">A3: “Do not waste my time…”</p></div>
+</div>
+<p class="footer">The neutral condition is built the same way; the effect is the difference between the two · data/scenarios/trials.jsonl</p>
+<aside>KRISHNA · 0:30 — Here is how each condition is built, using a real example: the trust game with an angry partner at 100 rupees. The same rules are written in four different wordings, and each is paired with four of our five angry messages, rotating which one is left out. That gives 16 prompts, each asked three times with fixed seeds, so 48 decisions. The neutral condition is built the same way, and the effect is the difference. So a result cannot come from one lucky wording or one particular message.
+If asked: across the main study each message appears in about 80% of conditions, and the statistics treat the message as a random factor.</aside>
+</section>
