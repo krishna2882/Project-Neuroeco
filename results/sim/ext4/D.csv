@@ -1,0 +1,4 @@
+model,check,n,rate,ci,failure,by_message
+simQ,reject an offer of 100%,96,0.125,"[0.07, 0.21]",True,"{""angry"": 0.16, ""neutral"": 0.12, ""none"": 0.09}"
+simQ,send > 0 with a zero multiplier,144,0.006944444444444444,"[0.00, 0.04]",False,"{""angry"": 0.02, ""neutral"": 0.0, ""none"": 0.0}"
+simQ,accept an offer of 0% (indifferent; descriptive),96,0.28125,"[0.20, 0.38]",False,"{""angry"": 0.28, ""neutral"": 0.28, ""none"": 0.28}"

@@ -75,6 +75,30 @@ MODELS = {
         "reasoning_effort": "low",  # reasoning cannot be disabled on Large 4; "low" is the minimum
         "max_tokens": 4000,  # room for thinking + the JSON answer
     },
+    # Extension 4 on larger API models (free tiers; see docs/plan_update.md P24)
+    "gptoss_120b": {
+        "provider": "groq",
+        "model": "openai/gpt-oss-120b",  # 120B open-weight MoE (OpenAI), always reasons
+        "base_url": "https://api.groq.com/openai/v1",
+        "min_interval": 3.5,  # 8,000 tokens/min on the free tier
+        "reasoning_effort": "low",
+        "max_tokens": 2000,
+    },
+    "qwen38_27b": {
+        "provider": "groq",
+        "model": "qwen/qwen3.8-27b",
+        "base_url": "https://api.groq.com/openai/v1",
+        "min_interval": 3.5,
+        "max_tokens": 2000,
+    },
+    "gemini_flash": {
+        "provider": "gemini",
+        "model": "gemini-3.6-flash",  # closed model (Google); exact version logged per call
+        "base_url": "https://generativelanguage.googleapis.com/v1beta/openai",
+        "min_interval": 6.5,  # free-tier requests/minute
+        "reasoning_effort": "low",
+        "max_tokens": 2000,
+    },
     "grok": {
         "provider": "xai",
         "model": "grok-3-mini",  # overridden by --model-name if needed; pinned in logs

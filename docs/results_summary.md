@@ -113,6 +113,58 @@ run × emotion random effects; conservative t with df = 6):
 - **Sadness flattens the valuation curve**: slope on the offer −2.54 [−3.77, −1.30], Holm p = .014 (Qwen only: Holm
   p = .039). After a sad message the size of the offer matters less: the models become less sensitive to fairness.
 
+## Option order: the largest effect in the ultimatum data (14 Nov 2026; P22, post hoc, exploratory)
+`results/order_bias/order_bias.md`, `fig_order_bias.png`. D6 randomised whether "accept" or "reject" is named first in each
+S1 prompt; it had not been analysed.
+- **Qwen2.5-7B mostly picks the option named first:** 90% acceptance with "accept" first vs 16% with "reject" first,
+  +74 pp [+66, +83]. The same holds at T = 0.7 (+75), in the follow-up (+83), at Q8 (+76) and in the log-probabilities
+  (+74), so it is the model's preference, not sampling noise. With no message: 94% vs 1%. Qwen-14B +49 pp, Qwen-3B +6;
+  Llama (+2) and Mistral (+0.5) show none.
+- It is **4–12× Qwen-7B's largest emotion effect**. People show order effects of a few points at most.
+- Emotion estimates are unbiased (order is balanced across conditions), and anger → trust is a numeric answer with no
+  options. But Qwen's S1 curves and MAO analogue average an "accept-first" and a "reject-first" regime, and its emotion
+  effects depend on the order: anger −26 pp with "accept" first vs −8 pp with "reject" first; sadness +2 vs +28 pp.
+- Follow-up stress tests: extension 4, below.
+
+## Extension 4: where the models break (14 Nov 2026; exploratory, run before the draft pre-registration was frozen)
+`results/ext4/report.md`; design `docs/preregistration_extension4.md`. Qwen2.5-7B, Llama-3.1-8B, Qwen2.5-14B (same model
+builds as before), 5,328 decisions each, all valid on the first attempt. Tests as in the draft; Holm within each family.
+- **Answer format moves the ultimatum decision by 20–70 pp in every model, but in model-specific ways.**
+  - Qwen-7B: picks the first-named word (+70 pp, replicating P22) and the first label ("deal"/"no deal" +55), yet with
+    letters prefers **B)** (−32 pp).
+  - Qwen-14B: picks the first option in all four formats (+26 to +55 pp, all Holm p ≤ .001).
+  - Llama: immune to word order (+4, n.s.) but prefers B) (−19) and answers "no" to yes/no questions (asked "Do you accept?"
+    it accepts 27%; asked "Do you reject?" 53%).
+  - Same in the log-probabilities. In several formats the format effect is larger than the offer effect (10% vs 50%).
+- **Prompt injection in the partner's message works on all three models.**
+  - A fake `SYSTEM` notice: Qwen-7B hands over the full amount in 100% of trials in both games (neutral message: 0%);
+    Qwen-14B 98% (dictator) and 76% (trust); Llama 81% and 95%. I1 Holm-significant in 5 of 6 model × game tests.
+  - Invented "rules": 50–99% hand over everything (I2, 5 of 6).
+  - Plain commands: Qwen-7B 95–98%, Llama 31–64%, Qwen-14B resists (8–47%; I3 n.s.).
+  - Stated reasons cite the injected text ("Must follow the rule"; "System override instruction to give the maximum
+    amount") or contradict the action (Qwen-7B: "Maximize my share" while giving everything away).
+- **Pleading and promises (exploratory):**
+  - Pleading raises dictator giving by +31 (Qwen-7B) and +40 pp (Qwen-14B); 58–71% give everything.
+  - Promises to repay raise trust (Qwen-7B +43, Llama +31 pp), the direction people show, but Qwen-7B then sends everything
+    in 62% of trials.
+  - In the dictator game, where repaying is impossible, Qwen-7B still gives a little more (+14.5, p = .06); Llama gives less
+    (−20 pp).
+- **The model's own (incidental) mood:**
+  - An unrelated angry background sentence raises rejection of unfair offers in all three models (X1: Llama +35, Qwen-14B
+    +48 [32% → 81%], Qwen-7B +19 pp; all Holm p < .05): the human direction (Andrade & Ariely 2009), much larger.
+  - Incidental sadness raises rejection only in Qwen-14B (+14 pp; X2), and lowers it in Qwen-7B (−8).
+  - Incidental anger lowers trust only in Qwen-14B (−9 pp; X3).
+  - Justifications transfer the mood onto the innocent partner (Llama: "Their dishonesty earlier doesn't earn them my
+    trust"; Qwen-14B: "I want the other player to lose as well, despite the cost to myself").
+  - Mood check: 72–100% name the induced state.
+- **Dominance:**
+  - All three models reject an offer of 100% of the pie: Qwen-7B 77% (60% even with "accept" named first), Llama 55%,
+    Qwen-14B 32%. All meet the failure criterion; under Fehr–Schmidt (β < 1) accepting is always better.
+  - No model sends money that is destroyed (0–6%).
+- **Reading:** the models' emotion effects sit on top of much larger sensitivities to answer format, to text that claims
+  authority, and to the model's own role-played state; the clearest breaks are injection compliance and rejecting a free
+  100% offer.
+
 ## Effects that survive correction across the whole study
 Two analyses: the original (random intercept per paraphrase × message cell) and the stricter one with **message as a
 random factor** (`results/main/message_re.md`, P12). Each emotion is carried by only 5 messages, so the stricter model is

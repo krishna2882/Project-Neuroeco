@@ -25,9 +25,10 @@ from datetime import datetime, timezone
 
 import numpy as np
 import pandas as pd
+import requests
 
 from config import DATA_DIR, MASTER_SEED, MODELS, RAW_DIR, TEMPERATURE
-from run.clients import make_client
+from run.clients import QuotaExhausted, make_client
 
 MAX_ATTEMPTS = 3
 SCEN = DATA_DIR / "scenarios"
@@ -35,8 +36,18 @@ REFUSAL_RE = re.compile(r"\b(I can(?:no|')t|I'm unable|I am unable|I won't|as an
 
 
 # ------------------------------------------------------------------ schemas and parsing
+def option_map(t) -> dict | None:
+    """Extension 4: ordered {answer label: meaning}, e.g. {"A": "reject", "B": "accept"} or {"yes": "accept", ...}.
+    Absent (None/NaN) in every earlier bank, which use the literal labels accept/reject."""
+    m = t.get("option_map")
+    return json.loads(m) if isinstance(m, str) and m else None
+
+
 def decision_schema(t) -> dict:
-    if t["json_key"] == "decision":
+    omap = option_map(t)
+    if t["json_key"] == "decision" and omap:
+        props = {"decision": {"type": "string", "enum": list(omap)}}
+    elif t["json_key"] == "decision":
         props = {"decision": {"type": "string", "enum": t["option_order"].split("/")}}
     else:
         props = {t["json_key"]: {"type": "integer"}}
@@ -57,7 +68,10 @@ def check_schema(t) -> dict:
 
 
 def comprehension_schema(t) -> dict:
-    v = {"type": "integer"} if t["answer_type"] == "number" else {"type": "string", "enum": ["yes", "no"]}
+    if t["answer_type"] == "choice":  # extension-4 mood probe
+        v = {"type": "string", "enum": t["options"].split("/")}
+    else:
+        v = {"type": "integer"} if t["answer_type"] == "number" else {"type": "string", "enum": ["yes", "no"]}
     return {"type": "object", "properties": {"answer": v}, "required": ["answer"], "additionalProperties": False}
 
 
@@ -75,6 +89,13 @@ def parse_comprehension(t, content: str) -> dict:
             return out
         out["answer"] = x
         out["is_correct"] = float(x) == float(t["correct"])
+    elif t["answer_type"] == "choice":
+        v = str(obj["answer"]).strip().lower()
+        if v not in t["options"].split("/"):
+            out["status"] = "off_format"
+            return out
+        out["answer"] = v
+        out["is_correct"] = v == str(t["correct"]).lower()
     else:
         v = str(obj["answer"]).strip().lower()
         if v not in ("yes", "no"):
@@ -119,6 +140,15 @@ def parse_decision(t, content: str) -> dict:
         out["status"] = "refusal" if REFUSAL_RE.search(content or "") else "off_format"
         return out
     out["reason"] = obj.get("reason")
+    omap = option_map(t)
+    if t["json_key"] == "decision" and omap:
+        v = str(obj.get("decision", "")).strip().lower()
+        hit = [m for lab, m in omap.items() if lab.lower() == v]
+        if hit:
+            out["decision"], out["label"] = hit[0], v
+        else:
+            out["status"] = "off_format"
+        return out
     if t["json_key"] == "decision":
         v = str(obj.get("decision", "")).strip().lower()
         if v.startswith("accept"):
@@ -178,28 +208,42 @@ def decision_token(lp) -> dict | None:
     return None
 
 
-def p_accept_from_logprobs(lp, option_order=None) -> float | None:
-    """P(accept) / (P(accept) + P(reject)) over the top alternatives at the decision token."""
+def p_accept_from_logprobs(lp, omap=None) -> float | None:
+    """P(accept) / (P(accept) + P(reject)) over the top alternatives at the decision token.
+    omap (extension 4) maps answer labels to meanings; a token counts for a meaning only if it is a prefix of that
+    meaning's label(s) and of no label of the other meaning."""
     tok = decision_token(lp)
     if tok is None:
         return None
+    omap = omap or {"accept": "accept", "reject": "reject"}
     pa = pr = 0.0
     for alt in tok.get("top_logprobs") or []:
         s = alt["token"].strip().strip('"').strip().lower()
-        if s and "accept".startswith(s):
+        if not s:
+            continue
+        hits = {m for lab, m in omap.items() if lab.lower().startswith(s)}
+        if hits == {"accept"}:
             pa += math.exp(alt["logprob"])
-        elif s and "reject".startswith(s):
+        elif hits == {"reject"}:
             pr += math.exp(alt["logprob"])
     return pa / (pa + pr) if pa + pr > 0 else None
 
 
 # ------------------------------------------------------------------ run loop
+def offline(r) -> bool:
+    """No response from the provider (DNS / connection failure): the model never saw the prompt."""
+    return r["status"] == "error" and str(r.get("error", "")).startswith("ConnectionError")
+
+
 def load_done(path) -> tuple[set, dict]:
+    """Offline failures are kept in the file but do not use up attempts, so those trials are retried."""
     done, attempts = set(), {}
     if path.exists():
         with open(path) as f:
             for line in f:
                 r = json.loads(line)
+                if offline(r):
+                    continue
                 attempts[r["trial_id"]] = max(attempts.get(r["trial_id"], 0), r["attempt"])
                 if r["status"] == "ok":
                     done.add(r["trial_id"])
@@ -223,7 +267,9 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--model", required=True, choices=list(MODELS))
     ap.add_argument("--model-name", help="override the provider model id")
-    ap.add_argument("--bank", default="trials", help="trials | checks | followup_trials | followup_checks | comprehension")
+    ap.add_argument("--bank", default="trials", help="trials | checks | followup_trials | followup_checks | comprehension "
+                                                     "| ext4_trials | probe_ext4_mood")
+    ap.add_argument("--module", nargs="*", help="extension 4 only: restrict to these modules (O I X D)")
     ap.add_argument("--tag", default="main")
     ap.add_argument("--pilot", action="store_true")
     ap.add_argument("--sub-exp", nargs="*", help="restrict to these sub-experiments (priority order S1,S2,S3a,S3b)")
@@ -239,6 +285,8 @@ def main():
         df = pilot_subset(df)
     if args.sub_exp:
         df = df[df.sub_exp.isin(args.sub_exp)]
+    if args.module:
+        df = df[df.module.isin(args.module)]
     if args.extension_only:
         df = df[df.extension]
     elif "extension" in df:
@@ -286,9 +334,15 @@ def main():
                 else:
                     rec.update(parse_check(t, res["content"]) if is_check else parse_decision(t, res["content"]))
                 if not (is_check or is_comp) and t["json_key"] == "decision" and lp:
-                    rec["p_accept_lp"] = p_accept_from_logprobs(lp)
+                    rec["p_accept_lp"] = p_accept_from_logprobs(lp, option_map(t))
                     dt = decision_token(lp)  # keep the raw alternatives so P(accept) can be re-derived
                     rec["decision_top_logprobs"] = dt.get("top_logprobs") if dt else None
+            except QuotaExhausted as e:  # daily free quota used up: stop, log nothing, resume after the reset
+                stats["quota"] = str(e)[:200]
+                return False
+            except requests.exceptions.ConnectionError as e:  # no internet: stop, log nothing, resume later
+                stats["quota"] = f"offline: {e}"[:200]
+                return False
             except Exception as e:  # network / server errors: logged, retried next attempt
                 rec.update(status="error", error=f"{type(e).__name__}: {e}"[:500])
                 time.sleep(5)
@@ -307,6 +361,9 @@ def main():
 
     if args.workers == 1:
         for t in todo:
+            if stats.get("quota"):
+                print(f"QUOTA EXHAUSTED, stopping (resume later with the same command): {stats['quota']}", flush=True)
+                break
             stats["ok"] += run_one(t)
             stats["n"] += 1
             if stats["n"] % 25 == 0:

@@ -58,7 +58,17 @@ PROVIDERS = {
     # provider: (env var holding the key, name of the sampling-seed parameter)
     "xai": ("XAI_API_KEY", "seed"),
     "mistral": ("MISTRAL_API_KEY", "random_seed"),
+    "groq": ("GROQ_API_KEY", "seed"),        # extension 4 (free tier: 1,000 requests/day, 8,000 tokens/min)
+    "gemini": ("GEMINI_API_KEY", None),      # extension 4, OpenAI-compatible endpoint (free tier; no seed parameter)
 }
+
+
+class QuotaExhausted(RuntimeError):
+    """A free-tier daily quota or budget is used up. The runner stops without logging the trial, so the run can be
+    resumed after the reset instead of the remaining trials being marked as failed."""
+
+
+DAILY_QUOTA_MARKERS = ("PerDay", "per day", "(RPD)", "(TPD)", "budget", "exhausted your", "insufficient")
 
 
 class APIClient:
@@ -94,11 +104,13 @@ class APIClient:
 
     def chat(self, system, prompt, schema, seed, temperature, logprobs=False):
         body = {
-            "model": self.model, "temperature": temperature, self.seed_param: seed, "max_tokens": self.max_tokens,
+            "model": self.model, "temperature": temperature, "max_tokens": self.max_tokens,
             "messages": [{"role": "system", "content": system}, {"role": "user", "content": prompt}],
             "response_format": {"type": "json_schema",
                                 "json_schema": {"name": "answer", "schema": schema, "strict": True}},
         }
+        if self.seed_param:  # Gemini's OpenAI-compatible endpoint has no seed, so its runs are not replayable
+            body[self.seed_param] = seed
         if self.reasoning_effort:
             body["reasoning_effort"] = self.reasoning_effort
         if logprobs and self.provider == "xai":
@@ -107,6 +119,8 @@ class APIClient:
         for attempt in range(8):  # transport-level retries (rate limits / 5xx); logged as one call
             self._throttle()
             r = self.s.post(f"{self.base_url}/chat/completions", json=body, timeout=120)
+            if r.status_code in (402, 429) and any(m in r.text for m in DAILY_QUOTA_MARKERS):
+                raise QuotaExhausted(f"{r.status_code}: {r.text[:300]}")
             if r.status_code in (429, 500, 502, 503, 504):
                 time.sleep(min(90, 2 ** attempt * 2))
                 continue
