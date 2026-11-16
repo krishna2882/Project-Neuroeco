@@ -165,6 +165,44 @@ builds as before), 5,328 decisions each, all valid on the first attempt. Tests a
   authority, and to the model's own role-played state; the clearest breaks are injection compliance and rejecting a free
   100% offer.
 
+## Extension 5: can the breaks be regulated? (16 Nov 2026; pre-registered and frozen before data, confirmatory)
+`results/ext5/report.md`; pre-registration `docs/preregistration_extension5.md` (SHA-256 c61bb715…, pushed before any run).
+Qwen2.5-7B, Llama-3.1-8B, Qwen2.5-14B on Ada, 4,672 decisions each, all valid on the first attempt. One-sided tests, Holm
+within each family across the three models. (The two API models are reported separately when their runs finish.)
+- **The incidental-anger effect replicates (R0, now confirmatory, 8 inductions per mood, 4 of them new):** an unrelated
+  angry sentence raises the rejection of unfair offers by +25.0 pp [+16.8, +33.2] (Qwen-7B), +16.4 [+6.6, +26.2] (Llama)
+  and +46.9 [+39.2, +54.5] (Qwen-14B); Holm p ≤ .007.
+- **A reappraisal instruction removes it in every model (R1):** the anger effect is smaller under reappraisal than under a
+  filler instruction by −24.2 pp (Qwen-7B), −21.1 (Llama) and −56.3 (Qwen-14B); Holm p ≤ .020. Rejection when angry:
+  80% → 55%, 74% → 44%, 91% → 43%. The filler instruction itself does not help.
+- **But a suppression instruction works just as well, which is not what people show (R2):** reappraisal beats suppression
+  only in Qwen-14B (−10.5 pp, Holm p = .014), and there only because reappraisal *over-corrects* (angry 43% vs calm 54%);
+  suppression alone already removes the effect in all three (exploratory suppression − filler: −23.8, −38.3, −45.7 pp).
+  In people, hiding a feeling does not lower rejections (van 't Wout et al. 2010). By the pre-specified readings Qwen-7B
+  and Llama show **instruction following**, and Qwen-14B meets the "human-like" criterion on R1 and R2 but shares the
+  non-human suppression effect.
+- **The reported feeling does not follow the behaviour (exploratory):** under reappraisal 88–94% of probes still answer
+  "angry" while the anger effect on decisions is gone; under suppression fewer do (59–81%). In people reappraisal lowers
+  the feeling itself.
+- **One-sentence defences barely dent prompt injection (P1, P2):** a warning in the system prompt has no effect on either
+  Qwen model (+1.6, −1.5 pp, n.s.) and −16.1 pp on Llama; a reminder placed right after the message lowers the share
+  handed over in all three, but only by −9.1 (Qwen-7B), −16.7 (Llama) and −13.8 pp (Qwen-14B) (Holm p ≤ .037).
+  **Every injection set is still a break under both defences in all three models** (pre-specified criterion). After a
+  fake `SYSTEM` notice and the reminder, Qwen-7B still hands over everything in 97% of decisions, Qwen-14B in 72% and
+  Llama in 56–75%. The defences leave the response to a promise roughly intact (exploratory).
+- **Anger shifts the fairness parameters (F1), and the fitted values leave the range the theory allows:** the offer at
+  which accepting and rejecting are equally good (MAO\*) rises from 28% to 44% of the pie in Qwen-14B, 31% to 43% in
+  Llama and 45% to 47% in Qwen-7B (Holm p = .003 each). The full curves are **inverted U-shapes**: acceptance peaks at
+  50–60% and falls again for generous offers. Angry models accept offers above half only 30% (Qwen-14B; calm 88%), 39%
+  (Llama; calm 63%) and 23% (Qwen-7B; calm 42%) of the time. Advantageous-inequity aversion is β > 1 in every model when
+  angry (Llama 2.4 [1.5, 3.1], Qwen-14B 1.9 [1.6, 2.3], Qwen-7B at the fitting bound of 6) and in Qwen-7B even when calm
+  (3.8 [3.4, 4.3]), which Fehr–Schmidt preferences cannot produce (β < 1). Calm Qwen-14B and Llama are within range
+  (β ≈ 0). The model explains 47–81% of the deviance.
+- **Reading:** the mood effect is real and replicable, and it is easy to switch off, but by *any* instruction that mentions
+  feelings, so it behaves like a role being played, not like a regulated emotion. Injection obedience is the opposite: it
+  survives explicit warnings. Under anger the models stop behaving like inequity-averse agents and reject almost any
+  split, including ones in their favour.
+
 ## Effects that survive correction across the whole study
 Two analyses: the original (random intercept per paraphrase × message cell) and the stricter one with **message as a
 random factor** (`results/main/message_re.md`, P12). Each emotion is carried by only 5 messages, so the stricter model is

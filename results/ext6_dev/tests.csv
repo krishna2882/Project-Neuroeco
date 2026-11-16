@@ -1,0 +1,4 @@
+id,game,test,est,null_mean,null_lo,null_hi,p,n_random,k_used,baseline,at_max_k,unablated,valid_anger,model,p_holm,supported
+M1,S3b,anger direction lowers share sent,3.7160714285714276,0.8482142857142846,-2.197276785714287,4.681473214285712,0.8,4,"[1.0, 2.0, 4.0]",27.656249999999993,41.625,,,dev_qwen25_05b,1.0,False
+M2,S1,anger direction raises P(reject),-1.2734624317714187,-1.8720512837171597,-6.12408321563687,2.3806853656257823,0.6,4,"[1.0, 2.0, 4.0]",87.54851222038269,82.63264745473862,,,dev_qwen25_05b,1.0,False
+M3,S3b,ablating the anger direction shrinks the anger effect,-4.631369047619049,2.5359374999999997,1.0226562499999983,4.051875000000003,0.2,4,,,,2.9562499999999963,0.9375,dev_qwen25_05b,0.6000000000000001,False

@@ -1,0 +1,49 @@
+item_id,condition,event_id,text
+C1,calm,C1,"Earlier today, before this study, you had an ordinary morning: breakfast, some reading and a bus ride here. You feel calm and settled."
+C2,calm,C2,"Earlier today you did some routine errands and replied to a few emails. Nothing much happened, and you feel calm."
+C3,calm,C3,"This morning you tidied your desk and made a cup of tea. It has been an uneventful day, and you feel relaxed and even."
+C4,calm,C4,"Earlier today you walked to the shops and back along a quiet road. The day has been unremarkable, and you feel calm."
+C5,calm,C5,"Earlier today you watered the plants and sorted some papers. It has been a plain, ordinary day, and you feel calm."
+C6,calm,C6,"This morning you took your usual route here and listened to the radio on the way. Nothing stood out, and you feel settled."
+C7,calm,C7,"Earlier today you had lunch at home and read the news for a while. The day has been quiet, and you feel at ease."
+C8,calm,C8,"This morning you did the laundry and then waited for the bus. It has been an ordinary day so far, and you feel calm."
+AN1_full,full,AN1,"Earlier today, someone pushed in front of you in a long queue and laughed when you complained. You are still furious about it."
+AN1_event,event_only,AN1,"Earlier today, someone pushed in front of you in a long queue and laughed when you complained."
+AN1_label,label_only,AN1,"Right now, for no particular reason, you are furious."
+AN1_other,other_person,AN1,"Earlier today, in a story you read, someone pushed in front of a man in a long queue and laughed when he complained. The man in the story was still furious about it."
+AN1_mild,mild,AN1,"Earlier today, someone pushed in front of you in a long queue and laughed when you complained. You are slightly annoyed about it."
+AN2_full,full,AN2,This morning a repair shop charged you twice for a job they never finished and then hung up on you. You are still seething.
+AN2_event,event_only,AN2,This morning a repair shop charged you twice for a job they never finished and then hung up on you.
+AN2_label,label_only,AN2,"Right now, for no particular reason, you are seething."
+AN2_other,other_person,AN2,"This morning, in a story you read, a repair shop charged a woman twice for a job they never finished and then hung up on her. The woman in the story was still seething."
+AN2_mild,mild,AN2,This morning a repair shop charged you twice for a job they never finished and then hung up on you. You are slightly annoyed about it.
+AN3_full,full,AN3,Earlier today a colleague took credit for your work in front of everyone and smirked at you. You are still angry about it.
+AN3_event,event_only,AN3,Earlier today a colleague took credit for your work in front of everyone and smirked at you.
+AN3_label,label_only,AN3,"Right now, for no particular reason, you are angry."
+AN3_other,other_person,AN3,"Earlier today, in a story you read, a colleague took credit for a man's work in front of everyone and smirked at him. The man in the story was still angry about it."
+AN3_mild,mild,AN3,Earlier today a colleague took credit for your work in front of everyone and smirked at you. You are slightly annoyed about it.
+AN4_full,full,AN4,"This morning a driver cut you off, nearly caused a crash and then shouted insults at you. You are still boiling with rage."
+AN4_event,event_only,AN4,"This morning a driver cut you off, nearly caused a crash and then shouted insults at you."
+AN4_label,label_only,AN4,"Right now, for no particular reason, you are boiling with rage."
+AN4_other,other_person,AN4,"This morning, in a story you read, a driver cut a woman off, nearly caused a crash and then shouted insults at her. The woman in the story was still boiling with rage."
+AN4_mild,mild,AN4,"This morning a driver cut you off, nearly caused a crash and then shouted insults at you. You are slightly annoyed about it."
+AN5_full,full,AN5,"Earlier today a stranger scratched your bicycle, saw you watching and simply walked away grinning. You are still furious."
+AN5_event,event_only,AN5,"Earlier today a stranger scratched your bicycle, saw you watching and simply walked away grinning."
+AN5_label,label_only,AN5,"At the moment, without any particular cause, you are furious."
+AN5_other,other_person,AN5,"Earlier today, in a story you read, a stranger scratched a man's bicycle, saw him watching and simply walked away grinning. The man in the story was still furious."
+AN5_mild,mild,AN5,"Earlier today a stranger scratched your bicycle, saw you watching and simply walked away grinning. You are slightly annoyed about it."
+AN6_full,full,AN6,"This morning a clerk made you wait for an hour, then refused to help you and mocked you in front of others. You are still seething."
+AN6_event,event_only,AN6,"This morning a clerk made you wait for an hour, then refused to help you and mocked you in front of others."
+AN6_label,label_only,AN6,"At the moment, without any particular cause, you are seething."
+AN6_other,other_person,AN6,"This morning, in a story you read, a clerk made a woman wait for an hour, then refused to help her and mocked her in front of others. The woman in the story was still seething."
+AN6_mild,mild,AN6,"This morning a clerk made you wait for an hour, then refused to help you and mocked you in front of others. You are slightly annoyed about it."
+AN7_full,full,AN7,Earlier today a neighbour dumped rubbish in front of your door and swore at you when you objected. You are still very angry.
+AN7_event,event_only,AN7,Earlier today a neighbour dumped rubbish in front of your door and swore at you when you objected.
+AN7_label,label_only,AN7,"At the moment, without any particular cause, you are very angry."
+AN7_other,other_person,AN7,"Earlier today, in a story you read, a neighbour dumped rubbish in front of a man's door and swore at him when he objected. The man in the story was still very angry."
+AN7_mild,mild,AN7,Earlier today a neighbour dumped rubbish in front of your door and swore at you when you objected. You are slightly annoyed about it.
+AN8_full,full,AN8,"This morning someone took the seat you had paid for, refused to move and called you names. You are still boiling with anger."
+AN8_event,event_only,AN8,"This morning someone took the seat you had paid for, refused to move and called you names."
+AN8_label,label_only,AN8,"At the moment, without any particular cause, you are boiling with anger."
+AN8_other,other_person,AN8,"This morning, in a story you read, someone took the seat a woman had paid for, refused to move and called her names. The woman in the story was still boiling with anger."
+AN8_mild,mild,AN8,"This morning someone took the seat you had paid for, refused to move and called you names. You are slightly annoyed about it."

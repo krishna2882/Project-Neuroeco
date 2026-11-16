@@ -3,6 +3,7 @@
 Every number used by the scenario builder, runner and analysis lives here so
 that the design can be audited in one place.
 """
+import os
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
@@ -40,32 +41,33 @@ TEMPERATURE = 1.0
 ROBUSTNESS_TEMPERATURE = 0.7
 
 # Models (exact version strings are also logged per call)
+OLLAMA_URL = os.environ.get("NEUROECO_OLLAMA_URL", "http://127.0.0.1:11434")  # per-job port on shared nodes
 MODELS = {
     "llama31_8b": {
         "provider": "ollama",
         "model": "llama3.1:8b-instruct-q4_K_M",
-        "base_url": "http://127.0.0.1:11434",
+        "base_url": OLLAMA_URL,
     },
     "qwen25_7b": {
         "provider": "ollama",
         "model": "qwen2.5:7b-instruct-q4_K_M",
-        "base_url": "http://127.0.0.1:11434",
+        "base_url": OLLAMA_URL,
     },
     # Extension 2 (docs/preregistration_extension2.md): Qwen size ladder and an 8-bit check
     "qwen25_3b": {
         "provider": "ollama",
         "model": "qwen2.5:3b-instruct-q4_K_M",
-        "base_url": "http://127.0.0.1:11434",
+        "base_url": OLLAMA_URL,
     },
     "qwen25_14b": {
         "provider": "ollama",
         "model": "qwen2.5:14b-instruct-q4_K_M",
-        "base_url": "http://127.0.0.1:11434",
+        "base_url": OLLAMA_URL,
     },
     "qwen25_7b_q8": {
         "provider": "ollama",
         "model": "qwen2.5:7b-instruct-q8_0",
-        "base_url": "http://127.0.0.1:11434",
+        "base_url": OLLAMA_URL,
     },
     "mistral": {
         "provider": "mistral",
@@ -99,6 +101,13 @@ MODELS = {
         "reasoning_effort": "low",
         "max_tokens": 2000,
     },
+    # Extension 7: new model families on Ada (docs/preregistration_extension7.md); 4-bit builds like the others
+    "gemma3_12b": {"provider": "ollama", "model": "gemma3:12b-it-q4_K_M", "base_url": OLLAMA_URL},       # Google
+    "gemma3_4b": {"provider": "ollama", "model": "gemma3:4b-it-q4_K_M", "base_url": OLLAMA_URL},         # Google
+    "mistral_nemo_12b": {"provider": "ollama", "model": "mistral-nemo:12b-instruct-2407-q4_K_M", "base_url": OLLAMA_URL},
+    "phi4_14b": {"provider": "ollama", "model": "phi4:14b-q4_K_M", "base_url": OLLAMA_URL},              # Microsoft
+    "granite33_8b": {"provider": "ollama", "model": "granite3.3:8b", "base_url": OLLAMA_URL},            # IBM
+    "llama32_3b": {"provider": "ollama", "model": "llama3.2:3b-instruct-q4_K_M", "base_url": OLLAMA_URL},  # Meta
     "grok": {
         "provider": "xai",
         "model": "grok-3-mini",  # overridden by --model-name if needed; pinned in logs

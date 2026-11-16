@@ -1,0 +1,22 @@
+{
+ "model": "Qwen/Qwen2.5-0.5B-Instruct",
+ "key": "dev_kgrid_05b",
+ "n_layers": 24,
+ "steer_layer": 12,
+ "k": [
+  0.0,
+  1.0,
+  2.0,
+  4.0,
+  8.0,
+  16.0,
+  32.0
+ ],
+ "n_random": 8,
+ "n_samples": 8,
+ "n_prompts": 396,
+ "seconds": 157,
+ "torch": "2.5.1+cu121",
+ "dtype": "float16",
+ "limit": 2
+}

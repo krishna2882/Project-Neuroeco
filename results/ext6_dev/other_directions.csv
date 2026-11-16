@@ -1,0 +1,7 @@
+game,direction,slope_pp_per_k,p_two_sided,model
+S3b,sad,3.1089285714285695,0.8,dev_qwen25_05b
+S3b,happy,0.6607142857142854,1.0,dev_qwen25_05b
+S3b,own_anger,1.3151785714285686,0.8,dev_qwen25_05b
+S1,sad,1.3164599878447403,0.8,dev_qwen25_05b
+S1,happy,-0.6487533450126686,0.8,dev_qwen25_05b
+S1,own_anger,-3.2824201669011845,0.8,dev_qwen25_05b
