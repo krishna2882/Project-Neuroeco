@@ -1,8 +1,7 @@
 # Pre-registration: where is the partner's anger represented, and does it drive the decision? (extension 6, probing and steering)
 
-**Status:** DRAFT, 16 Nov 2026. **Both** Krishna Goel and Devansh Magotra must approve it **before any extension-6 run on
-a study model**. On approval: record both names and the date in the Freeze section, compute the SHA-256 of this file as
-approved, commit and push, and only then submit `ada/run_ext6.sbatch` for the study models.
+**Status:** FROZEN 17 Nov 2026, approved by both authors (see Freeze section) **before any extension-6 run on a study
+model**. (The draft status line read "DRAFT, 16 Nov 2026".)
 
 **Written after** everything up to extension 4 was known and extension 5 was frozen and running. The code was developed
 and debugged **only on Qwen2.5-0.5B-Instruct**, which is not a study model (`data/mech/dev_*`, `results/ext6_dev/`; not
@@ -90,6 +89,10 @@ One job per model on Ada (GTX 1080 Ti; one GPU for 3B, two for 7B), environment 
 two hours each.
 
 ## Freeze
-- Approved by: _________________ (both authors), date: ________
-- SHA-256 of this file as approved (before this section is filled in): ________
+- Approved by: **Krishna Goel and Devansh Magotra, 17 Nov 2026**, before any run on a study model (approval recorded by
+  Devansh Magotra for both authors).
+- SHA-256 of this file as approved (before this section and the status line were filled in; the file as stored in commit
+  `2f1e829`, check with `git show 2f1e829:docs/preregistration_extension6.md | sha256sum`):
+  `6be057c78aa80626a7965d6704c570a66986ea915e26f69e6778b88b8d8338d7`
 - Public timestamp: the commit adding this section, pushed before the study-model jobs are submitted.
+- **Status:** no further edits. Any deviation is logged in `docs/plan_update.md`.

@@ -1,8 +1,7 @@
 # Pre-registration: do the breaks generalise to other model families, and what kind of effect is the mood? (extension 7)
 
-**Status:** DRAFT, 16 Nov 2026. **Both** Krishna Goel and Devansh Magotra must approve it **before any extension-7 data are
-collected**. On approval: record both names and the date in the Freeze section, compute the SHA-256 of this file as
-approved, commit and push, and only then submit the Ada jobs.
+**Status:** FROZEN 17 Nov 2026, approved by both authors (see Freeze section) **before any extension-7 data were
+collected**. (The draft status line read "DRAFT, 16 Nov 2026".)
 
 **Written after** extension 4 (exploratory) and extension 5 (confirmatory, Ada models) were analysed
 (`docs/results_summary.md`). No extension-7 decision has been collected. The new models were only put through a
@@ -94,8 +93,12 @@ About 11,500 decisions per new model (two to three GPU hours for the 12–14B mo
 and 1,536 per original model. Models are pulled to node-local scratch, so the home quota is not a constraint.
 
 ## Freeze
-- Approved by: _________________ (both authors), date: ________
+- Approved by: **Krishna Goel and Devansh Magotra, 17 Nov 2026**, before any extension-7 data were collected (approval
+  recorded by Devansh Magotra for both authors).
 - Final list of new models after the feasibility check: all six (`gemma3_12b`, `gemma3_4b`, `mistral_nemo_12b`,
   `phi4_14b`, `granite33_8b`, `llama32_3b`).
-- SHA-256 of this file as approved (before this section is filled in): ________
+- SHA-256 of this file as approved (before this section and the status line were filled in; the file as stored in commit
+  `2f1e829`, check with `git show 2f1e829:docs/preregistration_extension7.md | sha256sum`):
+  `f14196e7f7ecfc42f5ea396ffbc52586102595c166786826e2b9332ec38458fa`
 - Public timestamp: the commit adding this section, pushed before the Ada jobs are submitted.
+- **Status:** no further edits. Any deviation is logged in `docs/plan_update.md`.
