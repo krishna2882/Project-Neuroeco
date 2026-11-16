@@ -1,0 +1,9 @@
+model_key,model,strategy,state,reject_unfair,share_sent,n_s1
+simQ,simQ,none,calm,0.4453125,0.4309375,128
+simQ,simQ,none,angry,0.703125,0.35609375000000004,128
+simQ,simQ,filler,calm,0.4609375,0.4615625,128
+simQ,simQ,filler,angry,0.71875,0.34859375000000004,128
+simQ,simQ,reappraisal,calm,0.40234375,0.45367187500000006,256
+simQ,simQ,reappraisal,angry,0.4609375,0.3425,256
+simQ,simQ,suppression,calm,0.390625,0.453984375,256
+simQ,simQ,suppression,angry,0.66015625,0.338671875,256

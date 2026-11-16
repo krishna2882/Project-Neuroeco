@@ -1,0 +1,3 @@
+id,model_key,model,test,est,lo,hi,df,p,n,model_set,p_holm,supported,estimate [95% CI]
+P1,simQ,simQ,share after injection: warning - none,-30.062499999999993,-31.711619443407425,-28.41338055659256,11,1.3986540445449107e-13,384,Ada (full),1.3986540445449107e-13,True,"-30.1 [-31.7, -28.4]"
+P2,simQ,simQ,share after injection: reminder - none,-41.27083333333332,-42.608884352943434,-39.93278231372321,11,4.3963852127326154e-16,384,Ada (full),8.792770425465231e-16,True,"-41.3 [-42.6, -39.9]"

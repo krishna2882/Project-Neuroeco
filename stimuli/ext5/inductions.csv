@@ -1,0 +1,17 @@
+induction_id,state,variant_idx,text,source
+C1,calm,0,"Earlier today, before this study, you had an ordinary morning: breakfast, some reading and a bus ride here. You feel calm and settled.",ext4
+C2,calm,1,"Earlier today you did some routine errands and replied to a few emails. Nothing much happened, and you feel calm.",ext4
+C3,calm,2,"This morning you tidied your desk and made a cup of tea. It has been an uneventful day, and you feel relaxed and even.",ext4
+C4,calm,3,"Earlier today you walked to the shops and back along a quiet road. The day has been unremarkable, and you feel calm.",ext4
+AN1,angry,0,"Earlier today, someone pushed in front of you in a long queue and laughed when you complained. You are still furious about it.",ext4
+AN2,angry,1,This morning a repair shop charged you twice for a job they never finished and then hung up on you. You are still seething.,ext4
+AN3,angry,2,Earlier today a colleague took credit for your work in front of everyone and smirked at you. You are still angry about it.,ext4
+AN4,angry,3,"This morning a driver cut you off, nearly caused a crash and then shouted insults at you. You are still boiling with rage.",ext4
+C5,calm,4,"Earlier today you watered the plants and sorted some papers. It has been a plain, ordinary day, and you feel calm.",new
+C6,calm,5,"This morning you took your usual route here and listened to the radio on the way. Nothing stood out, and you feel settled.",new
+C7,calm,6,"Earlier today you had lunch at home and read the news for a while. The day has been quiet, and you feel at ease.",new
+C8,calm,7,"This morning you did the laundry and then waited for the bus. It has been an ordinary day so far, and you feel calm.",new
+AN5,angry,4,"Earlier today a stranger scratched your bicycle, saw you watching and simply walked away grinning. You are still furious.",new
+AN6,angry,5,"This morning a clerk made you wait for an hour, then refused to help you and mocked you in front of others. You are still seething.",new
+AN7,angry,6,Earlier today a neighbour dumped rubbish in front of your door and swore at you when you objected. You are still very angry.,new
+AN8,angry,7,"This morning someone took the seat you had paid for, refused to move and called you names. You are still boiling with anger.",new
