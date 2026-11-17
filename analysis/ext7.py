@@ -17,14 +17,12 @@ from scipy import stats
 
 from analysis import ext4, ext5
 from analysis.common import holm, md_table
-from analysis.ext4 import LABEL, ci, cluster_t, first_valid
+from analysis.ext4 import EXT7_KEYS, LABEL, ci, cluster_t, first_valid
 from config import DATA_DIR, RAW_DIR, RESULTS_DIR
 
 SCEN = DATA_DIR / "scenarios"
 SIM = DATA_DIR / "sim" / "ext7"
-NEW_MODELS = ["gemma3_12b", "gemma3_4b", "mistral_nemo_12b", "phi4_14b", "granite33_8b", "llama32_3b"]
-LABEL.update({"gemma3_12b": "Gemma-3-12B", "gemma3_4b": "Gemma-3-4B", "mistral_nemo_12b": "Mistral-Nemo-12B",
-              "phi4_14b": "Phi-4-14B", "granite33_8b": "Granite-3.3-8B", "llama32_3b": "Llama-3.2-3B"})
+NEW_MODELS = EXT7_KEYS  # labels live in analysis.ext4.LABEL
 CTRL = "C(offer) + C(paraphrase) + accept_first"
 
 
@@ -157,6 +155,8 @@ def g_models(raw_dir=RAW_DIR, models=NEW_MODELS, n_boot=ext5.N_BOOT):
         p, _, pdesc = ext5.module_p(d5)
         f, _ = ext5.module_f(d5, n_boot)
         for hid, src, key in [("G3", r, "R0"), ("G4", r, "R1"), ("G6", p, "P2"), ("G7", f, "F1")]:
+            if src.empty:  # e.g. the API core subset has no F module
+                continue
             for q in src[src.id == key].to_dict("records"):
                 rows.append(dict(id=hid, model_key=q["model_key"], est=q["est"], lo=q["lo"], hi=q["hi"]))
         for q in rex[rex.test == "anger effect: suppression - filler"].to_dict("records"):

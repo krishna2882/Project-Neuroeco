@@ -120,6 +120,8 @@ def main(dev=False):
         extras.append(pd.DataFrame(e).assign(model=d.name))
         behs.append(pd.DataFrame(behaviour(pd.read_csv(d / "behaviour.csv"))).assign(model=d.name))
         probes.append(pd.read_csv(d / "probe.csv").assign(model=d.name, steer_layer=meta.steer_layer))
+        if not (d / "sweep.csv").exists():  # the exploratory sweep runs last and may still be running
+            continue
         sw = pd.read_csv(d / "sweep.csv")
         base = s[s.direction == "none"]
         for (layer, game), g in sw.groupby(["layer", "game"]):

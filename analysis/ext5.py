@@ -24,7 +24,7 @@ from scipy import optimize, special
 from statsmodels.stats.proportion import proportion_confint
 
 from analysis.common import holm, md_table
-from analysis.ext4 import LABEL, ci, cluster_t, first_valid
+from analysis.ext4 import EXT7_KEYS, EXT7_SET, LABEL, ci, cluster_t, first_valid
 from config import DATA_DIR, RAW_DIR, RESULTS_DIR
 
 SCEN = DATA_DIR / "scenarios"
@@ -66,7 +66,8 @@ def with_holm(rows):
     t = pd.DataFrame(rows)
     if t.empty:
         return t
-    t["model_set"] = np.where(t.model_key.isin(API_MODELS), "API (core)", "Ada (full)")
+    t["model_set"] = np.select([t.model_key.isin(API_MODELS), t.model_key.isin(EXT7_KEYS)],
+                               ["API (core)", EXT7_SET], "Ada (full)")
     t["p_holm"] = t.groupby("model_set").p.transform(lambda p: pd.Series(holm(p.values), index=p.index))
     t["supported"] = t.p_holm < .05
     t["estimate [95% CI]"] = [ci(r) for r in t.to_dict("records")]
@@ -238,9 +239,11 @@ def module_f(df, n_boot=N_BOOT, seed=5):
 
 
 # ------------------------------------------------------------------ report
-def report(raw_dir=RAW_DIR, out=RESULTS_DIR / "ext5", n_boot=N_BOOT):
+def report(raw_dir=RAW_DIR, out=RESULTS_DIR / "ext5", n_boot=N_BOOT, models=None):
     out.mkdir(parents=True, exist_ok=True)
     df = load(raw_dir)
+    # the default report covers the models of extension 5 itself; the extension-7 models are reported under results/ext7
+    df = df[df.model_key.isin(models) if models else ~df.model_key.isin(EXT7_KEYS)] if not df.empty else df
     if df.empty:
         print("no ext5 data")
         return {}
@@ -248,6 +251,9 @@ def report(raw_dir=RAW_DIR, out=RESULTS_DIR / "ext5", n_boot=N_BOOT):
     p, pex, pdesc = module_p(df)
     f, fcurves = module_f(df, n_boot)
     mood = mood_check(raw_dir)
+    if not mood.empty:  # only the models of this report
+        names = set(df.model_key) | {LABEL.get(k, k) for k in df.model_key.unique()}
+        mood = mood[mood[mood.columns[0]].isin(names)].reset_index(drop=True)
     cols = ["id", "model", "test", "estimate [95% CI]", "df", "p", "p_holm", "supported", "model_set"]
     show = lambda t, c: md_table(t[[k for k in c if k in t]].round(3)) if not t.empty else "No data."  # noqa: E731
     fcols = ["model", "alpha_calm", "alpha_calm_ci", "alpha_angry", "alpha_angry_ci", "beta_calm", "beta_calm_ci",

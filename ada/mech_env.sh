@@ -5,7 +5,9 @@ set -euo pipefail
 export MECH_ROOT=/scratch/$USER/neuroeco_mech
 export HF_HOME=$MECH_ROOT/hf PIP_CACHE_DIR=$MECH_ROOT/pip TMPDIR=$MECH_ROOT/tmp
 mkdir -p "$MECH_ROOT" "$HF_HOME" "$TMPDIR"
+exec 9> "$MECH_ROOT/venv.lock"; flock 9   # two jobs on one node must not build the environment at the same time
 if [ ! -f "$MECH_ROOT/venv/ok" ]; then
+  rm -rf "$MECH_ROOT/venv"                 # a half-built environment from an interrupted job
   python3 -m venv "$MECH_ROOT/venv"
   "$MECH_ROOT/venv/bin/pip" install -q --upgrade pip
   # cu121 wheels still support the GTX 1080 Ti (Pascal)
@@ -14,6 +16,7 @@ if [ ! -f "$MECH_ROOT/venv/ok" ]; then
       "numpy==1.26.4" "scipy==1.14.1" "statsmodels==0.14.4" "safetensors"
   touch "$MECH_ROOT/venv/ok"
 fi
+flock -u 9
 export MECH_PY=$MECH_ROOT/venv/bin/python
 "$MECH_PY" -c "
 import torch, transformers

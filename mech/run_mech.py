@@ -43,6 +43,7 @@ def load_model(model_id):
         tok.pad_token = tok.eos_token
     model = AutoModelForCausalLM.from_pretrained(model_id, torch_dtype=torch.float16, device_map="auto")
     model.eval()
+    print("last-position logits only:", last_only_kwarg(model), flush=True)
     return tok, model
 
 
@@ -84,13 +85,25 @@ def first_device(model):
     return next(model.parameters()).device
 
 
+LAST_ONLY = {}  # per model class: the keyword that makes forward() return the logits of the last position only
+
+
+def last_only_kwarg(model):
+    """Full-sequence logits (batch x tokens x 152k vocabulary) do not fit next to a 3B model on an 11 GB GPU; only the
+    last position is ever used. Same numbers, less memory."""
+    import inspect
+    names = inspect.signature(model.forward).parameters
+    LAST_ONLY[type(model)] = next(({k: 1} for k in ("num_logits_to_keep", "logits_to_keep") if k in names), {})
+    return LAST_ONLY[type(model)]
+
+
 @torch.no_grad()
 def forward_last(tok, model, txts, bs=24, hidden=False):
     """Next-token probabilities (and, optionally, every layer's residual stream) at the last position."""
     probs, hs = [], []
     for i in range(0, len(txts), bs):
         enc = tok(txts[i:i + bs], return_tensors="pt", padding=True, add_special_tokens=False).to(first_device(model))
-        out = model(**enc, output_hidden_states=hidden)
+        out = model(**enc, output_hidden_states=hidden, **LAST_ONLY.get(type(model), {}))
         probs.append(torch.softmax(out.logits[:, -1, :].float(), -1).cpu())
         if hidden:
             hs.append(torch.stack([h[:, -1, :].float().cpu() for h in out.hidden_states], 1))
@@ -256,8 +269,8 @@ def main():
     gen = torch.Generator().manual_seed(6)
     v = direction(H, bank, "angry", L)
 
-    def randoms(n, norm, d):
-        r = torch.randn(n, d, generator=gen)
+    def randoms(n, norm, d, g=gen):
+        r = torch.randn(n, d, generator=g)
         return r / r.norm(dim=1, keepdim=True) * norm
 
     def steer(layer, name, vec, ks):
@@ -280,24 +293,15 @@ def main():
             log(f"steering: {j + 1} random directions")
     pd.DataFrame(rows).to_csv(out / "steer.csv", index=False)
 
-    # ---- exploratory layer sweep: anger direction of each layer vs a few random directions
-    rows = []
-    for layer in range(2, n_layers + 1, 2):
-        vl = direction(H, bank, "angry", layer)
-        rows += steer(layer, "anger", vl, ks)
-        for j, r in enumerate(randoms(a.sweep_random, vl.norm(), vl.shape[0])):
-            rows += steer(layer, f"random{j:03d}", r, ks)
-    pd.DataFrame(rows).to_csv(out / "sweep.csv", index=False)
-    log("layer sweep saved")
-
-    # ---- ablation on held-out messages (angry and neutral follow-up messages)
+    # ---- ablation on held-out messages (angry and neutral follow-up messages). Confirmatory (M3), so it runs
+    # before the long exploratory layer sweep; its random directions come from their own generator.
     ab = bank[(bank.set == "msg") & (bank.split == "test") & bank.emotion.isin(["angry", "neutral"])]
     ab_txt = [txts[i] for i in ab.index]
     unit = lambda x: x / x.norm()  # noqa: E731
     rows = behave(tok, model, dt, ab, ab_txt, a.n_samples, dict(direction="none"))
     with Intervene(model, ablate=unit(v)):
         rows += behave(tok, model, dt, ab, ab_txt, a.n_samples, dict(direction="anger"))
-    for j, r in enumerate(randoms(a.n_random, 1.0, v.shape[0])):
+    for j, r in enumerate(randoms(a.n_random, 1.0, v.shape[0], torch.Generator().manual_seed(7))):
         with Intervene(model, ablate=r):
             rows += behave(tok, model, dt, ab, ab_txt, a.n_samples, dict(direction=f"random{j:03d}"))
         if j % 20 == 19:
@@ -305,9 +309,25 @@ def main():
     pd.DataFrame(rows).merge(ab[["prompt_id", "emotion", "source_id", "paraphrase"]], on="prompt_id") \
         .to_csv(out / "ablate.csv", index=False)
 
-    json.dump(dict(model=a.model, key=a.key, n_layers=n_layers, steer_layer=L, k=a.k, n_random=a.n_random,
-                   n_samples=a.n_samples, n_prompts=len(bank), seconds=round(time.time() - t0),
-                   torch=torch.__version__, dtype="float16", limit=a.limit), open(out / "meta.json", "w"), indent=1)
+    def save_meta(stage):
+        json.dump(dict(model=a.model, key=a.key, n_layers=n_layers, steer_layer=L, k=a.k, n_random=a.n_random,
+                       n_samples=a.n_samples, n_prompts=len(bank), seconds=round(time.time() - t0), stage=stage,
+                       torch=torch.__version__, dtype="float16", limit=a.limit), open(out / "meta.json", "w"), indent=1)
+
+    save_meta("confirmatory stages done")
+    log("ablation saved")
+
+    # ---- exploratory layer sweep: anger direction of each layer vs a few random directions
+    rows, gsw = [], torch.Generator().manual_seed(8)
+    for layer in range(2, n_layers + 1, 2):
+        vl = direction(H, bank, "angry", layer)
+        rows += steer(layer, "anger", vl, ks)
+        for j, r in enumerate(randoms(a.sweep_random, vl.norm(), vl.shape[0], gsw)):
+            rows += steer(layer, f"random{j:03d}", r, ks)
+    pd.DataFrame(rows).to_csv(out / "sweep.csv", index=False)
+    log("layer sweep saved")
+
+    save_meta("complete")
     log("done ->", out)
 
 

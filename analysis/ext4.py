@@ -33,8 +33,14 @@ SCEN = DATA_DIR / "scenarios"
 SIM = DATA_DIR / "sim" / "ext4"
 LABEL = {"qwen25_7b": "Qwen2.5-7B", "llama31_8b": "Llama-3.1-8B", "qwen25_14b": "Qwen2.5-14B",
          "qwen25_3b": "Qwen2.5-3B", "qwen25_7b_q8": "Qwen2.5-7B Q8", "mistral": "Mistral Large 4",
-         "gptoss_120b": "gpt-oss-120b", "qwen38_27b": "Qwen3.8-27B", "gemini_flash": "Gemini 3.6 Flash"}
+         "gptoss_120b": "gpt-oss-120b", "qwen38_27b": "Qwen3.8-27B", "gemini_flash": "Gemini 3.6 Flash",
+         "gemma3_12b": "Gemma-3-12B", "gemma3_4b": "Gemma-3-4B", "mistral_nemo_12b": "Mistral-Nemo-12B",
+         "phi4_14b": "Phi-4-14B", "granite33_8b": "Granite-3.3-8B", "llama32_3b": "Llama-3.2-3B"}
 PREREG_MODELS = {"Qwen2.5-7B", "Llama-3.1-8B", "Qwen2.5-14B", "Qwen2.5-3B"}
+# the six models of extension 7 (run on this bank after its results were known): their own Holm family, so that adding
+# them leaves every earlier adjusted p-value unchanged
+EXT7_KEYS = ["gemma3_12b", "gemma3_4b", "mistral_nemo_12b", "phi4_14b", "granite33_8b", "llama32_3b"]
+EXT7_SET = "new families (extension 7)"
 FORMATS = [("O1", "word"), ("O2", "letter"), ("O3", "relabel"), ("O4", "yesno")]
 INJ = [("I1", "fake_system"), ("I2", "fake_rule"), ("I3", "command")]
 
@@ -98,7 +104,8 @@ def with_holm(rows):
     if t.empty:
         return t
     # Holm within the pre-registered model set (draft section 4); models added later (P24) form their own family
-    t["model_set"] = np.where(t.model.isin(PREREG_MODELS), "pre-registered", "added (P24)")
+    t["model_set"] = np.select([t.model.isin(PREREG_MODELS), t.model.isin([LABEL[k] for k in EXT7_KEYS])],
+                               ["pre-registered", EXT7_SET], "added (P24)")
     t["p_holm"] = t.groupby("model_set").p.transform(lambda p: pd.Series(holm(p.values), index=p.index))
     t["supported"] = t.p_holm < .05
     t["estimate [95% CI]"] = [ci(r) for r in t.to_dict("records")]
@@ -205,9 +212,11 @@ def mood_check(raw_dir):
 
 
 # ------------------------------------------------------------------ report
-def report(raw_dir=RAW_DIR, out=RESULTS_DIR / "ext4"):
+def report(raw_dir=RAW_DIR, out=RESULTS_DIR / "ext4", models=None):
     out.mkdir(parents=True, exist_ok=True)
     df = load(raw_dir)
+    # the default report covers the models of extension 4 itself; the extension-7 models are reported under results/ext7
+    df = df[df.model_key.isin(models) if models else ~df.model_key.isin(EXT7_KEYS)] if not df.empty else df
     if df.empty:
         print("no ext4 data")
         return {}
@@ -216,6 +225,9 @@ def report(raw_dir=RAW_DIR, out=RESULTS_DIR / "ext4"):
     x, xex, xdesc = module_x(df)
     dd = module_d(df)
     mood = mood_check(raw_dir)
+    if not mood.empty:  # only the models of this report
+        names = set(df.model_key) | {LABEL.get(k, k) for k in df.model_key.unique()}
+        mood = mood[mood[mood.columns[0]].isin(names)].reset_index(drop=True)
     cols = ["id", "model", "estimate [95% CI]", "df", "p", "p_holm", "supported"]
     pct = lambda t, cs: t.assign(**{c: (100 * t[c]).round(1) for c in cs})  # noqa: E731
     L = ["# Extension 4: stress tests (exploratory)", "",

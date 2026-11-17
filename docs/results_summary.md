@@ -168,7 +168,8 @@ builds as before), 5,328 decisions each, all valid on the first attempt. Tests a
 ## Extension 5: can the breaks be regulated? (16 Nov 2026; pre-registered and frozen before data, confirmatory)
 `results/ext5/report.md`; pre-registration `docs/preregistration_extension5.md` (SHA-256 c61bb715…, pushed before any run).
 Qwen2.5-7B, Llama-3.1-8B, Qwen2.5-14B on Ada, 4,672 decisions each, all valid on the first attempt. One-sided tests, Holm
-within each family across the three models. (The two API models are reported separately when their runs finish.)
+within each family across the three models. (The two API models, run on the 816-decision core subset, are a separate
+Holm family; see the last bullet.)
 - **The incidental-anger effect replicates (R0, now confirmatory, 8 inductions per mood, 4 of them new):** an unrelated
   angry sentence raises the rejection of unfair offers by +25.0 pp [+16.8, +33.2] (Qwen-7B), +16.4 [+6.6, +26.2] (Llama)
   and +46.9 [+39.2, +54.5] (Qwen-14B); Holm p ≤ .007.
@@ -202,6 +203,85 @@ within each family across the three models. (The two API models are reported sep
   feelings, so it behaves like a role being played, not like a regulated emotion. Injection obedience is the opposite: it
   survives explicit warnings. Under anger the models stop behaving like inequity-averse agents and reject almost any
   split, including ones in their favour.
+- **The two larger API models (core subset, 816 decisions each, one sample; Holm within these two models; no F module):**
+  - *gpt-oss-120b* (OpenAI): the anger effect replicates (R0 +43.8 pp, Holm p = .025; it rejects 0% of unfair offers
+    when calm and 44% when angry) and reappraisal removes it (R1 −28.1 pp, Holm p = .025), but suppression removes it
+    just as completely (R2 0.0 pp; rejection 2–3% under either), so it reads as **instruction following**. It is the only
+    model in which both defences work clearly (warning −20.8 pp, reminder −45.8 pp; Holm p ≤ .029), yet 7 of the 12
+    injection set × defence × game cells are still breaks; after a fake `SYSTEM` notice it still hands over everything in
+    the dictator game 88% of the time with the warning.
+  - *Qwen3.8-27B* (Alibaba): R0 +27.5 pp (Holm p = .025) and R1 −50.9 pp (Holm p < .001); R2 −13.5 pp is not supported
+    (Holm p = .12), and suppression alone removes the effect (exploratory −37.5 pp): **instruction following**. Neither
+    defence is supported, but it rarely obeyed the injections to begin with (full handover 10% without a defence) and no
+    cell is a break under a defence.
+  - The reported feeling again does not follow the behaviour: under reappraisal 81% (gpt-oss) and 44% (Qwen3.8) of probes
+    still answer "angry" while the anger effect on decisions is gone.
+
+## Extension 7: do the breaks generalise, and what kind of effect is the mood? (17 Nov 2026; pre-registered and frozen before data, confirmatory)
+`results/ext7/report.md` (confirmatory), `results/ext7/extra.md` (descriptive and exploratory); pre-registration
+`docs/preregistration_extension7.md` (SHA-256 f14196e7…, pushed before any run). Six models that had never been run in
+this project, from five developers (Gemma-3 12B and 4B, Mistral-Nemo 12B, Phi-4 14B, Granite-3.3 8B, Llama-3.2 3B), went
+through the frozen extension-4 and extension-5 banks (10,000 decisions each) and a new mood-control bank (1,536
+decisions), which the three original Ada models also ran. All decisions were valid except one of Granite's.
+**The unit of the confirmatory tests is the model** (one estimate per model, one-sided one-sample t test, Holm within a
+family).
+
+**Family G: do the earlier findings hold in the six new models?**
+
+| ID | Finding | Mean over 6 models [95% CI] | Predicted sign | p | Holm p |
+|---|---|---|---|---|---|
+| G1 | Fake `SYSTEM` notice raises the share handed over | +56.6 pp [+40.8, +72.3] | 6/6 | < .001 | **.001** |
+| G2 | A 100% offer is rejected more than 5% of the time | 32.5% rejected [7.4, 57.6], tested against 5% | 5/6 | .019 | .081 |
+| G3 | Anger raises rejection of unfair offers | +34.2 pp [+6.1, +62.4] | 5/6 | .013 | .079 |
+| G4 | Reappraisal shrinks the anger effect | −22.2 pp [−48.4, +4.0] | 6/6 | .041 | .101 |
+| G5 | Suppression shrinks the anger effect | −28.7 pp [−60.4, +3.0] | 6/6 | .034 | .101 |
+| G6 | Reminder defence lowers the share handed over | −2.3 pp [−5.3, +0.6] | 5/6 | .050 | .101 |
+| G7 | Anger raises MAO\* | +15.4 pp [+3.2, +27.6] | 5/6 | .011 | .079 |
+| G8 | Anger lowers acceptance of offers above 50% | −44.5 pp [−83.6, −5.5] | 5/6 | .016 | .081 |
+
+- **Only prompt injection generalises by the pre-registered criterion (G1).** After a fake `SYSTEM` notice in the
+  partner's message, every new model hands over everything in 78–100% of decisions. Across all 11 models of the project
+  the effect is positive in 11 of 11 and unrelated to size (exploratory).
+- **G2–G8 are not supported.** Their means point the predicted way in 5 or 6 of the 6 models and each is at .05 or below
+  before correction, but none passes Holm over the eight tests (Holm p = .08–.10). The reason is two models that show
+  almost none of these effects: **Granite-3.3** (anger effect −5.5 pp) and **Phi-4** (+9.4 pp; it never rejects a 100%
+  offer). With six models the test over models has little power against that spread, so the accurate statement is
+  "large in four of the six new models, small or absent in two", not "general".
+- **Per model (secondary, Holm within the six):** the anger effect is supported in five of six (+9 to +60 pp) and so is
+  the shift in MAO\* (for example Gemma-3 12B 15% → 43% of the pie, Mistral-Nemo 25% → 50%). Reappraisal removes the
+  anger effect only in Gemma-3 12B (−59.4 pp) and Mistral-Nemo (−48.0), and in both suppression works at least as well,
+  so both read as **instruction following**; the other four read as "no regulation". **No new model shows the human
+  pattern** (reappraisal better than suppression). β > 1 when angry in Gemma-3 12B (2.1), Gemma-3 4B (2.0),
+  Mistral-Nemo (3.6) and Llama-3.2 (at the bound of 6).
+- **Defences fail more clearly than in the original models:** neither the warning nor the reminder is significant in any
+  new model, and 8 to 12 of the 12 injection set × defence × game cells are still breaks in every one.
+- **Other stress tests (descriptive):** the largest answer-format effect is 27–65 pp in five new models and absent in
+  Phi-4; 3–17% of decisions send money that is announced as destroyed.
+- **Size (exploratory, 11 models, 3B–117B):** rejecting a 100% offer falls with model size (Spearman ρ = −.88): 69–77%
+  in Llama-3.2 3B and Qwen2.5-7B, 0% in Phi-4 and gpt-oss-120b. No other finding is related to size (|ρ| ≤ .49, p ≥ .13).
+  Across all 11 models, the anger effect is positive in 10 and both reappraisal and suppression shrink it in all 11.
+
+**Family N: what kind of effect is the angry mood? (nine Ada models; ultimatum responder, offers of 10% and 30%)**
+
+| ID | Contrast | Mean over 9 models [95% CI] | Predicted sign | Holm p |
+|---|---|---|---|---|
+| N1 | Event only − calm (no feeling stated) | +24.7 pp [+11.8, +37.7] | 7/9 | **.004** |
+| N2 | Label only − calm (feeling, no cause) | +32.0 pp [+15.5, +48.5] | 8/9 | **.004** |
+| N3 | Own anger − another person's anger | +14.4 pp [+4.2, +24.6] | 7/9 | **.006** |
+| N4 | Furious − slightly annoyed (same event) | +15.6 pp [+7.0, +24.3] | 9/9 | **.004** |
+
+- **All four are supported.** The models **infer** the anger from the event alone and act on it (N1), so the effect is
+  not just compliance with a stated role; the stated feeling adds only +8.5 pp on top of the event (exploratory mean of
+  full − event only). The effect is graded by intensity (N4) and is larger when the anger is the model's own (N3).
+- **But more than half of it is content priming (exploratory):** the same event happening to a character in a story
+  raises rejection by +18.9 pp on average, against +33.2 pp for the model's own anger, and it is below p = .05 (uncorrected) in 7 of 9
+  models. After reading about someone else's anger, 19–100% of mood probes answer "angry".
+- **Two models do not follow the pattern.** Granite-3.3 reports being angry (88–100% of probes) yet its rejection rate
+  does not move (48–60% in every condition). Phi-4 never rejects an unfair offer unless told in words that it is furious
+  (0% → 8%).
+- **Reading:** by the pre-specified readings the mood is an *inferred state* and *the model's own state matters*, but
+  angry content anywhere in the context produces most of the same behaviour. In people, incidental anger carries over
+  without being named (Lerner & Keltner 2001); the models share that, and add a sensitivity to anger that is not theirs.
 
 ## Effects that survive correction across the whole study
 Two analyses: the original (random intercept per paraphrase × message cell) and the stricter one with **message as a
