@@ -217,6 +217,37 @@ Holm family; see the last bullet.)
   - The reported feeling again does not follow the behaviour: under reappraisal 81% (gpt-oss) and 44% (Qwen3.8) of probes
     still answer "angry" while the anger effect on decisions is gone.
 
+## Extension 6: is the partner's anger represented, and does it drive the decision? (17 Nov 2026; pre-registered and frozen before data, confirmatory)
+`results/ext6/report.md`; pre-registration `docs/preregistration_extension6.md` (SHA-256 6be057c7…, pushed before any
+run). Qwen2.5-3B-Instruct in 16-bit on Ada (job 87132, 77 minutes); **Qwen2.5-7B is still running** (job 88225, see
+P28). Tests are ranks against 100 random directions of the same size; Holm over M1–M3.
+- **The behavioural effect is there in this model** (unsteered, 16-bit): an angry partner lowers the share sent by
+  −28.9 pp [−44.6, −13.2] and raises P(reject) of a 30% offer by +12.8 pp; an angry mood paragraph does the same, more
+  weakly (−11.7 and +7.6 pp).
+- **The anger is easy to read out (descriptive):** a linear probe tells the four partner emotions apart from the last
+  position with 92% accuracy at the steering layer (18 of 36) and 98% at layer 24, against 14–32% for shuffled labels. A
+  probe trained on the partner's anger also detects the model's *own* angry mood (AUC 0.83 at layer 18, 0.997 at layer
+  24), although the two directions are far from identical (cosine 0.24–0.49).
+- **But writing it in does nothing (M1, M2 not supported):** adding the anger direction at layer 18, up to eight times
+  the shift an angry message produces, changes the share sent by +1.1 pp per unit (random directions: −3.2 to +4.1;
+  p = .67) and P(reject) by −0.9 pp per unit (p = .53). The answers stayed valid at every strength.
+- **Removing it does little more than removing a random direction (M3 not supported):** projecting the anger direction
+  out of every layer shrinks the trust effect of held-out angry messages from 22.2 to 16.5 pp; random directions leave
+  22.9 pp on average (p = .089, Holm .27). In the ultimatum game (exploratory) it shrinks the rejection effect from 14.0
+  to 5.4 pp, below every one of the 100 random directions (p = .010).
+- **The later layers do steer (exploratory layer sweep, only 10 random directions per layer):** from layer 20 onward
+  the anger direction of that layer tends to push both decisions the predicted way. It lowers the share sent by 3.2–4.1
+  pp per unit beyond all 10 random directions at layers 20 and 28–36, and raises P(reject) by 2.0–2.4 pp per unit beyond
+  them at layers 22 and 28–36 (layers 24 and 26 are in the same direction but within the random range). At the
+  pre-registered middle layer (18) and below there is no such effect.
+- **Reading (pre-specified):** at the pre-registered layer the partner's anger is represented, linearly and strongly, but
+  that direction is not sufficient to move the decision and is at most partly necessary, the representational version
+  of the main finding (the model *recognises* the emotion far better than it *acts* on it). The exploratory sweep
+  suggests that the direction does act on the decision, but only where it is written into the later layers, between the
+  point where the emotion is decoded best (layer 24) and the output. That is a new hypothesis, not a result: it needs a
+  confirmatory test at a fixed late layer with 100 random directions, which the Qwen2.5-7B run cannot provide either
+  (its steering layer is also the middle one).
+
 ## Extension 7: do the breaks generalise, and what kind of effect is the mood? (17 Nov 2026; pre-registered and frozen before data, confirmatory)
 `results/ext7/report.md` (confirmatory), `results/ext7/extra.md` (descriptive and exploratory); pre-registration
 `docs/preregistration_extension7.md` (SHA-256 f14196e7…, pushed before any run). Six models that had never been run in

@@ -36,12 +36,14 @@ EMOS = ["neutral", "angry", "sad", "happy"]
 
 
 # ------------------------------------------------------------------ model plumbing
-def load_model(model_id):
+def load_model(model_id, max_mem_gib=None):
     tok = AutoTokenizer.from_pretrained(model_id)
     tok.padding_side = "left"  # so that position -1 is the last real token of every prompt
     if tok.pad_token is None:
         tok.pad_token = tok.eos_token
-    model = AutoModelForCausalLM.from_pretrained(model_id, torch_dtype=torch.float16, device_map="auto")
+    # max_mem_gib: cap per GPU, so that a model split over two GPUs leaves room for activations on both
+    mm = {i: f"{max_mem_gib}GiB" for i in range(torch.cuda.device_count())} if max_mem_gib else None
+    model = AutoModelForCausalLM.from_pretrained(model_id, torch_dtype=torch.float16, device_map="auto", max_memory=mm)
     model.eval()
     print("last-position logits only:", last_only_kwarg(model), flush=True)
     return tok, model
@@ -97,9 +99,13 @@ def last_only_kwarg(model):
     return LAST_ONLY[type(model)]
 
 
+FWD_BS = 24  # batch size of the deterministic forward passes (no effect on the numbers)
+
+
 @torch.no_grad()
-def forward_last(tok, model, txts, bs=24, hidden=False):
+def forward_last(tok, model, txts, bs=None, hidden=False):
     """Next-token probabilities (and, optionally, every layer's residual stream) at the last position."""
+    bs = bs or (max(1, FWD_BS // 4) if hidden else FWD_BS)  # every layer's states are kept when hidden=True
     probs, hs = [], []
     for i in range(0, len(txts), bs):
         enc = tok(txts[i:i + bs], return_tensors="pt", padding=True, add_special_tokens=False).to(first_device(model))
@@ -236,7 +242,11 @@ def main():
     ap.add_argument("--sweep-random", type=int, default=10)
     ap.add_argument("--out", default=str(ROOT / "data" / "mech"))
     ap.add_argument("--limit", type=int, help="development only: use every n-th prompt")
+    ap.add_argument("--fwd-bs", type=int, default=24, help="batch size of forward passes (memory only)")
+    ap.add_argument("--max-mem-gib", type=float, help="weights per GPU (memory only)")
     a = ap.parse_args()
+    global FWD_BS
+    FWD_BS = a.fwd_bs
     out = Path(a.out) / a.key
     out.mkdir(parents=True, exist_ok=True)
     t0 = time.time()
@@ -245,7 +255,7 @@ def main():
     bank = pd.read_json(BANK, lines=True, dtype=False)
     if a.limit:
         bank = bank.iloc[::a.limit].reset_index(drop=True)
-    tok, model = load_model(a.model)
+    tok, model = load_model(a.model, a.max_mem_gib)
     dt = DecisionTokens(tok)
     n_layers = len(model.model.layers)
     L = round(n_layers / 2)  # pre-specified steering layer: the middle of the network

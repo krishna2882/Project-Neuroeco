@@ -1,0 +1,21 @@
+{
+ "model": "Qwen/Qwen2.5-3B-Instruct",
+ "key": "qwen25_3b_hf",
+ "n_layers": 36,
+ "steer_layer": 18,
+ "k": [
+  0,
+  1,
+  2,
+  4,
+  8
+ ],
+ "n_random": 100,
+ "n_samples": 8,
+ "n_prompts": 792,
+ "seconds": 4646,
+ "stage": "complete",
+ "torch": "2.5.1+cu121",
+ "dtype": "float16",
+ "limit": null
+}
