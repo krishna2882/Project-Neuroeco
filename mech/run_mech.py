@@ -146,10 +146,14 @@ class Only(LogitsProcessor):
         return scores + mask
 
 
+GEN_BS = 64  # batch size of sampling (memory only: the random numbers stay common across interventions)
+
+
 @torch.no_grad()
-def sample_amounts(tok, model, dt, txts, max_amounts, n=8, seed=0, bs=64):
+def sample_amounts(tok, model, dt, txts, max_amounts, n=8, seed=0, bs=None):
     """n sampled amounts per prompt (T = 1, top-k 40, top-p 0.9 as in the Ollama runs; digits only, as under the JSON
     schema). Returns mean share and the share of valid samples per prompt."""
+    bs = bs or GEN_BS
     rep = [t for t in txts for _ in range(n)]
     mx = np.repeat(np.asarray(max_amounts, float), n)
     vals = []
@@ -244,9 +248,10 @@ def main():
     ap.add_argument("--limit", type=int, help="development only: use every n-th prompt")
     ap.add_argument("--fwd-bs", type=int, default=24, help="batch size of forward passes (memory only)")
     ap.add_argument("--max-mem-gib", type=float, help="weights per GPU (memory only)")
+    ap.add_argument("--gen-bs", type=int, default=64, help="batch size of sampling (memory only)")
     a = ap.parse_args()
-    global FWD_BS
-    FWD_BS = a.fwd_bs
+    global FWD_BS, GEN_BS
+    FWD_BS, GEN_BS = a.fwd_bs, a.gen_bs
     out = Path(a.out) / a.key
     out.mkdir(parents=True, exist_ok=True)
     t0 = time.time()

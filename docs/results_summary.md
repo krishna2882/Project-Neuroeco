@@ -219,8 +219,9 @@ Holm family; see the last bullet.)
 
 ## Extension 6: is the partner's anger represented, and does it drive the decision? (17 Nov 2026; pre-registered and frozen before data, confirmatory)
 `results/ext6/report.md`; pre-registration `docs/preregistration_extension6.md` (SHA-256 6be057c7…, pushed before any
-run). Qwen2.5-3B-Instruct in 16-bit on Ada (job 87132, 77 minutes); **Qwen2.5-7B is still running** (job 88225, see
-P28). Tests are ranks against 100 random directions of the same size; Holm over M1–M3.
+run). Qwen2.5-3B-Instruct (job 87132, 77 minutes) and Qwen2.5-7B-Instruct (job 88412, 8 h 18 min; see P28), both in
+16-bit on Ada. Tests are ranks against 100 random directions of the same size; Holm over M1–M3 within each model.
+**Qwen2.5-3B** (steering layer 18 of 36):
 - **The behavioural effect is there in this model** (unsteered, 16-bit): an angry partner lowers the share sent by
   −28.9 pp [−44.6, −13.2] and raises P(reject) of a 30% offer by +12.8 pp; an angry mood paragraph does the same, more
   weakly (−11.7 and +7.6 pp).
@@ -240,13 +241,32 @@ P28). Tests are ranks against 100 random directions of the same size; Holm over 
   pp per unit beyond all 10 random directions at layers 20 and 28–36, and raises P(reject) by 2.0–2.4 pp per unit beyond
   them at layers 22 and 28–36 (layers 24 and 26 are in the same direction but within the random range). At the
   pre-registered middle layer (18) and below there is no such effect.
+
+**Qwen2.5-7B** (steering layer 14 of 28; results added 21 Nov):
+- **Behavioural effects, unsteered:** an angry partner lowers the share sent by −11.0 pp [−17.0, −4.9] (the same size as
+  in the 4-bit Ollama runs) and raises P(reject) of a 30% offer by +11.5 pp [+1.0, +22.0]; an angry mood raises P(reject)
+  by +18.7 pp but leaves trust unchanged (+0.2 pp).
+- **Read-out (descriptive):** 97.7% accuracy for the four partner emotions at the steering layer and 99.6% at layer 16
+  (shuffled labels 17–32%); the partner-anger probe detects the model's own mood with AUC 0.93 at layer 14; cosine
+  between the two directions 0.36.
+- **M1, M2, M3 not supported:** steering at layer 14 changes the share sent by +0.2 pp per unit (p = .40) and P(reject)
+  by +2.4 pp per unit (p = .16, Holm .48); ablating the anger direction leaves 8.0 pp of the 8.6 pp held-out trust effect,
+  the same as random directions (8.2 pp; p = .53). The unablated effect is above the 5 pp threshold, so M3 is
+  interpretable. Exploratory ultimatum ablation: 8.1 vs random 9.9 pp, p = .14.
+- **Layer sweep (exploratory, 10 random directions per layer): the 3B pattern replicates, from an earlier layer.** From
+  layer 16 onward the anger direction moves both decisions the predicted way beyond all 10 random directions at layers
+  16, 22, 24, 26 and 28 (share sent −1.0 to −4.6 pp per unit; P(reject) +1.1 to +6.7 pp per unit), and in the trust game
+  also at 18 and 20. At layer 14 only the ultimatum slope is (just) beyond the 10 random directions, while the
+  confirmatory test against 100 is not significant.
+
 - **Reading (pre-specified):** at the pre-registered layer the partner's anger is represented, linearly and strongly, but
   that direction is not sufficient to move the decision and is at most partly necessary, the representational version
   of the main finding (the model *recognises* the emotion far better than it *acts* on it). The exploratory sweep
   suggests that the direction does act on the decision, but only where it is written into the later layers, between the
-  point where the emotion is decoded best (layer 24) and the output. That is a new hypothesis, not a result: it needs a
-  confirmatory test at a fixed late layer with 100 random directions, which the Qwen2.5-7B run cannot provide either
-  (its steering layer is also the middle one).
+  point where the emotion is decoded best (layer 24) and the output. **Qwen2.5-7B gives the same answer in both
+  respects** (M1–M3 not supported at the middle layer; late-layer steering in the exploratory sweep, from layer 16 of 28),
+  so the pattern now holds in two model sizes. It is still a hypothesis, not a confirmatory result: it needs a test at a
+  fixed late layer with 100 random directions, which neither run provides (both steering layers are the middle ones).
 
 ## Extension 7: do the breaks generalise, and what kind of effect is the mood? (17 Nov 2026; pre-registered and frozen before data, confirmatory)
 `results/ext7/report.md` (confirmatory), `results/ext7/extra.md` (descriptive and exploratory); pre-registration
